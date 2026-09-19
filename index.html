@@ -145,6 +145,7 @@
     .guarantee p { color: rgba(244,239,227,.88); font-size: 16px; margin: 0; max-width: 70ch; }
     .price-note { color: rgba(244,239,227,.6); font-size: 13px; margin: 18px 0 24px; }
     @media (max-width: 640px) { .price-row { grid-template-columns: 1fr; gap: 6px; } .price-amt { font-size: 24px; } }
+    h2 .line { display: block; }
     .course .who { color: var(--gold-soft); font-size: 13px; margin-bottom: 10px; }
     .course p { color: rgba(244,239,227,.78); font-size: 15px; max-width: 70ch; }
 
@@ -166,7 +167,7 @@
 
     .books { background: var(--cream); color: var(--ink); }
     .books h2 { margin-bottom: 32px; }
-    .book-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .book-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
     .book {
       background: #fff; overflow: hidden;
       border-top: 3px solid var(--navy); box-shadow: 0 10px 24px rgba(20,20,16,.06);
@@ -245,7 +246,7 @@
       .brand-text { font-size: 9px; letter-spacing: .18em; }
       .nav-right { gap: 10px; }
       .nav .btn { padding: 10px 14px; font-size: 10px; letter-spacing: .1em; }
-      .book-grid { grid-template-columns: 1fr; }
+      .book-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
       .testimonial-columns { column-count: 1; }
       .course { grid-template-columns: 1fr; gap: 8px; }
       .hero-inner { padding-top: 120px; }
@@ -283,7 +284,7 @@
     <section class="section intro">
       <div class="wrap intro-grid">
         <div>
-          <h2 class="serif" data-i18n="introTitle">Cinco cursos. Escolha a sua pista de decolagem.</h2>
+          <h2 class="serif"><span class="line" data-i18n="introTitle">Cinco cursos.</span><span class="line" data-i18n="introTitle2">Escolha a sua pista de decolagem.</span></h2>
           <p data-i18n="introP1">
             Mudar para o Canadá não é só visto e passagem. É saber se apresentar numa entrevista no inglês certo — o tom certo, o vocabulário certo, a confiança certa.
           </p>
@@ -448,7 +449,7 @@
           <p data-i18n="bioP1">Há trinta anos, comecei a ensinar inglês. Desde então, vivi a magia que pode acontecer quando um ser humano ajuda outro a crescer.</p>
           <p data-i18n="bioP2">Ao compartilhar a jornada dos meus alunos, percebi que a minha missão ia além do inglês. Não alcancei o divino, mas vivo uma vida cheia de sentido graças a pessoas como você — pessoas que investem no próprio sucesso e que se levantam quando tropeçam.</p>
           <p data-i18n="bioP3">Deixe-me guiar você enquanto você se firma no Canadá.</p>
-          <p class="bio-signoff" data-i18n="bioSignoff">O melhor ainda está por vir.</p>
+          <p class="bio-signoff" data-i18n="bioSignoff">O melhor ainda está por vir!</p>
         </div>
       </div>
     </section>
@@ -472,7 +473,6 @@
     </section>
 
     <section class="cta" id="inscrever">
-      <p class="kicker">Human 2 Human</p>
       <h2 class="serif" data-i18n="ctaTitle">Pronto para testar as águas — ou começar a todo vapor?</h2>
     </section>
 
@@ -541,10 +541,11 @@
         bioP1: "Há trinta anos, comecei a ensinar inglês. Desde então, vivi a magia que pode acontecer quando um ser humano ajuda outro a crescer.",
         bioP2: "Ao compartilhar a jornada dos meus alunos, percebi que a minha missão ia além do inglês. Não alcancei o divino, mas vivo uma vida cheia de sentido graças a pessoas como você — pessoas que investem no próprio sucesso e que se levantam quando tropeçam.",
         bioP3: "Deixe-me guiar você enquanto você se firma no Canadá.",
-        bioSignoff: "O melhor ainda está por vir.",
+        bioSignoff: "O melhor ainda está por vir!",
         h1: "The Canadian Dream",
         heroSub: "O programa Masterclass de Ron Taylor é dedicado a brasileiros que investem no próprio sucesso no Canadá — onde as montanhas e o oceano recebem você de braços abertos.",
-        introTitle: "Cinco cursos. Escolha a sua pista de decolagem.",
+        introTitle: "Cinco cursos.",
+        introTitle2: "Escolha a sua pista de decolagem.",
         introP1: "Mudar para o Canadá não é só visto e passagem. É saber se apresentar numa entrevista no inglês certo — o tom certo, o vocabulário certo, a confiança certa.",
         introP2: "Ron Taylor trabalha individualmente com brasileiros para decifrar o código do inglês — da conversa do dia a dia ao inglês de carreira e à fluência real na fala.",
         courseKicker: "Os cursos",
@@ -624,10 +625,11 @@
         bioP1: "Thirty years ago, I started teaching English. During that time, I’ve experienced the magic that can happen when one human being helps another grow.",
         bioP2: "Through sharing my students’ journeys, I came to realise that my mission went beyond English. I haven’t attained the divine, but I live a meaningful life because of people like you—people who invest in their own success, and who rise when they stumble.",
         bioP3: "Allow me to guide you as you find your footing.",
-        bioSignoff: "The best is yet to come.",
+        bioSignoff: "The best is yet to come!",
         h1: "The Canadian Dream",
         heroSub: "Ron Taylor’s Masterclass Program is dedicated to Brazilians investing in their success in Canada — where mountains and ocean welcome you with open arms.",
-        introTitle: "Five courses. Choose your runway.",
+        introTitle: "Five courses.",
+        introTitle2: "Choose your runway.",
         introP1: "Moving to Canada is more than a visa and a flight. It is knowing how to introduce yourself in an interview in the right English — the right tone, the right vocabulary, the right confidence.",
         introP2: "Ron Taylor works one-on-one with Brazilians to break the English code — from everyday conversation to career English and real spoken fluency.",
         courseKicker: "The Courses",
