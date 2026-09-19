@@ -129,6 +129,19 @@
       font-family: "Cormorant Garamond", Georgia, serif;
       font-size: 28px; font-weight: 500; color: #fff; margin-bottom: 6px;
     }
+    .courses-more { margin-top: 36px; padding: 26px 28px; border: 1px solid rgba(201,162,39,.45); display: grid; gap: 16px; }
+    .courses-more .btn { justify-self: start; }
+    .courses-more p { color: rgba(244,239,227,.85); font-size: 16px; max-width: 70ch; margin: 0; }
+    .prices { background: var(--navy); border-top: 1px solid rgba(201,162,39,.22); }
+    .prices h2 { color: var(--cream); margin-bottom: 28px; }
+    .price-list { border-top: 1px solid rgba(201,162,39,.45); max-width: 900px; }
+    .price-row { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid rgba(201,162,39,.22); }
+    .price-row h3 { font-family: "Cormorant Garamond", Georgia, serif; font-size: 26px; font-weight: 500; color: #fff; margin: 0 0 4px; }
+    .price-row p { color: rgba(244,239,227,.72); font-size: 14px; margin: 0; max-width: 60ch; }
+    .price-row.first h3 { color: var(--gold); }
+    .price-amt { font-family: "Cormorant Garamond", Georgia, serif; font-size: 28px; color: var(--cream); white-space: nowrap; }
+    .price-note { color: rgba(244,239,227,.6); font-size: 13px; margin: 18px 0 24px; }
+    @media (max-width: 640px) { .price-row { grid-template-columns: 1fr; gap: 6px; } .price-amt { font-size: 24px; } }
     .course .who { color: var(--gold-soft); font-size: 13px; margin-bottom: 10px; }
     .course p { color: rgba(244,239,227,.78); font-size: 15px; max-width: 70ch; }
 
@@ -249,6 +262,7 @@
         <button type="button" class="active" data-lang="pt">PT</button>
         <button type="button" data-lang="en">EN</button>
       </div>
+      <a class="nav-link" href="#precos" data-i18n="navCourses">Preços</a>
       <a class="nav-link" href="#bio">Bio</a>
       <a class="btn" href="#aplicar" data-i18n="navApply">Inscreva-se</a>
     </div>
@@ -288,7 +302,7 @@
             <div class="num">01</div>
             <div>
               <h3 data-i18n="c1title">Testando as Águas</h3>
-              <p class="who" data-i18n="c1who">Para quem ainda está decidindo se muda para o Canadá.</p>
+              <p class="who" data-i18n="c1who">Para quem está considerando o Canadá e vem visitar por algumas semanas ou um mês.</p>
               <p data-i18n="c1body">Curso flexível, individual e intensivo, no seu nível de fala e compreensão e no tempo que você tem — semanas ou meses. Você experimenta estudar em inglês e sentir o cotidiano canadense antes de dar o passo maior.</p>
             </div>
           </article>
@@ -317,6 +331,57 @@
             </div>
           </article>
         </div>
+        <div class="courses-more">
+          <p data-i18n="coursesMore">Todo aluno começa com o Preboarding Assessment: duas horas, individual e online, por $50 CAD. Assim conhecemos um ao outro e eu preparo o seu curso antes da primeira aula.</p>
+          <a class="btn" href="#precos" data-i18n="coursesLink">Ver preços</a>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section prices" id="precos">
+      <div class="wrap">
+        <p class="kicker" data-i18n="pricesKicker">Preços</p>
+        <h2 class="serif" data-i18n="pricesTitle">Cursos e preços</h2>
+        <div class="price-list">
+          <div class="price-row first">
+            <div>
+              <h3 data-i18n="pr0n">Preboarding Assessment</h3>
+              <p data-i18n="pr0f">2 horas · individual · online · antes de qualquer curso</p>
+            </div>
+            <div class="price-amt" data-i18n="pr0p">$50 CAD</div>
+          </div>
+          <div class="price-row">
+            <div>
+              <h3 data-i18n="pr1n">Testando as Águas</h3>
+              <p data-i18n="pr1f">5 dias · 2 horas de aula por dia · tarefas diárias de compreensão · reunião de acompanhamento depois do curso</p>
+            </div>
+            <div class="price-amt" data-i18n="pr1p">$425 CAD</div>
+          </div>
+          <div class="price-row">
+            <div>
+              <h3 data-i18n="pr2n">The Onboarding Sprint</h3>
+              <p data-i18n="pr2f">5 aulas de 90 minutos por semana · tarefas diárias de compreensão</p>
+            </div>
+            <div class="price-amt" data-i18n="pr2p">$1.500 CAD / mês</div>
+          </div>
+          <div class="price-row">
+            <div>
+              <h3 data-i18n="pr3n">The Career Sprint</h3>
+              <p data-i18n="pr3f">2 horas de aula por dia, de segunda a sexta · tarefas diárias de compreensão · $400 CAD por semana</p>
+            </div>
+            <div class="price-amt" data-i18n="pr3p">$40 CAD / hora</div>
+          </div>
+          <div class="price-row">
+            <div>
+              <h3 data-i18n="pr4n">The Master Class</h3>
+              <p data-i18n="pr4f">Programa contínuo, individual e avançado</p>
+            </div>
+            <div class="price-amt" data-i18n="pr4p">$35 CAD / hora</div>
+          </div>
+        </div>
+        <p class="price-note" data-i18n="pricesNote">Todas as aulas são individuais e online. Valores em dólares canadenses.</p>
+        <a class="btn" href="#aplicar" data-i18n="pricesCta">Agende o seu Preboarding</a>
       </div>
     </section>
 
@@ -468,13 +533,13 @@
         introP2: "Ron Taylor trabalha individualmente com brasileiros para decifrar o código do inglês — da conversa do dia a dia ao inglês de carreira e à fluência real na fala.",
         courseKicker: "The Courses",
         c1title: "Testando as Águas",
-        c1who: "Para quem ainda está decidindo se muda para o Canadá.",
-        c1body: "Curso flexível, individual e intensivo, no seu nível de fala e compreensão e no tempo que você tem — semanas ou meses. Você experimenta estudar em inglês e sentir o cotidiano canadense antes de dar o passo maior.",
+        c1who: "Para quem está considerando o Canadá e vem visitar por algumas semanas ou um mês.",
+        c1body: "Curso intensivo de 5 dias, individual, para todos os níveis a partir do elementar. Duas horas de aula por dia, tarefas diárias de compreensão e uma reunião de acompanhamento depois do curso. Você vive o inglês e o cotidiano canadense antes de dar o passo maior.",
         c2who: "Para quem vai se mudar — ou acabou de chegar.",
-        c2body: "Um sprint individual e intensivo para acelerar a adaptação. Comunicação falada e prática para o dia a dia, trabalho, estudo e a confiança de funcionar em Vancouver desde a primeira semana.",
+        c2body: "O curso mais abrangente: cinco aulas individuais de 90 minutos por semana, mais tarefas diárias de compreensão. Dia a dia, trabalho, entrevistas e a confiança de funcionar em Vancouver desde a primeira semana.",
         c3who: "Entrevistas, contratação e os primeiros meses de prova.",
         c3body: "Aulas individuais para o momento que decide a carreira: responder perguntas, explicar sua experiência, demonstrar valor e atravessar o probation num ambiente canadense.",
-        c4who: "Para quem já trabalha no Canadá e quer fluência real na fala.",
+        c4who: "Para quem já mora e trabalha no Canadá e precisa de fluência real na fala.",
         c4body: "Programa longo, individual e personalizado para ir além do “inglês bom o suficiente”. Vocabulário, presença, participação plena na vida profissional e social canadense.",
         chipOnboarding: "Inglês de adaptação",
         chipInterview: "Inglês de entrevista",
@@ -482,13 +547,36 @@
         chipCitizenship: "Residência permanente à cidadania",
         booksTitle: "Masterclass Series",
         navApply: "Inscreva-se",
+        navCourses: "Preços",
+        coursesLink: "Ver preços",
+        pricesKicker: "Preços",
+        pricesTitle: "Cursos e preços",
+        pricesNote: "Todas as aulas são individuais e online. Valores em dólares canadenses.",
+        pricesCta: "Agende o seu Preboarding",
+        pr0n: "Preboarding Assessment",
+        pr0f: "2 horas · individual · online · antes de qualquer curso",
+        pr0p: "$50 CAD",
+        pr1n: "Testando as Águas",
+        pr1f: "5 dias · 2 horas de aula por dia · tarefas diárias de compreensão · reunião de acompanhamento depois do curso",
+        pr1p: "$425 CAD",
+        pr2n: "The Onboarding Sprint",
+        pr2f: "5 aulas de 90 minutos por semana · tarefas diárias de compreensão",
+        pr2p: "$1.500 CAD / mês",
+        pr3n: "The Career Sprint",
+        pr3f: "2 horas de aula por dia, de segunda a sexta · tarefas diárias de compreensão · $400 CAD por semana",
+        pr3p: "$40 CAD / hora",
+        pr4n: "The Master Class",
+        pr4f: "Programa contínuo, individual e avançado",
+        pr4p: "$35 CAD / hora",
+                coursesMore: "Todo aluno começa com o Preboarding Assessment: duas horas, individual e online, por $50 CAD. Assim conhecemos um ao outro e eu preparo o seu curso antes da primeira aula.",
+        
         applyKicker: "Inscreva-se",
-        applyIntro: "Este Masterclass Program não é para iniciantes — você já deve conseguir manter uma conversa simples em inglês, falada e compreendida, mesmo que não seja perfeita. Preencha os campos abaixo e vamos marcar uma aula experimental.",
+        applyIntro: "Este Masterclass Program não é para iniciantes — você já deve conseguir manter uma conversa simples em inglês, falada e compreendida, mesmo que não seja perfeita. Preencha os campos abaixo e vamos marcar o seu Preboarding Assessment: duas horas, online, $50 CAD.",
         fieldName: "Nome completo",
         fieldEmail: "E-mail",
-        fieldArrival: "Quando você planeja se mudar para o Canadá?",
+        fieldArrival: "Quando você planeja vir para o Canadá?",
         fieldArrivalPh: "ex: já estou aqui / Janeiro de 2027",
-        fieldReason: "Por que você está se mudando para o Canadá?",
+        fieldReason: "Por que o Canadá? Você vem visitar, se mudar ou já está aqui?",
         fieldBackground: "Qual é a sua formação ou área profissional?",
         fieldCourse: "Qual curso combina mais com você?",
         courseChoose: "Selecione uma opção",
@@ -522,13 +610,13 @@
         introP2: "Ron Taylor works one-on-one with Brazilians to break the English code — from everyday conversation to career English and real spoken fluency.",
         courseKicker: "The Courses",
         c1title: "Testing the Waters",
-        c1who: "For Brazilians still deciding whether to move to Canada.",
-        c1body: "A flexible one-on-one intensive course tailored to your speaking and listening level and how long you’ll be staying. Get a real feel for studying in English and everyday Canadian life before you commit to the bigger move.",
+        c1who: "For Brazilians considering Canada and visiting for a few weeks or a month.",
+        c1body: "A 5-day one-on-one intensive for all levels from elementary up. Two hours of coaching a day, daily listening assignments, and a follow-up meeting after the course. Live in English and experience everyday Canadian life before you commit to the bigger move.",
         c2who: "For Brazilians planning to move — or who have just arrived.",
-        c2body: "An intensive one-on-one sprint to adjust to Canadian life quickly: practical spoken communication for everyday life, work, study, and confidence in your new city.",
+        c2body: "The broadest course: five one-on-one 90-minute lessons a week, plus daily listening assignments. Everyday life, work, interviews, and the confidence to function in your new city from the first week.",
         c3who: "Interviews, getting hired, and succeeding during probation.",
         c3body: "One-on-one coaching for the moment that decides your career: learn how to answer interview questions, explain your experience, demonstrate your value, and navigate the critical first months in a Canadian workplace.",
-        c4who: "For Brazilians working in Canada who want real spoken fluency.",
+        c4who: "For Brazilians living and working in Canada who need real spoken fluency.",
         c4body: "A long-term, one-on-one, personalized program to move beyond “good enough” English — fluency, presence, and full participation in Canadian professional and social life.",
         chipOnboarding: "Onboarding English",
         chipInterview: "Interview English",
@@ -536,13 +624,36 @@
         chipCitizenship: "Permanent Residency to Citizenship",
         booksTitle: "Masterclass Series",
         navApply: "Apply",
+        navCourses: "Prices",
+        coursesLink: "See prices",
+        pricesKicker: "Prices",
+        pricesTitle: "Courses and prices",
+        pricesNote: "All lessons are one-on-one and online. Prices in Canadian dollars.",
+        pricesCta: "Book your Preboarding",
+        pr0n: "Preboarding Assessment",
+        pr0f: "2 hours · one-on-one · online · before any course",
+        pr0p: "$50 CAD",
+        pr1n: "Testing the Waters",
+        pr1f: "5 days · 2 hours of coaching a day · daily listening assignments · follow-up meeting after the course",
+        pr1p: "$425 CAD",
+        pr2n: "The Onboarding Sprint",
+        pr2f: "5 × 90-minute lessons a week · daily listening assignments",
+        pr2p: "$1,500 CAD / month",
+        pr3n: "The Career Sprint",
+        pr3f: "2 hours of coaching a day, Monday to Friday · daily listening assignments · $400 CAD per week",
+        pr3p: "$40 CAD / hour",
+        pr4n: "The Master Class",
+        pr4f: "Ongoing, one-on-one, advanced program",
+        pr4p: "$35 CAD / hour",
+                coursesMore: "Every student begins with the Preboarding Assessment: two hours, one-on-one and online, for $50 CAD. We get to know each other, and I prepare your course before the first lesson.",
+        
         applyKicker: "Apply",
-        applyIntro: "This Masterclass Program isn't for beginners — you should already be able to hold a simple spoken conversation in English, even if it isn't perfect. Fill in the fields below and let's arrange a trial lesson.",
+        applyIntro: "This Masterclass Program isn't for beginners — you should already be able to hold a simple spoken conversation in English, even if it isn't perfect. Fill in the fields below and let's book your Preboarding Assessment: two hours, online, $50 CAD.",
         fieldName: "Full name",
         fieldEmail: "Email",
-        fieldArrival: "When are you planning to move to Canada?",
+        fieldArrival: "When are you planning to come to Canada?",
         fieldArrivalPh: "e.g. already here / January 2027",
-        fieldReason: "Why are you moving to Canada?",
+        fieldReason: "Why Canada? Are you visiting, moving, or already here?",
         fieldBackground: "What's your professional background?",
         fieldCourse: "Which course fits you best?",
         courseChoose: "Select an option",
@@ -591,10 +702,10 @@
         `Name: ${name}`,
         `Email: ${f.email.value.trim()}`,
         "",
-        "When are you planning to move to Canada?",
+        "When are you planning to come to Canada?",
         f.arrival.value.trim(),
         "",
-        "Why are you moving to Canada?",
+        "Why Canada? Visiting, moving, or already here?",
         f.reason.value.trim(),
         "",
         "Professional background:",
@@ -606,7 +717,7 @@
         "Approximate English level:",
         levelText
       ].join("\n");
-      const subject = `Masterclass Application - ${name}`;
+      const subject = `Preboarding Assessment - ${name}`;
       window.location.href = `mailto:human2human.ca@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
   </script>
