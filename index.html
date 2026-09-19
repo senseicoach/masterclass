@@ -140,6 +140,9 @@
     .price-row p { color: rgba(244,239,227,.72); font-size: 14px; margin: 0; max-width: 60ch; }
     .price-row.first h3 { color: var(--gold); }
     .price-amt { font-family: "Cormorant Garamond", Georgia, serif; font-size: 28px; color: var(--cream); white-space: nowrap; }
+    .guarantee { max-width: 900px; margin-top: 28px; padding: 22px 26px; border: 1px solid var(--gold); background: rgba(201,162,39,.06); }
+    .guarantee h3 { font-family: "Cormorant Garamond", Georgia, serif; font-size: 26px; font-weight: 500; color: var(--gold); margin: 0 0 6px; }
+    .guarantee p { color: rgba(244,239,227,.88); font-size: 16px; margin: 0; max-width: 70ch; }
     .price-note { color: rgba(244,239,227,.6); font-size: 13px; margin: 18px 0 24px; }
     @media (max-width: 640px) { .price-row { grid-template-columns: 1fr; gap: 6px; } .price-amt { font-size: 24px; } }
     .course .who { color: var(--gold-soft); font-size: 13px; margin-bottom: 10px; }
@@ -380,6 +383,10 @@
             <div class="price-amt" data-i18n="pr4p">$35 CAD / hora</div>
           </div>
         </div>
+        <div class="guarantee">
+          <h3 data-i18n="guarTitle">Minha garantia</h3>
+          <p data-i18n="guarBody">Se você decidir parar a qualquer momento durante um curso, todas as aulas restantes são reembolsadas integralmente. Sem perguntas.</p>
+        </div>
         <p class="price-note" data-i18n="pricesNote">Todas as aulas são individuais e online. Valores em dólares canadenses.</p>
         <a class="btn" href="#aplicar" data-i18n="pricesCta">Agende o seu Preboarding</a>
       </div>
@@ -430,7 +437,7 @@
           </blockquote>
           <p data-i18n="bioP1">Há trinta anos, comecei a ensinar inglês. Desde então, vivi a magia que pode acontecer quando um ser humano ajuda outro a crescer.</p>
           <p data-i18n="bioP2">Ao compartilhar a jornada dos meus alunos, percebi que a minha missão ia além do inglês. Não alcancei o divino, mas vivo uma vida cheia de sentido graças a pessoas como você — pessoas que investem no próprio sucesso e que se levantam quando tropeçam.</p>
-          <p data-i18n="bioP3">Permita-me guiar você enquanto firma os pés.</p>
+          <p data-i18n="bioP3">Deixe-me guiar você enquanto você se firma no Canadá.</p>
           <p class="bio-signoff" data-i18n="bioSignoff">O melhor ainda está por vir.</p>
         </div>
       </div>
@@ -523,7 +530,7 @@
         bioQuote: "“Não apenas pratique a sua arte, mas penetre nos seus segredos, pois ela e o conhecimento podem elevar o homem ao divino.”",
         bioP1: "Há trinta anos, comecei a ensinar inglês. Desde então, vivi a magia que pode acontecer quando um ser humano ajuda outro a crescer.",
         bioP2: "Ao compartilhar a jornada dos meus alunos, percebi que a minha missão ia além do inglês. Não alcancei o divino, mas vivo uma vida cheia de sentido graças a pessoas como você — pessoas que investem no próprio sucesso e que se levantam quando tropeçam.",
-        bioP3: "Permita-me guiar você enquanto firma os pés.",
+        bioP3: "Deixe-me guiar você enquanto você se firma no Canadá.",
         bioSignoff: "O melhor ainda está por vir.",
         h1: "The Canadian Dream",
         heroSub: "O programa Masterclass de Ron Taylor é dedicado a brasileiros que investem no próprio sucesso no Canadá — onde as montanhas e o oceano recebem você de braços abertos.",
@@ -550,6 +557,8 @@
         navCourses: "Preços",
         coursesLink: "Ver preços",
         pricesKicker: "Preços",
+        guarTitle: "Minha garantia",
+        guarBody: "Se você decidir parar a qualquer momento durante um curso, todas as aulas restantes são reembolsadas integralmente. Sem perguntas.",
         pricesTitle: "Cursos e preços",
         pricesNote: "Todas as aulas são individuais e online. Valores em dólares canadenses.",
         pricesCta: "Agende o seu Preboarding",
@@ -629,6 +638,8 @@
         navCourses: "Prices",
         coursesLink: "See prices",
         pricesKicker: "Prices",
+        guarTitle: "My guarantee",
+        guarBody: "If you decide to stop at any point during a course, all remaining lessons are refunded in full. No questions asked.",
         pricesTitle: "Courses and prices",
         pricesNote: "All lessons are one-on-one and online. Prices in Canadian dollars.",
         pricesCta: "Book your Preboarding",
