@@ -130,7 +130,12 @@
       font-size: 28px; font-weight: 500; color: #fff; margin-bottom: 6px;
     }
     .courses-more { margin-top: 36px; padding: 26px 28px; border: 1px solid rgba(201,162,39,.45); display: grid; gap: 16px; }
-        .courses-more p { color: rgba(244,239,227,.85); font-size: 16px; max-width: 70ch; margin: 0; }
+        .pb-head { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: baseline; padding-bottom: 14px; border-bottom: 1px solid rgba(201,162,39,.3); }
+    .pb-head h3 { font-family: "Cormorant Garamond", Georgia, serif; font-size: 30px; font-weight: 500; color: var(--gold); margin: 0 0 4px; }
+    .courses-more .pb-meta { font-size: 14px; color: rgba(244,239,227,.65); }
+    .courses-more .pb-lead { font-family: "Cormorant Garamond", Georgia, serif; font-size: 24px; color: var(--cream); }
+    @media (max-width: 640px) { .pb-head { grid-template-columns: 1fr; gap: 6px; } }
+    .courses-more p { color: rgba(244,239,227,.85); font-size: 16px; max-width: 70ch; margin: 0; }
     .prices { background: var(--navy); border-top: 1px solid rgba(201,162,39,.22); }
     .prices h2 { color: var(--cream); margin-bottom: 28px; }
     .price-list { border-top: 1px solid rgba(201,162,39,.45); max-width: 900px; }
@@ -289,7 +294,7 @@
             Você está prestes a embarcar numa jornada que vai testar a sua garra, fazer você duvidar de si mesmo e, no fim, revelar o melhor de você.
           </p>
           <p data-i18n="introP2">
-            A pista é pavimentada com inglês e, com as minhas três décadas de experiência em aulas individuais e personalizadas, vamos decifrar o inglês juntos.
+            A pista é pavimentada com inglês e, graças às minhas três décadas de experiência em aulas individuais e personalizadas, vamos decifrar o inglês juntos.
           </p>
         </div>
       </div>
@@ -319,7 +324,7 @@
             <div class="num">03</div>
             <div>
               <h3>The University &amp; College Prep Sprint</h3>
-              <p class="who" data-i18n="c5who">Para brasileiros que vão estudar em um college ou universidade no Canadá.</p>
+              <p class="who" data-i18n="c5who">Para quem vai estudar em um college ou universidade no Canadá.</p>
               <p data-i18n="c5body">Entenda como o college e a universidade funcionam no Canadá antes de aprender da forma mais difícil. Você já tem uma boa formação e é um profissional experiente, mas ser estudante no Canadá significa aprender outro sistema acadêmico, em inglês. Quatro semanas de aulas individuais: carga de estudos, prazos e estudo independente; redação, argumentação, pesquisa, paráfrase e citações; discussões em aula, apresentações e como pedir ajuda aos professores; trabalhos em grupo; integridade acadêmica e uso adequado de IA; e simulações de aulas, tarefas e situações reais de estudante.</p>
             </div>
           </article>
@@ -341,7 +346,16 @@
           </article>
         </div>
         <div class="courses-more">
-          <p data-i18n="coursesMore">Você vai começar com o Preboarding Assessment: duas horas, individual e online. Preciso conhecer a sua trajetória, o seu trabalho e os seus objetivos no Canadá, e ouvir como você se comunica em inglês. Essas duas horas são essenciais, porque me permitem adaptar o curso às suas necessidades. E também são uma oportunidade para você conhecer a minha forma de trabalhar.</p>
+          <div class="pb-head">
+            <div>
+              <h3 data-i18n="pr0n">Preboarding Assessment</h3>
+              <p class="pb-meta" data-i18n="pr0f">2 horas · individual · online · antes de qualquer curso</p>
+            </div>
+            <div class="price-amt"><span data-i18n="pr0p">$50</span> <small data-i18n="pr0pu">CAD</small></div>
+          </div>
+          <p class="pb-lead" data-i18n="pbLead">O Preboarding Assessment estabelece a base.</p>
+          <p data-i18n="pbP1">Durante a nossa avaliação de duas horas, preciso entender como você chegou até aqui — os desafios que enfrentou, as conquistas que alcançou e a experiência e o conhecimento que construiu ao longo da sua carreira.</p>
+          <p data-i18n="pbP2">Só então posso adaptar as suas aulas e traçar um plano de ação que aproveite o que você já sabe e a experiência que você traz na bagagem.</p>
         </div>
       </div>
     </section>
@@ -352,13 +366,6 @@
         <p class="kicker" data-i18n="pricesKicker">Preços</p>
         <h2 class="serif" data-i18n="pricesTitle">Cursos e preços</h2>
         <div class="price-list">
-          <div class="price-row first">
-            <div>
-              <h3 data-i18n="pr0n">Preboarding Assessment</h3>
-              <p data-i18n="pr0f">2 horas · individual · online · antes de qualquer curso</p>
-            </div>
-            <div class="price-amt"><span data-i18n="pr0p">$50</span> <small data-i18n="pr0pu">CAD</small></div>
-          </div>
           <div class="price-row">
             <div>
               <h3 data-i18n="pr1n">Testando as Águas</h3>
@@ -547,7 +554,7 @@
         introTitle: "Cinco cursos.",
         introTitle2: "Escolha a sua pista de decolagem.",
         introP1: "Você está prestes a embarcar numa jornada que vai testar a sua garra, fazer você duvidar de si mesmo e, no fim, revelar o melhor de você.",
-        introP2: "A pista é pavimentada com inglês e, com as minhas três décadas de experiência em aulas individuais e personalizadas, vamos decifrar o inglês juntos.",
+        introP2: "A pista é pavimentada com inglês e, graças às minhas três décadas de experiência em aulas individuais e personalizadas, vamos decifrar o inglês juntos.",
         courseKicker: "Os cursos",
         c1title: "Testando as Águas",
         c1who: "Para quem está considerando o Canadá e vem visitar por algumas semanas ou um mês.",
@@ -566,7 +573,10 @@
         navApply: "Inscreva-se",
         navCourses: "Preços",
         pricesKicker: "Preços",
-        c5who: "Para brasileiros que vão estudar em um college ou universidade no Canadá.",
+        pbLead: "O Preboarding Assessment estabelece a base.",
+        pbP1: "Durante a nossa avaliação de duas horas, preciso entender como você chegou até aqui — os desafios que enfrentou, as conquistas que alcançou e a experiência e o conhecimento que construiu ao longo da sua carreira.",
+        pbP2: "Só então posso adaptar as suas aulas e traçar um plano de ação que aproveite o que você já sabe e a experiência que você traz na bagagem.",
+        c5who: "Para quem vai estudar em um college ou universidade no Canadá.",
         c5body: "Entenda como o college e a universidade funcionam no Canadá antes de aprender da forma mais difícil. Você já tem uma boa formação e é um profissional experiente, mas ser estudante no Canadá significa aprender outro sistema acadêmico, em inglês. Quatro semanas de aulas individuais: carga de estudos, prazos e estudo independente; redação, argumentação, pesquisa, paráfrase e citações; discussões em aula, apresentações e como pedir ajuda aos professores; trabalhos em grupo; integridade acadêmica e uso adequado de IA; e simulações de aulas, tarefas e situações reais de estudante.",
         pr5n: "The University & College Prep Sprint",
         pr5f: "4 semanas · 40 horas de aula individual · cerca de 20 horas de tarefas de casa de compreensão auditiva e transcrição",
@@ -592,7 +602,6 @@
         pr4n: "The Executive Class",
         pr4f: "Programa contínuo, individual e avançado",
         pr4p: "$35", pr4pu: "CAD / hora",
-                coursesMore: "Você vai começar com o Preboarding Assessment: duas horas, individual e online. Preciso conhecer a sua trajetória, o seu trabalho e os seus objetivos no Canadá, e ouvir como você se comunica em inglês. Essas duas horas são essenciais, porque me permitem adaptar o curso às suas necessidades. E também são uma oportunidade para você conhecer a minha forma de trabalhar.",
         
         applyKicker: "Inscreva-se",
         applyIntro: "Preencha os campos abaixo e vamos marcar o seu Preboarding Assessment: duas horas, online, $50 CAD.",
@@ -650,6 +659,9 @@
         navApply: "Apply",
         navCourses: "Prices",
         pricesKicker: "Prices",
+        pbLead: "The Preboarding Assessment establishes the foundation.",
+        pbP1: "During our two-hour assessment, I need to understand how you arrived at this point — the challenges you’ve faced, the successes you’ve achieved, and the experience and knowledge you’ve built throughout your career.",
+        pbP2: "Only then can I tailor your classes and design a game plan that capitalizes on what you already know and the experience you bring to the table.",
         c5who: "For Brazilians preparing to study at a Canadian college or university.",
         c5body: "Learn how Canadian college and university actually work before you have to learn the hard way. You are already well educated and an experienced professional, but becoming a Canadian student means learning a different academic system in English. Four weeks of one-on-one lessons: workload, syllabi, deadlines and independent study; essay structure, arguments, research, paraphrasing and citations; academic discussions, presentations and asking professors for help; group projects; academic integrity and appropriate use of AI; and simulated lectures, assignments and real student situations.",
         pr5n: "The University & College Prep Sprint",
@@ -676,7 +688,6 @@
         pr4n: "The Executive Class",
         pr4f: "Ongoing, one-on-one, advanced program",
         pr4p: "$35", pr4pu: "CAD / hour",
-                coursesMore: "You will begin with the Preboarding Assessment: two hours, one-on-one and online. I need to learn about your background, your work and your goals in Canada, and hear how you communicate in English. Those two hours are vital, because they allow me to tailor the course to your needs. They also give you the opportunity to experience how I work.",
         
         applyKicker: "Apply",
         applyIntro: "Fill in the fields below and let's book your Preboarding Assessment: two hours, online, $50 CAD.",
