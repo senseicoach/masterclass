@@ -150,7 +150,7 @@
     .guarantee p { color: rgba(244,239,227,.88); font-size: 16px; margin: 0; max-width: 70ch; }
     .price-note { color: rgba(244,239,227,.6); font-size: 13px; margin: 18px 0 24px; }
     @media (max-width: 640px) { .price-row { grid-template-columns: 1fr; gap: 6px; } .price-amt { font-size: 24px; } }
-    h2 .line { display: block; }
+    h2 .line, p .line { display: block; }
     .course .who { color: var(--gold-soft); font-size: 13px; margin-bottom: 10px; }
     .course p { color: rgba(244,239,227,.78); font-size: 15px; max-width: 70ch; }
 
@@ -486,7 +486,7 @@
     <section class="section apply" id="aplicar">
       <div class="wrap">
         <p class="kicker" data-i18n="applyKicker">Inscreva-se</p>
-        <p data-i18n="applyIntro">Preencha os campos abaixo e vamos marcar o seu Preboarding Assessment: duas horas, online, $50 CAD.</p>
+        <p ><span class="line" data-i18n="applyIntro">Preencha os campos abaixo e vamos marcar o seu Preboarding Assessment:</span><span class="line" data-i18n="applyIntro2">Duas horas, online, $50 CAD.</span></p>
         <form class="apply-form" id="applyForm">
           <div class="field">
             <label for="af-name" data-i18n="fieldName">Nome completo</label>
@@ -604,7 +604,8 @@
         pr4p: "$35", pr4pu: "CAD / hora",
         
         applyKicker: "Inscreva-se",
-        applyIntro: "Preencha os campos abaixo e vamos marcar o seu Preboarding Assessment: duas horas, online, $50 CAD.",
+        applyIntro: "Preencha os campos abaixo e vamos marcar o seu Preboarding Assessment:",
+        applyIntro2: "Duas horas, online, $50 CAD.",
         fieldName: "Nome completo",
         fieldEmail: "E-mail",
         fieldArrival: "Quando você planeja vir para o Canadá?",
@@ -690,7 +691,8 @@
         pr4p: "$35", pr4pu: "CAD / hour",
         
         applyKicker: "Apply",
-        applyIntro: "Fill in the fields below and let's book your Preboarding Assessment: two hours, online, $50 CAD.",
+        applyIntro: "Fill in the fields below and let's book your Preboarding Assessment:",
+        applyIntro2: "Two hours, online, $50 CAD.",
         fieldName: "Full name",
         fieldEmail: "Email",
         fieldArrival: "When are you planning to come to Canada?",
