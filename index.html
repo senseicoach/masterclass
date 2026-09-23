@@ -206,6 +206,8 @@
     .field textarea { resize: vertical; }
     .field-note { margin-top: 4px; font-size: 12.5px; line-height: 1.5; color: rgba(244,239,227,.62); font-style: italic; }
     .apply-form .btn { justify-self: start; margin-top: 6px; border: 0; cursor: pointer; }
+    .apply-form .btn[disabled] { opacity: .6; cursor: wait; }
+    .form-status { font-size: 15px; line-height: 1.5; color: var(--gold-soft); max-width: 60ch; }
 
     .cta {
       background: var(--navy); text-align: center; padding: 96px 24px;
@@ -317,7 +319,7 @@
             <div>
               <h3>The Onboarding Sprint</h3>
               <p class="who" data-i18n="c2who">Para quem vai se mudar — ou acabou de chegar.</p>
-              <p data-i18n="c2body">O curso mais abrangente: cinco aulas individuais de 90 minutos por semana, mais tarefas de casa diárias de compreensão auditiva. Dia a dia, trabalho, entrevistas e a confiança para se virar em Vancouver desde a primeira semana.</p>
+              <p data-i18n="c2body">Cinco aulas individuais de 2 horas por semana, mais tarefas de casa diárias de compreensão auditiva. Dia a dia, trabalho, entrevistas e a confiança para se virar em Vancouver desde a primeira semana.</p>
             </div>
           </article>
           <article class="course">
@@ -325,7 +327,7 @@
             <div>
               <h3>The University &amp; College Prep Sprint</h3>
               <p class="who" data-i18n="c5who">Para quem vai estudar em um college ou universidade no Canadá.</p>
-              <p data-i18n="c5body">Entenda como o college e a universidade funcionam no Canadá antes de descobrir do jeito difícil. Você já tem uma boa formação e é um profissional experiente, mas ser estudante no Canadá significa aprender outro sistema acadêmico, em inglês. Quatro semanas de aulas individuais: carga de estudos, prazos e estudo independente; redação, argumentação, pesquisa, paráfrase e citações; discussões em aula, apresentações e como pedir ajuda aos professores; trabalhos em grupo; integridade acadêmica e uso adequado de IA; e simulações de aulas, tarefas e situações reais de estudante.</p>
+              <p data-i18n="c5body">Entenda como o college e a universidade funcionam no Canadá antes de ter que aprender da pior forma. Você já tem uma boa formação e é um profissional experiente, mas ser estudante no Canadá significa aprender outro sistema acadêmico, em inglês. Quatro semanas de aulas individuais: carga de estudos, prazos e estudo independente; redação, argumentação, pesquisa, paráfrase e citações; discussões em aula, apresentações e como pedir ajuda aos professores; trabalhos em grupo; integridade acadêmica e uso adequado de IA; e simulações de aulas, tarefas e situações reais de estudante.</p>
             </div>
           </article>
           <article class="course">
@@ -376,7 +378,7 @@
           <div class="price-row">
             <div>
               <h3 data-i18n="pr2n">The Onboarding Sprint</h3>
-              <p data-i18n="pr2f">5 aulas individuais de 90 minutos por semana · tarefas de casa diárias de compreensão auditiva</p>
+              <p data-i18n="pr2f">5 aulas individuais de 2 horas por semana · tarefas de casa diárias de compreensão auditiva</p>
             </div>
             <div class="price-amt"><span data-i18n="pr2p">$1.475</span> <small data-i18n="pr2pu">CAD / mês</small></div>
           </div>
@@ -406,7 +408,7 @@
           <h3 data-i18n="guarTitle">Minha garantia</h3>
           <p data-i18n="guarBody">Se você decidir parar a qualquer momento durante o seu curso, todas as aulas restantes são reembolsadas integralmente. Sem perguntas. Só lágrimas.</p>
         </div>
-        <p class="price-note" data-i18n="pricesNote">Os preços são em dólares canadenses. Todas as aulas são individuais e online.</p>
+        <p class="price-note" data-i18n="pricesNote">Os preços são em dólares canadenses. Todas as aulas são individuais e online. O Preboarding Assessment não é reembolsável.</p>
         <a class="btn" href="#aplicar" data-i18n="pricesCta">Agende o seu Preboarding</a>
       </div>
     </section>
@@ -414,8 +416,8 @@
     <section class="section vancouver">
       <div class="wrap">
         <div class="chips">
-          <span class="chip" data-i18n="chipOnboarding">Inglês de adaptação</span>
-          <span class="chip" data-i18n="chipInterview">Inglês de entrevista</span>
+          <span class="chip" data-i18n="chipOnboarding">Inglês para o dia a dia</span>
+          <span class="chip" data-i18n="chipInterview">Inglês para entrevistas</span>
           <span class="chip" data-i18n="chipProbation">Inglês corporativo</span>
           <span class="chip" data-i18n="chipCitizenship">Inglês acadêmico</span>
         </div>
@@ -450,12 +452,12 @@
           <h2 class="bio-name">Ron Taylor</h2>
           <p class="bio-role" data-i18n="bioRole">Consultor de comunicação no Canadá</p>
           <blockquote>
-            <span data-i18n="bioQuote">“Não apenas pratique a sua arte, mas penetre nos seus segredos, pois ela e o conhecimento podem elevar o homem ao divino.”</span>
+            <span data-i18n="bioQuote">“Não apenas pratique a sua arte, mas desvende os seus segredos, pois ela e o conhecimento podem elevar o homem ao divino.”</span>
             <cite>Ludwig van Beethoven</cite>
           </blockquote>
           <p data-i18n="bioP1">Há trinta anos, comecei a ensinar inglês. Desde então, vivi a magia que acontece quando um ser humano ajuda outro a crescer.</p>
           <p data-i18n="bioP2">Ao compartilhar a jornada dos meus alunos, percebi que a minha missão ia além do inglês. Não alcancei o divino, mas vivo uma vida cheia de sentido graças a pessoas como você — pessoas que investem no próprio sucesso e que se levantam quando tropeçam.</p>
-          <p data-i18n="bioP3">Deixe-me guiar você enquanto você se firma no Canadá.</p>
+          <p data-i18n="bioP3">Quero guiar você enquanto se firma no Canadá.</p>
           <p class="bio-signoff" data-i18n="bioSignoff">O melhor ainda está por vir!</p>
         </div>
       </div>
@@ -470,11 +472,11 @@
           <div class="testimonial"><p>Quando iniciei o meu mestrado no Canadá em 2017, tive a grata felicidade de ser apresentado ao Ron. Durante os dois anos de curso, Ron me ajudou não somente com as revisões de trabalhos acadêmicos e o uso da língua inglesa, como também me preparou para entrevistas e para ingressar no mercado de trabalho. Por exemplo, quando eu estava me preparando para uma entrevista de emprego, ele focava as aulas neste objetivo e, inclusive, pesquisava sobre a empresa para ser mais eficaz na minha preparação. A adaptabilidade às minhas necessidades é a grande vantagem que encontrei nas aulas do Ron.</p><span>Flavio, Entrepreneur</span></div>
           <div class="testimonial"><p>Antes de recomeçar minha vida profissional no Canadá em 2017, tive aulas com o Ron duas vezes por semana, por dois anos, voltadas para o mundo corporativo. Isto me ajudou a dar o pontapé inicial na minha carreira profissional. Quando eu tinha entrevistas de emprego agendadas, Ron treinava comigo perguntas que poderiam ser feitas durante as entrevistas. As aulas com o Ron me ajudaram muito a melhorar as quatro habilidades que são imprescindíveis quando se mora em um país de língua inglesa. Sempre recomendo o Ron porque ele é muito profissional.</p><span>Denise, Accountant</span></div>
           <div class="testimonial"><p>Em 2020, procurei por um professor que me auxiliasse na preparação para o exame CELPIP, pois estava aplicando para o processo de Residência Permanente no Canadá. Não sabia que encontraria, além de um professor, um amigo. O Ron me auxiliou bastante com vocabulário e, principalmente, com exemplos e ritmo exigidos na prova. Isso foi o diferencial para estar bem preparado e ter conseguido um bom resultado. Após o exame, continuamos com as aulas focando principalmente em conversação e vocabulário, tendo como grande vantagem o Ron ser uma pessoa interessada e disposta a conhecer a sua realidade, o que facilita bastante o fluxo da conversa.</p><span>Marcéu, Mechanical Engineer</span></div>
-          <div class="testimonial"><p>Ron é um professor fenomenal e um ser humano incrível. Ele me ajudou em várias frentes no processo de aprendizagem, incluindo pronúncia, vocabulário e gramática. No entanto, Ron vai muito além do que podemos esperar de um professor de Inglês, pois ele trabalha nossa confiança, nos ensina sobre a cultura canadense, nos prepara para entrevistas de emprego estudando sobre as empresas e vagas, oferece apoio e uma preocupação genuína com seus alunos. As aulas são personalizadas, leves, engraçadas e dinâmicas. Ron já trabalhou com tantos alunos brasileiros que conhece todas as dificuldades que enfrentamos, como por exemplo, a pronúncia de alguns sons. Não tenho palavras suficientes para agradecê-lo!</p><span>Amanda, Lawyer</span></div>
-          <div class="testimonial"><p>Mesmo com vivência profissional em grandes multinacionais americanas no Brasil, percebi que meu inglês teria muito que ser aprimorado para me lançar no mercado canadense. Aprimorar entonação, accents e pronúncia seria o foco fundamental para galgar sucesso na minha área profissional. Em pouco tempo, as aulas com o Ron aumentaram a minha confiança para fazer apresentações. Ele é incansável em aperfeiçoar minha pronúncia, me encorajando sempre a fazer melhor e elevar meu potencial nas conversações e na escrita. Professor extremamente dedicado, sempre disponibiliza materiais interessantes que me ajudam em vários temas da minha carreira profissional. Hoje, sou praticamente uma viciada em suas aulas. Não vejo como custo, mas como investimento do meu tempo no aperfeiçoamento da língua inglesa para progredir com sucesso e segurança. Recomendo o Ron de olhos fechados.</p><span>Cristiane, Business Consultant</span></div>
+          <div class="testimonial"><p>Ron é um professor fenomenal e um ser humano incrível. Ele me ajudou em várias frentes no processo de aprendizagem, incluindo pronúncia, vocabulário e gramática. No entanto, Ron vai muito além do que podemos esperar de um professor de inglês, pois ele trabalha nossa confiança, nos ensina sobre a cultura canadense, nos prepara para entrevistas de emprego estudando sobre as empresas e vagas, oferece apoio e uma preocupação genuína com seus alunos. As aulas são personalizadas, leves, engraçadas e dinâmicas. Ron já trabalhou com tantos alunos brasileiros que conhece todas as dificuldades que enfrentamos, como por exemplo, a pronúncia de alguns sons. Não tenho palavras suficientes para agradecê-lo!</p><span>Amanda, Lawyer</span></div>
+          <div class="testimonial"><p>Mesmo com vivência profissional em grandes multinacionais americanas no Brasil, percebi que meu inglês teria muito que ser aprimorado para me lançar no mercado canadense. Aprimorar entonação, sotaque e pronúncia seria o foco fundamental para galgar sucesso na minha área profissional. Em pouco tempo, as aulas com o Ron aumentaram a minha confiança para fazer apresentações. Ele é incansável em aperfeiçoar minha pronúncia, me encorajando sempre a fazer melhor e elevar meu potencial nas conversações e na escrita. Professor extremamente dedicado, sempre disponibiliza materiais interessantes que me ajudam em vários temas da minha carreira profissional. Hoje, sou praticamente uma viciada em suas aulas. Não vejo como custo, mas como investimento do meu tempo no aperfeiçoamento da língua inglesa para progredir com sucesso e segurança. Recomendo o Ron de olhos fechados.</p><span>Cristiane, Business Consultant</span></div>
           <div class="testimonial"><p>O que mais me cativa nas aulas são o formato das lições, a dinâmica e a genuína atenção do Ron em focar nos pontos que eu comentei que gostaria de melhorar. Por exemplo, a minha dificuldade na pronúncia de palavras no gerúndio por conta do meu idioma nativo. As aulas foram essenciais e de grande valor para meu desenvolvimento e aprimoramento na língua inglesa. Evoluí muito na conversação e comunicação com meus colegas de trabalho, e considero o método do Ron o melhor para quem busca aprimorar a pronúncia de uma forma objetiva e eficiente.</p><span>Rita, IT Manager</span></div>
-          <div class="testimonial"><p>As aulas do Ron foram fundamentais para aprimorar meus pontos fracos no inglês, e foi decisivo para me sair bem nas entrevistas de emprego! Ron, além de ótimo professor, é uma pessoa divertida e muito querida!</p><span>Sergio, Architect</span></div>
-          <div class="testimonial"><p>Desembarquei em Vancouver em julho de 2019 com inglês nível intermediário e meu marido, com o básico do básico. Eu precisava melhorar vocabulário, aprimorar o ouvido e aprender o inglês do dia a dia. Precisava me comunicar! Meu marido, estudando no college, corria atrás de referências de um professor de inglês que pudesse ajudá-lo a se comunicar melhor. Foi quando uma amiga indicou o Ron. Sempre tive resistência de ter aula on-line, até perceber que o inglês e a confiança do meu marido melhoravam significativamente. Decidi então me inscrever nas aulas. Foi a melhor coisa que fiz na vida. As aulas eram personalizadas, repassávamos vocabulário, aprendi palavras que nunca pensei em usar. Do conhecimento veio a confiança e a vontade de se comunicar ainda mais. E assim, fomos desbloqueando algumas inseguranças, quebrando barreiras. Nos permitimos errar, mas nunca insistir no erro. Ainda estamos em evolução, com a diferença de que mais preparados e com o suporte de um teacher e amigo que levaremos para o resto de nossas vidas. Como ele diz, conhecimento é investimento. Invista em você!</p><span>Jennifer, International Procurement Analyst</span></div>
+          <div class="testimonial"><p>As aulas do Ron foram fundamentais para aprimorar meus pontos fracos no inglês, e foram decisivas para me sair bem nas entrevistas de emprego! Ron, além de ótimo professor, é uma pessoa divertida e muito querida!</p><span>Sergio, Architect</span></div>
+          <div class="testimonial"><p>Desembarquei em Vancouver em julho de 2019 com inglês nível intermediário e meu marido, com o básico do básico. Eu precisava melhorar vocabulário, aprimorar o ouvido e aprender o inglês do dia a dia. Precisava me comunicar! Meu marido, estudando no college, corria atrás de referências de um professor de inglês que pudesse ajudá-lo a se comunicar melhor. Foi quando uma amiga indicou o Ron. Sempre tive resistência a ter aula online, até perceber que o inglês e a confiança do meu marido melhoravam significativamente. Decidi então me inscrever nas aulas. Foi a melhor coisa que fiz na vida. As aulas eram personalizadas, repassávamos vocabulário, aprendi palavras que nunca pensei em usar. Do conhecimento vieram a confiança e a vontade de nos comunicar ainda mais. E assim, fomos desbloqueando algumas inseguranças, quebrando barreiras. Nos permitimos errar, mas nunca insistir no erro. Ainda estamos em evolução, com a diferença de que agora estamos mais preparados e com o suporte de um teacher e amigo que levaremos para o resto de nossas vidas. Como ele diz, conhecimento é investimento. Invista em você!</p><span>Jennifer, International Procurement Analyst</span></div>
         </div>
       </div>
     </section>
@@ -487,7 +489,9 @@
       <div class="wrap">
         <p class="kicker" data-i18n="applyKicker">Inscreva-se</p>
         <p ><span class="line" data-i18n="applyIntro">Preencha os campos abaixo e vamos marcar o seu Preboarding Assessment:</span><span class="line" data-i18n="applyIntro2">Duas horas, online, $50 CAD.</span></p>
-        <form class="apply-form" id="applyForm">
+        <form class="apply-form" id="applyForm" name="preboarding" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="preboarding" />
+          <p hidden><label>Não preencha: <input name="bot-field" /></label></p>
           <div class="field">
             <label for="af-name" data-i18n="fieldName">Nome completo</label>
             <input type="text" id="af-name" name="name" required />
@@ -525,12 +529,13 @@
             <select id="af-level" name="level" required>
               <option value="" data-i18n="levelChoose" disabled selected>Selecione uma opção</option>
               <option value="Basic - simple conversation, some hesitation" data-i18n="levelBasic">Básico — consigo ter uma conversa simples, com alguma hesitação</option>
-              <option value="Intermediate - comfortable in everyday conversation" data-i18n="levelInter">Intermediário — confortável em conversas do dia a dia</option>
-              <option value="Advanced - refining fluency for your career" data-i18n="levelAdv">Avançado — refinando a fluência para a carreira</option>
+              <option value="Intermediate - comfortable in everyday conversation" data-i18n="levelInter">Intermediário — me sinto confortável em conversas do dia a dia</option>
+              <option value="Advanced - refining fluency for your career" data-i18n="levelAdv">Avançado — estou refinando a fluência para a carreira</option>
             </select>
             <p class="field-note" data-i18n="levelNote">Todos os cursos exigem inglês básico: você precisa conseguir entender e manter uma conversa simples em inglês falado. Não precisa ser perfeito.</p>
           </div>
           <button type="submit" class="btn" data-i18n="applySubmit">Enviar inscrição</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite" hidden></p>
         </form>
       </div>
     </section>
@@ -544,10 +549,10 @@
   <script>
     const copy = {
       pt: {
-        bioQuote: "“Não apenas pratique a sua arte, mas penetre nos seus segredos, pois ela e o conhecimento podem elevar o homem ao divino.”",
+        bioQuote: "“Não apenas pratique a sua arte, mas desvende os seus segredos, pois ela e o conhecimento podem elevar o homem ao divino.”",
         bioP1: "Há trinta anos, comecei a ensinar inglês. Desde então, vivi a magia que acontece quando um ser humano ajuda outro a crescer.",
         bioP2: "Ao compartilhar a jornada dos meus alunos, percebi que a minha missão ia além do inglês. Não alcancei o divino, mas vivo uma vida cheia de sentido graças a pessoas como você — pessoas que investem no próprio sucesso e que se levantam quando tropeçam.",
-        bioP3: "Deixe-me guiar você enquanto você se firma no Canadá.",
+        bioP3: "Quero guiar você enquanto se firma no Canadá.",
         bioSignoff: "O melhor ainda está por vir!",
         h1: "The Canadian Dream",
         heroSub: "O programa Masterclass de Ron Taylor é dedicado a brasileiros que investem no próprio sucesso no Canadá — onde as montanhas e o oceano recebem você de braços abertos.",
@@ -560,13 +565,13 @@
         c1who: "Para quem está considerando o Canadá e vem visitar por algumas semanas ou um mês.",
         c1body: "Curso intensivo de 5 dias, individual, para todos os níveis a partir do básico. Duas horas de aula por dia, tarefas de casa diárias de compreensão auditiva e uma reunião de acompanhamento depois do curso. Você vive o inglês e o cotidiano canadense antes de dar o passo maior.",
         c2who: "Para quem vai se mudar — ou acabou de chegar.",
-        c2body: "O curso mais abrangente: cinco aulas individuais de 90 minutos por semana, mais tarefas de casa diárias de compreensão auditiva. Dia a dia, trabalho, entrevistas e a confiança para se virar em Vancouver desde a primeira semana.",
+        c2body: "Cinco aulas individuais de 2 horas por semana, mais tarefas de casa diárias de compreensão auditiva. Dia a dia, trabalho, entrevistas e a confiança para se virar em Vancouver desde a primeira semana.",
         c3who: "Para quem está se preparando para entrevistas de emprego.",
         c3body: "Preparação individual focada exclusivamente em entrevistas de emprego: três horas de aula por semana, mais tarefas de casa semanais de compreensão auditiva. Você aprende a responder às perguntas mais comuns, apresentar a sua experiência com naturalidade, demonstrar o seu valor e entender o que os empregadores canadenses esperam.",
         c4who: "Para quem já mora e trabalha no Canadá e precisa elevar o nível.",
         c4body: "Um programa contínuo, individual e sob medida para a sua promoção — influência, presença e participação plena na vida profissional e social canadense.",
-        chipOnboarding: "Inglês de adaptação",
-        chipInterview: "Inglês de entrevista",
+        chipOnboarding: "Inglês para o dia a dia",
+        chipInterview: "Inglês para entrevistas",
         chipProbation: "Inglês corporativo",
         chipCitizenship: "Inglês acadêmico",
         booksTitle: "Masterclass Series",
@@ -577,7 +582,7 @@
         pbP1: "Durante a nossa avaliação de duas horas, preciso entender como você chegou até aqui — os desafios que enfrentou, as conquistas que alcançou e a experiência e o conhecimento que construiu ao longo da sua carreira.",
         pbP2: "Só então posso adaptar as suas aulas e traçar um plano de ação que aproveite o que você já sabe e a experiência que você traz na bagagem.",
         c5who: "Para quem vai estudar em um college ou universidade no Canadá.",
-        c5body: "Entenda como o college e a universidade funcionam no Canadá antes de descobrir do jeito difícil. Você já tem uma boa formação e é um profissional experiente, mas ser estudante no Canadá significa aprender outro sistema acadêmico, em inglês. Quatro semanas de aulas individuais: carga de estudos, prazos e estudo independente; redação, argumentação, pesquisa, paráfrase e citações; discussões em aula, apresentações e como pedir ajuda aos professores; trabalhos em grupo; integridade acadêmica e uso adequado de IA; e simulações de aulas, tarefas e situações reais de estudante.",
+        c5body: "Entenda como o college e a universidade funcionam no Canadá antes de ter que aprender da pior forma. Você já tem uma boa formação e é um profissional experiente, mas ser estudante no Canadá significa aprender outro sistema acadêmico, em inglês. Quatro semanas de aulas individuais: carga de estudos, prazos e estudo independente; redação, argumentação, pesquisa, paráfrase e citações; discussões em aula, apresentações e como pedir ajuda aos professores; trabalhos em grupo; integridade acadêmica e uso adequado de IA; e simulações de aulas, tarefas e situações reais de estudante.",
         pr5n: "The University & College Prep Sprint",
         pr5f: "4 semanas · 40 horas de aula individual · cerca de 20 horas de tarefas de casa de compreensão auditiva e transcrição",
         pr5p: "$1.475", pr5pu: "CAD / 4 semanas",
@@ -585,7 +590,7 @@
         guarTitle: "Minha garantia",
         guarBody: "Se você decidir parar a qualquer momento durante o seu curso, todas as aulas restantes são reembolsadas integralmente. Sem perguntas. Só lágrimas.",
         pricesTitle: "Cursos e preços",
-        pricesNote: "Os preços são em dólares canadenses. Todas as aulas são individuais e online.",
+        pricesNote: "Os preços são em dólares canadenses. Todas as aulas são individuais e online. O Preboarding Assessment não é reembolsável.",
         pricesCta: "Agende o seu Preboarding",
         pr0n: "Preboarding Assessment",
         pr0f: "2 horas · individual · online · pré-requisito para todos os cursos",
@@ -594,7 +599,7 @@
         pr1f: "5 dias · 2 horas de aula individual por dia · tarefas de casa diárias de compreensão auditiva · reunião de acompanhamento depois do curso",
         pr1p: "$425", pr1pu: "CAD",
         pr2n: "The Onboarding Sprint",
-        pr2f: "5 aulas individuais de 90 minutos por semana · tarefas de casa diárias de compreensão auditiva",
+        pr2f: "5 aulas individuais de 2 horas por semana · tarefas de casa diárias de compreensão auditiva",
         pr2p: "$1.475", pr2pu: "CAD / mês",
         pr3n: "The Interview Sprint",
         pr3f: "3 horas de aula individual por semana · tarefas de casa semanais de compreensão auditiva · foco em entrevistas de emprego",
@@ -622,13 +627,16 @@
         fieldLevel: "Qual é o seu nível aproximado de inglês?",
         levelChoose: "Selecione uma opção",
         levelBasic: "Básico — consigo ter uma conversa simples, com alguma hesitação",
-        levelInter: "Intermediário — confortável em conversas do dia a dia",
-        levelAdv: "Avançado — refinando a fluência para a carreira",
+        levelInter: "Intermediário — me sinto confortável em conversas do dia a dia",
+        levelAdv: "Avançado — estou refinando a fluência para a carreira",
         levelNote: "Todos os cursos exigem inglês básico: você precisa conseguir entender e manter uma conversa simples em inglês falado. Não precisa ser perfeito.",
         applySubmit: "Enviar inscrição",
         testiKicker: "Depoimentos",
         ctaTitle: "Pronto para começar a todo vapor?",
         bioRole: "Consultor de comunicação no Canadá",
+        formSending: "Enviando…",
+        formThanks: "Obrigado! Recebi a sua inscrição e vou responder por e-mail em breve.",
+        formError: "Não foi possível enviar. Vou abrir o seu e-mail para você mandar a inscrição diretamente.",
       },
       en: {
         bioQuote: "“Don’t only practice your art, but force your way into its secrets, for it and knowledge can raise men to the divine.”",
@@ -647,7 +655,7 @@
         c1who: "For Brazilians considering Canada and visiting for a few weeks or a month.",
         c1body: "A 5-day one-on-one intensive for all levels from elementary up. Two hours of lessons a day, daily listening homework, and a follow-up meeting after the course. Live in English and experience everyday Canadian life before you commit to the bigger move.",
         c2who: "For Brazilians planning to move — or who have just arrived.",
-        c2body: "The broadest course: five one-on-one 90-minute lessons a week, plus daily listening homework. Everyday life, work, interviews, and the confidence to function in your new city from the first week.",
+        c2body: "Five one-on-one 2-hour lessons a week, plus daily listening homework. Everyday life, work, interviews, and the confidence to function in your new city from the first week.",
         c3who: "For Brazilians preparing for job interviews.",
         c3body: "One-on-one preparation focused entirely on job interviews: three hours of lessons a week, plus weekly listening homework. Learn to answer the most common questions, present your experience naturally, demonstrate your value, and understand what Canadian employers expect.",
         c4who: "For Brazilians living and working in Canada who need to raise the bar.",
@@ -672,7 +680,7 @@
         guarTitle: "My guarantee",
         guarBody: "If you decide to stop at any point during your course, all remaining lessons are refunded in full. No questions asked. Just tears.",
         pricesTitle: "Courses and prices",
-        pricesNote: "Prices are in Canadian dollars. All lessons are one-on-one and online.",
+        pricesNote: "Prices are in Canadian dollars. All lessons are one-on-one and online. The Preboarding Assessment is non-refundable.",
         pricesCta: "Book your Preboarding",
         pr0n: "Preboarding Assessment",
         pr0f: "2 hours · one-on-one · online · prerequisite for all courses",
@@ -681,7 +689,7 @@
         pr1f: "5 days · 2 hours of one-on-one lessons a day · daily listening homework · follow-up meeting after the course",
         pr1p: "$425", pr1pu: "CAD",
         pr2n: "The Onboarding Sprint",
-        pr2f: "5 × 90-minute one-on-one lessons a week · daily listening homework",
+        pr2f: "5 × 2-hour one-on-one lessons a week · daily listening homework",
         pr2p: "$1,475", pr2pu: "CAD / month",
         pr3n: "The Interview Sprint",
         pr3f: "3 hours of one-on-one lessons a week · weekly listening homework · focused on job interviews",
@@ -716,6 +724,9 @@
         testiKicker: "Testimonials",
         ctaTitle: "Are you ready to hit the ground running?",
         bioRole: "Canadian Communication Consultant",
+        formSending: "Sending…",
+        formThanks: "Thank you! I’ve received your application and will reply by email soon.",
+        formError: "The form couldn’t be sent. I’ll open your email app so you can send the application directly.",
       }
     };
 
@@ -732,37 +743,64 @@
       });
       buttons.forEach((b) => b.classList.toggle("active", b.dataset.lang === lang));
     }
-    buttons.forEach((b) => b.addEventListener("click", () => applyLang(b.dataset.lang)));
+    let currentLang = "pt";
+    buttons.forEach((b) => b.addEventListener("click", () => { currentLang = b.dataset.lang; applyLang(currentLang); }));
     applyLang("pt");
 
     const applyForm = document.getElementById("applyForm");
-    applyForm.addEventListener("submit", (e) => {
+    applyForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       const f = e.target;
+      const status = document.getElementById("formStatus");
+      const submitBtn = f.querySelector('button[type="submit"]');
+      const t = (key) => copy[currentLang][key];
       const name = f.name.value.trim();
       const courseText = f.course.options[f.course.selectedIndex].textContent;
       const levelText = f.level.options[f.level.selectedIndex].textContent;
-      const body = [
-        `Name: ${name}`,
-        `Email: ${f.email.value.trim()}`,
-        "",
-        "When are you planning to come to Canada?",
-        f.arrival.value.trim(),
-        "",
-        "Why Canada? Visiting, moving, or already here?",
-        f.reason.value.trim(),
-        "",
-        "Professional background:",
-        f.background.value.trim(),
-        "",
-        "Which course fits best:",
-        courseText,
-        "",
-        "Approximate English level:",
-        levelText
-      ].join("\n");
-      const subject = `Preboarding Assessment - ${name}`;
-      window.location.href = `mailto:executiveclass.ca@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      const mailtoFallback = () => {
+        const body = [
+          `Name: ${name}`,
+          `Email: ${f.email.value.trim()}`,
+          "",
+          "When are you planning to come to Canada?",
+          f.arrival.value.trim(),
+          "",
+          "Why Canada? Visiting, moving, or already here?",
+          f.reason.value.trim(),
+          "",
+          "Professional background:",
+          f.background.value.trim(),
+          "",
+          "Which course fits best:",
+          courseText,
+          "",
+          "Approximate English level:",
+          levelText
+        ].join("\n");
+        const subject = `Preboarding Assessment - ${name}`;
+        window.location.href = `mailto:executiveclass.ca@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      };
+
+      submitBtn.disabled = true;
+      status.hidden = false;
+      status.textContent = t("formSending");
+      try {
+        const data = new URLSearchParams(new FormData(f));
+        const res = await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: data.toString()
+        });
+        if (!res.ok) throw new Error(res.status);
+        f.reset();
+        status.textContent = t("formThanks");
+      } catch (err) {
+        status.textContent = t("formError");
+        setTimeout(mailtoFallback, 1500);
+      } finally {
+        submitBtn.disabled = false;
+      }
     });
   </script>
 </body>
