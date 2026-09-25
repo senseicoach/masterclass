@@ -155,6 +155,9 @@
     .course .who { color: var(--gold-soft); font-size: 13px; margin-bottom: 10px; }
     .course p { color: rgba(244,239,227,.78); font-size: 15px; max-width: 70ch; }
     .course p.hw { margin-top: 8px; }
+    .lab-try { margin-top: 36px; }
+    .lab-link { color: var(--gold-soft); border-bottom: 1px solid var(--line); padding-bottom: 2px; font-size: 14px; letter-spacing: .02em; }
+    .lab-link:hover { color: #fff; border-bottom-color: var(--gold-soft); }
 
     .vancouver {
       position: relative; overflow: hidden;
@@ -370,6 +373,7 @@
               <h3>The University &amp; College Prep Sprint</h3>
               <p class="who" data-i18n="c5who">Para quem vai estudar em um college ou universidade no Canadá.</p>
               <p data-i18n="c5body">Entenda como o college e a universidade funcionam no Canadá antes de ter que aprender da pior forma. Você já tem uma boa formação e é um profissional experiente, mas ser estudante no Canadá significa aprender outro sistema acadêmico, em inglês. Quatro semanas de aulas individuais, mais tarefas diárias do Listening Lab: carga de estudos, prazos e estudo independente; redação, argumentação, pesquisa, paráfrase e citações; discussões em aula, apresentações e como pedir ajuda aos professores; trabalhos em grupo; integridade acadêmica e uso adequado de IA; e simulações de aulas, tarefas e situações reais de estudante.</p>
+              <p class="hw"><a class="lab-link" href="https://university-listeninglab.netlify.app" target="_blank" rel="noopener" data-i18n="c5try">Experimente o University Listening Lab →</a></p>
             </div>
           </article>
           <article class="course">
@@ -426,6 +430,7 @@
           <li class="lab-step"><div class="n">3</div><h3 data-i18n="labS3">Decifrar</h3><p data-i18n="labS3d">Descubra o que você perdeu e por quê</p></li>
           <li class="lab-step"><div class="n">4</div><h3 data-i18n="labS4">Falar</h3><p data-i18n="labS4d">Use o idioma nas aulas ao vivo</p></li>
         </ol>
+        <a class="btn lab-try" href="https://masterclass-listeninglab.netlify.app" target="_blank" rel="noopener" data-i18n="labTry">Experimente o Listening Lab</a>
       </div>
     </section>
 
@@ -586,6 +591,8 @@
     const copy = {
       pt: {
         labKicker: "Método exclusivo",
+        labTry: "Experimente o Listening Lab",
+        c5try: "Experimente o University Listening Lab →",
         labS1: "Ouvir", labS1d: "Inglês canadense autêntico",
         labS2: "Transcrever", labS2d: "Escreva exatamente o que você ouve",
         labS3: "Decifrar", labS3d: "Descubra o que você perdeu e por quê",
@@ -681,6 +688,8 @@
       },
       en: {
         labKicker: "Signature Method",
+        labTry: "Try the Listening Lab",
+        c5try: "Try the University Listening Lab →",
         labS1: "Listen", labS1d: "Authentic Canadian English",
         labS2: "Transcribe", labS2d: "Write exactly what you hear",
         labS3: "Decode", labS3d: "Discover what you missed and why",
