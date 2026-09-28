@@ -161,8 +161,13 @@
     .guarantee { max-width: 900px; margin-top: 28px; padding: 22px 26px; border: 1px solid var(--gold); background: rgba(201,162,39,.06); }
     .guarantee h3 { font-family: "Cormorant Garamond", Georgia, serif; font-size: 26px; font-weight: 500; color: var(--gold); margin: 0 0 6px; }
     .guarantee p { color: rgba(244,239,227,.88); font-size: 16px; margin: 0; max-width: 70ch; }
-    .price-note { color: rgba(244,239,227,.6); font-size: 13px; margin: 18px 0 24px; }
+    .price-note { color: rgba(244,239,227,.6); font-size: 13px; margin: 18px 0 24px; max-width: 900px; }
+    .price-amt span { font-variant-numeric: lining-nums tabular-nums; font-feature-settings: "lnum" 1, "tnum" 1; }
+    .price-list .price-amt { display: grid; grid-template-columns: 120px 150px; align-items: baseline; }
+    .price-list .price-amt span { text-align: right; }
+    .price-list .price-amt small { margin-left: 12px; }
     @media (max-width: 640px) { .price-row { grid-template-columns: 1fr; gap: 6px; } .price-amt { font-size: 24px; } }
+    @media (max-width: 640px) { .price-list .price-amt { grid-template-columns: auto auto; justify-content: start; } .price-list .price-amt span { text-align: left; } }
     h2 .line, p .line { display: block; }
     .course .who { color: var(--gold-soft); font-size: 13px; margin-bottom: 10px; }
     .course p { color: rgba(244,239,227,.78); font-size: 15px; max-width: 70ch; }
@@ -180,7 +185,7 @@
       min-height: 560px;
       display: flex; align-items: center;
     }
-    .vancouver .wrap { width: min(720px, 100%); margin-left: max(24px, calc((100% - 1120px)/2)); }
+    .vancouver .wrap { width: min(900px, calc(100% - 48px)); margin-left: max(24px, calc((100% - 1120px)/2)); }
     .vancouver p { color: rgba(244,239,227,.86); margin-top: 18px; font-size: 16.5px; }
     .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
     .chip {
@@ -215,7 +220,8 @@
 
     .apply { background: var(--navy); }
     .apply > .wrap > p { color: rgba(244,239,227,.8); margin-top: 16px; max-width: 62ch; font-size: 16px; }
-    .apply-form { margin-top: 36px; display: grid; gap: 22px; max-width: 640px; }
+    .apply-form { margin-top: 36px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; max-width: 640px; }
+    .field input, .field textarea, .field select { width: 100%; min-width: 0; box-sizing: border-box; }
     .field { display: flex; flex-direction: column; gap: 8px; }
     .field label { font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-soft); }
     .field input, .field textarea, .field select {
@@ -230,8 +236,9 @@
     .form-status { font-size: 15px; line-height: 1.5; color: var(--gold-soft); max-width: 60ch; }
 
     .cta {
-      background: var(--navy); text-align: center; padding: 96px 24px;
+      background: var(--navy); text-align: center; padding: 96px 24px 8px;
     }
+    .apply > .wrap { max-width: 640px; }
     .cta h2 { color: var(--cream); }
     .cta p { color: rgba(244,239,227,.75); margin: 16px auto 28px; max-width: 52ch; }
 
@@ -264,6 +271,10 @@
     .bio-text .kicker { margin-top: 0; font-size: 11px; color: var(--gold); }
     .bio-name { color: #f7f1e4; font-size: clamp(34px, 4.4vw, 48px); }
     .bio-text .bio-role { margin: 8px 0 30px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-soft); }
+    .bio-text .bio-role { width: 100%; max-width: none; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; column-gap: 16px; row-gap: 6px; }
+    .bio-role span { white-space: nowrap; }
+    .bio-role .bio-cities { color: var(--gold); margin-left: auto; font-size: 12px; letter-spacing: .12em; }
+    @media (max-width: 520px) { .bio-role span { white-space: normal; } .bio-role .bio-cities { margin-left: 0; } }
     .nav-link { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-soft); }
     .nav-link:hover { color: #fff; }
 
@@ -340,7 +351,7 @@
         <div class="bio-text">
           <p class="kicker">Bio</p>
           <h2 class="bio-name">Ron Taylor</h2>
-          <p class="bio-role" data-i18n="bioRole">Consultor de comunicação no Canadá</p>
+          <p class="bio-role"><span data-i18n="bioRole">Consultor de comunicação no Canadá</span><span class="bio-cities" data-i18n="bioCities">Vancouver – Tóquio – São Paulo</span></p>
           <blockquote>
             <span data-i18n="bioQuote">“Não apenas pratique a sua arte, mas desvende os seus segredos, pois ela e o conhecimento podem elevar o homem ao divino.”</span>
             <cite>Ludwig van Beethoven</cite>
@@ -348,7 +359,6 @@
           <p data-i18n="bioP1">Há trinta anos, comecei a ensinar inglês. Desde então, vivi a magia que acontece quando um ser humano estende a mão a outro.</p>
           <p data-i18n="bioP2">Ao compartilhar a jornada dos meus alunos, percebi que a minha missão ia além do inglês. Não alcancei o divino, mas vivo uma vida cheia de sentido graças a pessoas como você — pessoas que investem no próprio sucesso e que se levantam quando tropeçam.</p>
           <p data-i18n="bioP3">Quero guiar você enquanto se firma no Canadá.</p>
-          <p data-i18n="bioBase">Hoje divido o meu tempo entre Vancouver e Tóquio.</p>
         </div>
       </div>
     </section>
@@ -460,15 +470,15 @@
         <p class="kicker" data-i18n="testiKicker">Depoimentos</p>
         <div class="testimonial-columns">
           <div class="testimonial"><p>Ter o Ron como meu professor de inglês foi fundamental para o meu sucesso no “Plano Canadá”. Graças à sua dedicação em me ensinar, consegui em menos de um ano morando no Canadá o emprego que eu queria, na minha área de formação e atuação no Brasil. Meu inglês era básico-intermediário e foi o Ron que me preparou para as entrevistas. Desde então, o Ron me auxiliou em todas as etapas da minha trajetória até me tornar cidadã canadense. Consegui duas promoções na minha área de trabalho e, quando casei, Ron também me ajudou a escrever meus votos de casamento. Tenho muita sorte em tê-lo na minha vida, um professor maravilhoso que tenho muito orgulho de chamar de amigo.</p><span>Nathalia, Risk, Audit &amp; Compliance Analyst</span></div>
-          <div class="testimonial"><p>Comecei a fazer aulas particulares com o Ron em março de 2022 e estou amando! Quando iniciei, estava procurando emprego no Canadá, e ter as aulas com ele me ajudou muito. Focamos na minha busca de emprego e o Ron trazia vocabulário relacionado à minha área. Dedicava tempo para aprimorar minha pronúncia e, com muito profissionalismo, empatia e real interesse em me auxiliar nesse processo estressante, torcia por mim e se alegrava ao me ver alcançar meus objetivos. No final de maio, veio a grande notícia. Consegui um emprego! Sem sombra de dúvidas, recomendo o Ron, que, além de excelente professor, é conhecedor das dificuldades de alunos brasileiros em termos de pronúncia e outros aspectos. Ele é um ser humano incrível que realmente se importa com quem está na sua frente, tem empatia e isso, como sabemos, faz toda a diferença!</p><span>Luciana, Human Resources Manager</span></div>
           <div class="testimonial"><p>Quando iniciei o meu mestrado no Canadá em 2017, tive a grata felicidade de ser apresentado ao Ron. Durante os dois anos de curso, Ron me ajudou não somente com as revisões de trabalhos acadêmicos e o uso da língua inglesa, como também me preparou para entrevistas e para ingressar no mercado de trabalho. Por exemplo, quando eu estava me preparando para uma entrevista de emprego, ele focava as aulas nesse objetivo e, inclusive, pesquisava sobre a empresa para ser mais eficaz na minha preparação. A adaptabilidade às minhas necessidades é a grande vantagem que encontrei nas aulas do Ron.</p><span>Flávio, Entrepreneur</span></div>
           <div class="testimonial"><p>Antes de recomeçar minha vida profissional no Canadá em 2017, tive aulas com o Ron duas vezes por semana, por dois anos, voltadas para o mundo corporativo. Isso me ajudou a dar o pontapé inicial na minha carreira profissional. Quando eu tinha entrevistas de emprego agendadas, Ron treinava comigo perguntas que poderiam ser feitas durante as entrevistas. As aulas com o Ron me ajudaram muito a melhorar as quatro habilidades que são imprescindíveis quando se mora em um país de língua inglesa. Sempre recomendo o Ron porque ele é muito profissional.</p><span>Denise, Accountant</span></div>
           <div class="testimonial"><p>Em 2020, procurei por um professor que me auxiliasse na preparação para o exame CELPIP, pois estava dando entrada no processo de Residência Permanente no Canadá. Não sabia que encontraria, além de um professor, um amigo. O Ron me auxiliou bastante com vocabulário e, principalmente, com exemplos e ritmo exigidos na prova. Isso foi o diferencial para estar bem preparado e ter conseguido um bom resultado. Após o exame, continuamos com as aulas focando principalmente em conversação e vocabulário, tendo como grande vantagem o Ron ser uma pessoa interessada e disposta a conhecer a sua realidade, o que facilita bastante o fluxo da conversa.</p><span>Marceu, Mechanical Engineer</span></div>
-          <div class="testimonial"><p>Ron é um professor fenomenal e um ser humano incrível. Ele me ajudou em várias frentes no processo de aprendizagem, incluindo pronúncia, vocabulário e gramática. No entanto, Ron vai muito além do que podemos esperar de um professor de inglês, pois ele trabalha nossa confiança, nos ensina sobre a cultura canadense, nos prepara para entrevistas de emprego estudando sobre as empresas e vagas, oferece apoio e uma preocupação genuína com seus alunos. As aulas são personalizadas, leves, engraçadas e dinâmicas. Ron já trabalhou com tantos alunos brasileiros que conhece todas as dificuldades que enfrentamos, como, por exemplo, a pronúncia de alguns sons. Não tenho palavras suficientes para agradecê-lo!</p><span>Amanda, Lawyer</span></div>
-          <div class="testimonial"><p>O Ron foi um divisor de águas no desenvolvimento da minha comunicação em inglês. Ele tem o que considero o requisito mais importante no processo de aprendizagem: a capacidade de manter o aluno motivado e em constante evolução. Sabe aquela sensação comum depois de um tempo estudando inglês: “Nossa, hoje tenho aula, que saco!”? Isso nunca aconteceu comigo, porque o Ron deixa todas as aulas extremamente interessantes, e eu sempre saio com a sensação de que valeu a pena investir aquele tempo no inglês. Metodologia, carisma, personalização e interesse genuíno nas necessidades de cada aluno fazem do Ron o melhor professor de inglês que já tive. E olha que, em mais de 20 anos estudando o idioma, já tive inúmeros professores. Indico sem medo de errar!</p><span>Fausto, Procurement Specialist</span></div>
+          <div class="testimonial"><p>Comecei a fazer aulas particulares com o Ron em março de 2022 e estou amando! Quando iniciei, estava procurando emprego no Canadá, e ter as aulas com ele me ajudou muito. Focamos na minha busca de emprego e o Ron trazia vocabulário relacionado à minha área. Dedicava tempo para aprimorar minha pronúncia e, com muito profissionalismo, empatia e real interesse em me auxiliar nesse processo estressante, torcia por mim e se alegrava ao me ver alcançar meus objetivos. No final de maio, veio a grande notícia. Consegui um emprego! Sem sombra de dúvidas, recomendo o Ron, que, além de excelente professor, é conhecedor das dificuldades de alunos brasileiros em termos de pronúncia e outros aspectos. Ele é um ser humano incrível que realmente se importa com quem está na sua frente, tem empatia e isso, como sabemos, faz toda a diferença!</p><span>Luciana, Human Resources Manager</span></div>
           <div class="testimonial"><p>Mesmo com vivência profissional em grandes multinacionais americanas no Brasil, percebi que meu inglês teria muito a ser aprimorado para me lançar no mercado canadense. Aprimorar entonação, sotaque e pronúncia seria o foco fundamental para galgar sucesso na minha área profissional. Em pouco tempo, as aulas com o Ron aumentaram a minha confiança para fazer apresentações. Ele é incansável em aperfeiçoar minha pronúncia, me encorajando sempre a fazer melhor e elevar meu potencial nas conversações e na escrita. Professor extremamente dedicado, sempre disponibiliza materiais interessantes que me ajudam em vários temas da minha carreira profissional. Hoje, sou praticamente uma viciada em suas aulas. Não vejo como custo, mas como investimento do meu tempo no aperfeiçoamento da língua inglesa para progredir com sucesso e segurança. Recomendo o Ron de olhos fechados.</p><span>Cristiane, Business Consultant</span></div>
           <div class="testimonial"><p>O que mais me cativa nas aulas são o formato das lições, a dinâmica e a genuína atenção do Ron em focar nos pontos que eu comentei que gostaria de melhorar. Por exemplo, a minha dificuldade na pronúncia de palavras no gerúndio por conta do meu idioma nativo. As aulas foram essenciais e de grande valor para meu desenvolvimento e aprimoramento na língua inglesa. Evoluí muito na conversação e comunicação com meus colegas de trabalho, e considero o método do Ron o melhor para quem busca aprimorar a pronúncia de uma forma objetiva e eficiente.</p><span>Rita, IT Manager</span></div>
           <div class="testimonial"><p>As aulas do Ron foram fundamentais para aprimorar meus pontos fracos no inglês, e foram decisivas para me sair bem nas entrevistas de emprego! Ron, além de ótimo professor, é uma pessoa divertida e muito querida!</p><span>Sérgio, Architect</span></div>
+          <div class="testimonial"><p>Ron é um professor fenomenal e um ser humano incrível. Ele me ajudou em várias frentes no processo de aprendizagem, incluindo pronúncia, vocabulário e gramática. No entanto, Ron vai muito além do que podemos esperar de um professor de inglês, pois ele trabalha nossa confiança, nos ensina sobre a cultura canadense, nos prepara para entrevistas de emprego estudando sobre as empresas e vagas, oferece apoio e uma preocupação genuína com seus alunos. As aulas são personalizadas, leves, engraçadas e dinâmicas. Ron já trabalhou com tantos alunos brasileiros que conhece todas as dificuldades que enfrentamos, como, por exemplo, a pronúncia de alguns sons. Não tenho palavras suficientes para agradecê-lo!</p><span>Amanda, Lawyer</span></div>
+          <div class="testimonial"><p>O Ron foi um divisor de águas no desenvolvimento da minha comunicação em inglês. Ele tem o que considero o requisito mais importante no processo de aprendizagem: a capacidade de manter o aluno motivado e em constante evolução. Sabe aquela sensação comum depois de um tempo estudando inglês: “Nossa, hoje tenho aula, que saco!”? Isso nunca aconteceu comigo, porque o Ron deixa todas as aulas extremamente interessantes, e eu sempre saio com a sensação de que valeu a pena investir aquele tempo no inglês. Metodologia, carisma, personalização e interesse genuíno nas necessidades de cada aluno fazem do Ron o melhor professor de inglês que já tive. E olha que, em mais de 20 anos estudando o idioma, já tive inúmeros professores. Indico sem medo de errar!</p><span>Fausto, Procurement Specialist</span></div>
           <div class="testimonial"><p>Desembarquei em Vancouver em julho de 2019 com inglês nível intermediário e meu marido, com o básico do básico. Eu precisava melhorar vocabulário, aprimorar o ouvido e aprender o inglês do dia a dia. Precisava me comunicar! Meu marido, estudando no college, corria atrás de referências de um professor de inglês que pudesse ajudá-lo a se comunicar melhor. Foi quando uma amiga indicou o Ron. Sempre tive resistência a ter aula online, até perceber que o inglês e a confiança do meu marido melhoravam significativamente. Decidi então me inscrever nas aulas. Foi a melhor coisa que fiz na vida. As aulas eram personalizadas, repassávamos vocabulário, aprendi palavras que nunca pensei em usar. Do conhecimento vieram a confiança e a vontade de nos comunicar ainda mais. E assim, fomos desbloqueando algumas inseguranças, quebrando barreiras. Nós nos permitimos errar, mas nunca insistir no erro. Ainda estamos em evolução, com a diferença de que agora estamos mais preparados e com o suporte de um teacher e amigo que levaremos para o resto de nossas vidas. Como ele diz, conhecimento é investimento. Invista em você!</p><span>Jennifer, International Procurement Analyst</span></div>
         </div>
       </div>
@@ -608,7 +618,7 @@
 
   <footer class="wrap">
     <div>© 2026 Ron Taylor · Executive Class</div>
-    <div><span data-i18n="footerCity">Vancouver · Tóquio</span> · <a href="mailto:executiveclass.ca@gmail.com">executiveclass.ca@gmail.com</a> · <a href="https://wa.me/818039114334" target="_blank" rel="noopener">WhatsApp</a></div>
+    <div><span data-i18n="footerCity">Vancouver · Tóquio · São Paulo</span> · <a href="mailto:executiveclass.ca@gmail.com">executiveclass.ca@gmail.com</a> · <a href="https://wa.me/818039114334" target="_blank" rel="noopener">WhatsApp</a></div>
   </footer>
 
   <script>
@@ -651,8 +661,7 @@
         navApply: "Inscreva-se",
         navCourses: "Preços",
         navCourseList: "Cursos",
-        footerCity: "Vancouver · Tóquio",
-        bioBase: "Hoje divido o meu tempo entre Vancouver e Tóquio.",
+        footerCity: "Vancouver · Tóquio · São Paulo",
         payNote: "Pagamento: residentes no Canadá pagam por Interac e-Transfer para globalpro.co.jp@gmail.com; quem ainda está no Brasil paga pela Wise, via Pix, em reais. Envio os dados completos após a inscrição.",
         applyWa: "Prefere conversar antes?",
         applyWaLink: "Fale comigo no WhatsApp",
@@ -714,6 +723,7 @@
         testiKicker: "Depoimentos",
         ctaTitle: "Pronto para começar a todo vapor?",
         bioRole: "Consultor de comunicação no Canadá",
+        bioCities: "Vancouver – Tóquio – São Paulo",
         formSending: "Enviando…",
         formThanks: "Obrigado! Recebi a sua inscrição e vou responder por e-mail em breve.",
         formError: "Não foi possível enviar. Vou abrir o seu e-mail para você mandar a inscrição diretamente.",
@@ -756,8 +766,7 @@
         navApply: "Apply",
         navCourses: "Prices",
         navCourseList: "Courses",
-        footerCity: "Vancouver · Tokyo",
-        bioBase: "Today I divide my time between Vancouver and Tokyo.",
+        footerCity: "Vancouver · Tokyo · São Paulo",
         payNote: "Payment: Canadian residents pay by Interac e-Transfer to globalpro.co.jp@gmail.com; those still in Brazil pay through Wise, via Pix, in reais. I'll send the full details after you apply.",
         applyWa: "Prefer to talk first?",
         applyWaLink: "Message me on WhatsApp",
@@ -819,6 +828,7 @@
         testiKicker: "Testimonials",
         ctaTitle: "Are you ready to hit the ground running?",
         bioRole: "Canadian Communication Consultant",
+        bioCities: "Vancouver – Tokyo – São Paulo",
         formSending: "Sending…",
         formThanks: "Thank you! I’ve received your application and will reply by email soon.",
         formError: "The form couldn’t be sent. I’ll open your email app so you can send the application directly.",
