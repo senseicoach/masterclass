@@ -244,9 +244,12 @@
 
     footer {
       border-top: 1px solid rgba(201,162,39,.2);
-      padding: 28px 24px 40px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+      padding: 28px 24px 40px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px;
       color: #9a9486; font-size: 12px; letter-spacing: .08em;
     }
+    .footer-cities { text-align: center; }
+    .footer-contact { text-align: right; }
+    @media (max-width: 760px) { footer { grid-template-columns: 1fr; text-align: center; gap: 10px; } .footer-contact { text-align: center; } }
 
     footer a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(169,176,184,.35); }
     footer a:hover { color: #fff; }
@@ -547,7 +550,7 @@
         </div>
         <div class="guarantee">
           <h3 data-i18n="guarTitle">Minha garantia</h3>
-          <p data-i18n="guarBody">Se você decidir parar a qualquer momento durante o seu curso, todas as aulas restantes são reembolsadas integralmente. Sem perguntas.</p>
+          <p data-i18n="guarBody">Se você precisar parar a qualquer momento durante o seu curso, todas as aulas restantes são reembolsadas integralmente. Sem perguntas.</p>
         </div>
         <p class="price-note" data-i18n="payNote" style="margin-bottom:6px">Pagamento: residentes no Canadá pagam por Interac e-Transfer para globalpro.co.jp@gmail.com; quem ainda está no Brasil paga pela Wise, via Pix, em reais. Envio os dados completos após a inscrição.</p>
         <p class="price-note" data-i18n="pricesNote" style="margin-top:0">Os preços são em dólares canadenses. Todas as aulas são individuais e online. O Preboarding Assessment não é reembolsável.</p>
@@ -618,7 +621,8 @@
 
   <footer class="wrap">
     <div>© 2026 Ron Taylor · Executive Class</div>
-    <div><span data-i18n="footerCity">Vancouver · Tóquio · São Paulo</span> · <a href="mailto:executiveclass.ca@gmail.com">executiveclass.ca@gmail.com</a> · <a href="https://wa.me/818039114334" target="_blank" rel="noopener">WhatsApp</a></div>
+    <div class="footer-cities" data-i18n="footerCity">Vancouver · Tóquio · São Paulo</div>
+    <div class="footer-contact"><a href="mailto:executiveclass.ca@gmail.com">executiveclass.ca@gmail.com</a> · <a href="https://wa.me/818039114334" target="_blank" rel="noopener">WhatsApp</a></div>
   </footer>
 
   <script>
@@ -676,7 +680,7 @@
         pr5p: "$1.475", pr5pu: "CAD / 4 semanas",
         courseOpt6: "The University & College Prep Sprint",
         guarTitle: "Minha garantia",
-        guarBody: "Se você decidir parar a qualquer momento durante o seu curso, todas as aulas restantes são reembolsadas integralmente. Sem perguntas.",
+        guarBody: "Se você precisar parar a qualquer momento durante o seu curso, todas as aulas restantes são reembolsadas integralmente. Sem perguntas.",
         pricesTitle: "Cursos e Preços",
         pricesNote: "Os preços são em dólares canadenses. Todas as aulas são individuais e online. O Preboarding Assessment não é reembolsável.",
         pricesCta: "Agende o seu Preboarding",
@@ -781,7 +785,7 @@
         pr5p: "$1,475", pr5pu: "CAD / 4 weeks",
         courseOpt6: "The University & College Prep Sprint",
         guarTitle: "My guarantee",
-        guarBody: "If you decide to stop at any point during your course, all remaining lessons are refunded in full. No questions asked.",
+        guarBody: "If you need to stop at any point during your course, all remaining lessons are refunded in full. No questions asked.",
         pricesTitle: "Courses and Prices",
         pricesNote: "Prices are in Canadian dollars. All lessons are one-on-one and online. The Preboarding Assessment is non-refundable.",
         pricesCta: "Book your Preboarding",
