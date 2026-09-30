@@ -574,10 +574,15 @@
         <p ><span class="line" data-i18n="applyIntro">Preencha os campos abaixo e vamos marcar o seu Preboarding Assessment:</span><span class="line" data-i18n="applyIntro2">Duas horas, online, $50 CAD, não reembolsável.</span></p>
         <p><span data-i18n="applyWa">Prefere conversar antes?</span> <a class="wa-link" href="https://wa.me/818039114334" target="_blank" rel="noopener" data-i18n="applyWaLink">Fale comigo no WhatsApp</a></p>
         <form class="apply-form" id="applyForm" name="preboarding" method="POST" action="https://formsubmit.co/executiveclass.ca@gmail.com">
+          <input type="hidden" name="_subject" id="af-subject" value="Preboarding Assessment" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" id="af-next" value="https://executiveclass.ca/?enviado=1#aplicar" />
+          <input type="hidden" name="Site language" id="af-lang" value="PT" />
           <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
           <div class="field">
             <label for="af-name" data-i18n="fieldName">Nome completo</label>
-            <input type="text" id="af-name" name="name" required />
+            <input type="text" id="af-name" name="Name" required />
           </div>
           <div class="field">
             <label for="af-email" data-i18n="fieldEmail">E-mail</label>
@@ -585,19 +590,19 @@
           </div>
           <div class="field">
             <label for="af-arrival" data-i18n="fieldArrival">Quando você planeja vir para o Canadá?</label>
-            <input type="text" id="af-arrival" name="arrival" placeholder="ex.: já estou aqui / janeiro de 2027" data-i18n-placeholder="fieldArrivalPh" required />
+            <input type="text" id="af-arrival" name="When are you planning to come to Canada?" placeholder="ex.: já estou aqui / janeiro de 2027" data-i18n-placeholder="fieldArrivalPh" required />
           </div>
           <div class="field">
             <label for="af-reason" data-i18n="fieldReason">Por que o Canadá? Você vem para visitar, para se mudar ou já está aqui?</label>
-            <textarea id="af-reason" name="reason" rows="3" required></textarea>
+            <textarea id="af-reason" name="Why Canada? Visiting, moving, or already here?" rows="3" required></textarea>
           </div>
           <div class="field">
             <label for="af-background" data-i18n="fieldBackground">Qual é a sua formação ou área profissional?</label>
-            <textarea id="af-background" name="background" rows="3" required></textarea>
+            <textarea id="af-background" name="Professional background" rows="3" required></textarea>
           </div>
           <div class="field">
             <label for="af-course" data-i18n="fieldCourse">Qual curso combina mais com você?</label>
-            <select id="af-course" name="course" required>
+            <select id="af-course" name="Course" required>
               <option value="" data-i18n="courseChoose" disabled selected>Selecione uma opção</option>
               <option value="Testing the Waters" data-i18n="courseOpt1">Testando as Águas</option>
               <option value="The Onboarding Sprint" data-i18n="courseOpt2">The Onboarding Sprint</option>
@@ -609,7 +614,7 @@
           </div>
           <div class="field">
             <label for="af-level" data-i18n="fieldLevel">Qual é o seu nível aproximado de inglês?</label>
-            <select id="af-level" name="level" required>
+            <select id="af-level" name="English level" required>
               <option value="" data-i18n="levelChoose" disabled selected>Selecione uma opção</option>
               <option value="Basic - simple conversation, some hesitation" data-i18n="levelBasic">Básico — consigo ter uma conversa simples, com alguma hesitação</option>
               <option value="Intermediate - comfortable in everyday conversation" data-i18n="levelInter">Intermediário — me sinto confortável em conversas do dia a dia</option>
@@ -860,71 +865,24 @@
     applyLang("pt");
 
     const applyForm = document.getElementById("applyForm");
-    applyForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
+    const formStatus = document.getElementById("formStatus");
+    const params = new URLSearchParams(location.search);
+    if (params.get("lang") === "en") { currentLang = "en"; applyLang("en"); }
+    if (params.has("enviado")) {
+      formStatus.hidden = false;
+      formStatus.textContent = copy[currentLang].formThanks;
+      history.replaceState(null, "", location.pathname + "#aplicar");
+    }
+    applyForm.addEventListener("submit", (e) => {
       const f = e.target;
-      const status = document.getElementById("formStatus");
-      const submitBtn = f.querySelector('button[type="submit"]');
-      const t = (key) => copy[currentLang][key];
-      const name = f.name.value.trim();
-      const courseText = f.course.options[f.course.selectedIndex].textContent;
-      const levelText = f.level.options[f.level.selectedIndex].textContent;
-
-      const mailtoFallback = () => {
-        const body = [
-          `Name: ${name}`,
-          `Email: ${f.email.value.trim()}`,
-          "",
-          "When are you planning to come to Canada?",
-          f.arrival.value.trim(),
-          "",
-          "Why Canada? Visiting, moving, or already here?",
-          f.reason.value.trim(),
-          "",
-          "Professional background:",
-          f.background.value.trim(),
-          "",
-          "Which course suits best:",
-          courseText,
-          "",
-          "Approximate English level:",
-          levelText
-        ].join("\n");
-        const subject = `Preboarding Assessment - ${name}`;
-        window.location.href = `mailto:executiveclass.ca@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      };
-
-      submitBtn.disabled = true;
-      status.hidden = false;
-      status.textContent = t("formSending");
-      try {
-        if (f._honey.value) { f.reset(); status.textContent = t("formThanks"); return; }
-        const res = await fetch("https://formsubmit.co/ajax/executiveclass.ca@gmail.com", {
-          method: "POST",
-          headers: { "Content-Type": "application/json", "Accept": "application/json" },
-          body: JSON.stringify({
-            _subject: `Preboarding Assessment - ${name}`,
-            _template: "table",
-            _captcha: "false",
-            "Name": name,
-            "email": f.email.value.trim(),
-            "When are you planning to come to Canada?": f.arrival.value.trim(),
-            "Why Canada? Visiting, moving, or already here?": f.reason.value.trim(),
-            "Professional background": f.background.value.trim(),
-            "Course": f.course.value,
-            "English level": f.level.value,
-            "Site language": currentLang.toUpperCase()
-          })
-        });
-        const out = await res.json().catch(() => ({}));
-        if (!res.ok || String(out.success) !== "true") throw new Error(out.message || res.status);
-        f.reset();
-        status.textContent = t("formThanks");
-      } catch (err) {
-        status.textContent = "FormSubmit reply: " + (err && err.message ? err.message : String(err));
-      } finally {
-        submitBtn.disabled = false;
-      }
+      if (f._honey.value) { e.preventDefault(); f.reset(); return; }
+      const name = document.getElementById("af-name").value.trim();
+      document.getElementById("af-subject").value = `Preboarding Assessment - ${name}`;
+      document.getElementById("af-lang").value = currentLang.toUpperCase();
+      document.getElementById("af-next").value = `https://executiveclass.ca/?enviado=1${currentLang === "en" ? "&lang=en" : ""}#aplicar`;
+      formStatus.hidden = false;
+      formStatus.textContent = copy[currentLang].formSending;
+      setTimeout(() => { f.querySelector('button[type="submit"]').disabled = true; }, 0);
     });
     const navBar = document.querySelector(".nav");
     const setNav = () => navBar.classList.toggle("scrolled", window.scrollY > 40);
