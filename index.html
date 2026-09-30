@@ -921,8 +921,7 @@
         f.reset();
         status.textContent = t("formThanks");
       } catch (err) {
-        status.textContent = t("formError");
-        setTimeout(mailtoFallback, 1500);
+        status.textContent = "FormSubmit reply: " + (err && err.message ? err.message : String(err));
       } finally {
         submitBtn.disabled = false;
       }
