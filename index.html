@@ -440,7 +440,7 @@
               <h3 data-i18n="pr0n">Preboarding Assessment</h3>
               <p class="pb-meta" data-i18n="pr0f">2 horas · individual · online · pré-requisito para todos os cursos</p>
             </div>
-            <div class="price-amt"><span data-i18n="pr0p">$50</span> <small data-i18n="pr0pu">CAD · não reembolsável</small></div>
+            <div class="price-amt"><span data-i18n="pr0p">$75</span> <small data-i18n="pr0pu">CAD</small></div>
           </div>
           <p class="pb-lead" data-i18n="pbLead">O Preboarding Assessment estabelece a base.</p>
           <p data-i18n="pbP1">Durante a nossa avaliação de duas horas, preciso entender como você chegou até aqui — os desafios que enfrentou, as conquistas que alcançou e a experiência e o conhecimento que construiu ao longo da sua carreira.</p>
@@ -571,13 +571,18 @@
       <div class="wrap">
         <p class="spots" data-i18n="applySpots">Para preservar a qualidade da minha metodologia individual, só posso aceitar 24 novos alunos em 2027.</p>
         <p class="kicker" data-i18n="applyKicker">Inscreva-se</p>
-        <p ><span class="line" data-i18n="applyIntro">Preencha os campos abaixo e vamos marcar o seu Preboarding Assessment:</span><span class="line" data-i18n="applyIntro2">Duas horas, online, $50 CAD, não reembolsável.</span></p>
+        <p ><span class="line" data-i18n="applyIntro">Preencha os campos abaixo e vamos marcar o seu Preboarding Assessment:</span><span class="line" data-i18n="applyIntro2">Duas horas, online, $75 CAD.</span><span class="line" data-i18n="applyIntro3">Você sai com um plano de ação personalizado e a recomendação do curso ideal para você.</span></p>
         <p><span data-i18n="applyWa">Prefere conversar antes?</span> <a class="wa-link" href="https://wa.me/818039114334" target="_blank" rel="noopener" data-i18n="applyWaLink">Fale comigo no WhatsApp</a></p>
-        <form class="apply-form" id="applyForm" name="preboarding" method="POST" action="https://formsubmit.co/executiveclass.ca@gmail.com">
-          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
+        <form class="apply-form" id="applyForm" name="preboarding" method="POST" action="https://api.web3forms.com/submit">
+          <input type="hidden" name="access_key" value="f884dfc0-ddb7-4480-92a3-ca6892d53866" />
+          <input type="hidden" name="subject" id="af-subject" value="Preboarding Assessment" />
+          <input type="hidden" name="from_name" value="Executive Class website" />
+          <input type="hidden" name="redirect" id="af-next" value="https://executiveclass.ca/?enviado=1#aplicar" />
+          <input type="hidden" name="Site language" id="af-lang" value="PT" />
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
           <div class="field">
             <label for="af-name" data-i18n="fieldName">Nome completo</label>
-            <input type="text" id="af-name" name="name" required />
+            <input type="text" id="af-name" name="Name" required />
           </div>
           <div class="field">
             <label for="af-email" data-i18n="fieldEmail">E-mail</label>
@@ -585,19 +590,19 @@
           </div>
           <div class="field">
             <label for="af-arrival" data-i18n="fieldArrival">Quando você planeja vir para o Canadá?</label>
-            <input type="text" id="af-arrival" name="arrival" placeholder="ex.: já estou aqui / janeiro de 2027" data-i18n-placeholder="fieldArrivalPh" required />
+            <input type="text" id="af-arrival" name="When are you planning to come to Canada?" placeholder="ex.: já estou aqui / janeiro de 2027" data-i18n-placeholder="fieldArrivalPh" required />
           </div>
           <div class="field">
-            <label for="af-reason" data-i18n="fieldReason">Por que o Canadá? Você vem para visitar, para se mudar ou já está aqui?</label>
-            <textarea id="af-reason" name="reason" rows="3" required></textarea>
+            <label for="af-reason" data-i18n="fieldReason">Por que o Canadá? Você vem para visitar, para morar ou para estudar em uma universidade?</label>
+            <textarea id="af-reason" name="Why Canada? Visiting, moving, or attending university?" rows="3" required></textarea>
           </div>
           <div class="field">
             <label for="af-background" data-i18n="fieldBackground">Qual é a sua formação ou área profissional?</label>
-            <textarea id="af-background" name="background" rows="3" required></textarea>
+            <textarea id="af-background" name="Professional background" rows="3" required></textarea>
           </div>
           <div class="field">
             <label for="af-course" data-i18n="fieldCourse">Qual curso combina mais com você?</label>
-            <select id="af-course" name="course" required>
+            <select id="af-course" name="Course" required>
               <option value="" data-i18n="courseChoose" disabled selected>Selecione uma opção</option>
               <option value="Testing the Waters" data-i18n="courseOpt1">Testando as Águas</option>
               <option value="The Onboarding Sprint" data-i18n="courseOpt2">The Onboarding Sprint</option>
@@ -609,7 +614,7 @@
           </div>
           <div class="field">
             <label for="af-level" data-i18n="fieldLevel">Qual é o seu nível aproximado de inglês?</label>
-            <select id="af-level" name="level" required>
+            <select id="af-level" name="English level" required>
               <option value="" data-i18n="levelChoose" disabled selected>Selecione uma opção</option>
               <option value="Basic - simple conversation, some hesitation" data-i18n="levelBasic">Básico — consigo ter uma conversa simples, com alguma hesitação</option>
               <option value="Intermediate - comfortable in everyday conversation" data-i18n="levelInter">Intermediário — me sinto confortável em conversas do dia a dia</option>
@@ -690,7 +695,7 @@
         pricesNote: "Os preços são em dólares canadenses. Todas as aulas são individuais e online. O Preboarding Assessment não é reembolsável.",
         pr0n: "Preboarding Assessment",
         pr0f: "2 horas · individual · online · pré-requisito para todos os cursos",
-        pr0p: "$50", pr0pu: "CAD · não reembolsável",
+        pr0p: "$75", pr0pu: "CAD",
         pr1n: "Testando as Águas",
         pr1f: "5 dias · 2 horas de aula individual por dia · tarefas diárias do Listening Lab · reunião de acompanhamento depois do curso",
         pr1p: "$425", pr1pu: "CAD / semana",
@@ -707,12 +712,13 @@
         applySpots: "Para preservar a qualidade da minha metodologia individual, só posso aceitar 24 novos alunos em 2027.",
         applyKicker: "Inscreva-se",
         applyIntro: "Preencha os campos abaixo e vamos marcar o seu Preboarding Assessment:",
-        applyIntro2: "Duas horas, online, $50 CAD, não reembolsável.",
+        applyIntro2: "Duas horas, online, $75 CAD.",
+        applyIntro3: "Você sai com um plano de ação personalizado e a recomendação do curso ideal para você.",
         fieldName: "Nome completo",
         fieldEmail: "E-mail",
         fieldArrival: "Quando você planeja vir para o Canadá?",
         fieldArrivalPh: "ex.: já estou aqui / janeiro de 2027",
-        fieldReason: "Por que o Canadá? Você vem para visitar, para se mudar ou já está aqui?",
+        fieldReason: "Por que o Canadá? Você vem para visitar, para morar ou para estudar em uma universidade?",
         fieldBackground: "Qual é a sua formação ou área profissional?",
         fieldCourse: "Qual curso combina mais com você?",
         courseChoose: "Selecione uma opção",
@@ -734,7 +740,7 @@
         bioCities: "Vancouver – Tóquio – São Paulo",
         formSending: "Enviando…",
         formThanks: "Obrigado! Recebi a sua inscrição e vou responder por e-mail em breve.",
-        formError: "Não foi possível enviar. Vou abrir o seu e-mail para você mandar a inscrição diretamente.",
+        formError: "Não foi possível enviar agora. Tente de novo em alguns minutos ou fale comigo pelo WhatsApp.",
       },
       en: {
         labKicker: "Signature Method",
@@ -794,7 +800,7 @@
         pricesNote: "Prices are in Canadian dollars. All lessons are one-on-one and online. The Preboarding Assessment is non-refundable.",
         pr0n: "Preboarding Assessment",
         pr0f: "2 hours · one-on-one · online · prerequisite for all courses",
-        pr0p: "$50", pr0pu: "CAD · non-refundable",
+        pr0p: "$75", pr0pu: "CAD",
         pr1n: "Testing the Waters",
         pr1f: "5 days · 2 hours of one-on-one lessons a day · daily Listening Lab homework · follow-up meeting after the course",
         pr1p: "$425", pr1pu: "CAD / week",
@@ -811,12 +817,13 @@
         applySpots: "To preserve the quality of my one-on-one methodology, I can only accept 24 new students in 2027.",
         applyKicker: "Apply",
         applyIntro: "Fill in the fields below and let's book your Preboarding Assessment:",
-        applyIntro2: "Two hours, online, $50 CAD, non-refundable.",
+        applyIntro2: "Two hours, online, $75 CAD.",
+        applyIntro3: "You’ll leave with a personalised action plan and a recommendation for the right course for you.",
         fieldName: "Full name",
         fieldEmail: "Email",
         fieldArrival: "When are you planning to come to Canada?",
         fieldArrivalPh: "e.g. already here / January 2027",
-        fieldReason: "Why Canada? Are you visiting, moving, or already here?",
+        fieldReason: "Why Canada? Are you visiting, moving, or attending university?",
         fieldBackground: "What's your professional background?",
         fieldCourse: "Which course suits you best?",
         courseChoose: "Select an option",
@@ -838,7 +845,7 @@
         bioCities: "Vancouver – Tokyo – São Paulo",
         formSending: "Sending…",
         formThanks: "Thank you! I’ve received your application and will reply by email soon.",
-        formError: "The form couldn’t be sent. I’ll open your email app so you can send the application directly.",
+        formError: "The form couldn’t be sent right now. Please try again in a few minutes, or message me on WhatsApp.",
       }
     };
 
@@ -860,70 +867,41 @@
     applyLang("pt");
 
     const applyForm = document.getElementById("applyForm");
+    const formStatus = document.getElementById("formStatus");
+    const params = new URLSearchParams(location.search);
+    if (params.get("lang") === "en") { currentLang = "en"; applyLang("en"); }
+    if (params.has("enviado")) {
+      formStatus.hidden = false;
+      formStatus.textContent = copy[currentLang].formThanks;
+      history.replaceState(null, "", location.pathname + "#aplicar");
+    }
     applyForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       const f = e.target;
-      const status = document.getElementById("formStatus");
-      const submitBtn = f.querySelector('button[type="submit"]');
-      const t = (key) => copy[currentLang][key];
-      const name = f.name.value.trim();
-      const courseText = f.course.options[f.course.selectedIndex].textContent;
-      const levelText = f.level.options[f.level.selectedIndex].textContent;
-
-      const mailtoFallback = () => {
-        const body = [
-          `Name: ${name}`,
-          `Email: ${f.email.value.trim()}`,
-          "",
-          "When are you planning to come to Canada?",
-          f.arrival.value.trim(),
-          "",
-          "Why Canada? Visiting, moving, or already here?",
-          f.reason.value.trim(),
-          "",
-          "Professional background:",
-          f.background.value.trim(),
-          "",
-          "Which course suits best:",
-          courseText,
-          "",
-          "Approximate English level:",
-          levelText
-        ].join("\n");
-        const subject = `Preboarding Assessment - ${name}`;
-        window.location.href = `mailto:executiveclass.ca@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      };
-
-      submitBtn.disabled = true;
-      status.hidden = false;
-      status.textContent = t("formSending");
+      const btn = f.querySelector('button[type="submit"]');
+      if (f.botcheck.checked) { f.reset(); return; }
+      const name = document.getElementById("af-name").value.trim();
+      document.getElementById("af-subject").value = `Preboarding Assessment - ${name}`;
+      document.getElementById("af-lang").value = currentLang.toUpperCase();
+      formStatus.hidden = false;
+      formStatus.textContent = copy[currentLang].formSending;
+      btn.disabled = true;
       try {
-        if (f._honey.value) { f.reset(); status.textContent = t("formThanks"); return; }
-        const res = await fetch("https://formsubmit.co/ajax/executiveclass.ca@gmail.com", {
+        const data = Object.fromEntries(new FormData(f));
+        delete data.redirect; delete data.botcheck;
+        const res = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
           headers: { "Content-Type": "application/json", "Accept": "application/json" },
-          body: JSON.stringify({
-            _subject: `Preboarding Assessment - ${name}`,
-            _template: "table",
-            _captcha: "false",
-            "Name": name,
-            "email": f.email.value.trim(),
-            "When are you planning to come to Canada?": f.arrival.value.trim(),
-            "Why Canada? Visiting, moving, or already here?": f.reason.value.trim(),
-            "Professional background": f.background.value.trim(),
-            "Course": f.course.value,
-            "English level": f.level.value,
-            "Site language": currentLang.toUpperCase()
-          })
+          body: JSON.stringify(data)
         });
         const out = await res.json().catch(() => ({}));
-        if (!res.ok || String(out.success) !== "true") throw new Error(out.message || res.status);
+        if (!res.ok || !out.success) throw new Error(out.message || res.status);
         f.reset();
-        status.textContent = t("formThanks");
+        formStatus.textContent = copy[currentLang].formThanks;
       } catch (err) {
-        status.textContent = "FormSubmit reply: " + (err && err.message ? err.message : String(err));
+        formStatus.textContent = copy[currentLang].formError;
       } finally {
-        submitBtn.disabled = false;
+        btn.disabled = false;
       }
     });
     const navBar = document.querySelector(".nav");
