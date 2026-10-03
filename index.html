@@ -591,12 +591,28 @@
             <input type="email" id="af-email" name="email" required />
           </div>
           <div class="field">
-            <label for="af-arrival" data-i18n="fieldArrival">Quando você planeja vir para o Canadá?</label>
-            <input type="text" id="af-arrival" name="When are you planning to come to Canada?" placeholder="ex.: já estou aqui / janeiro de 2027" data-i18n-placeholder="fieldArrivalPh" required />
+            <label for="af-residence" data-i18n="fieldResidence">Onde você mora hoje?</label>
+            <select id="af-residence" name="Where do you live now?" required>
+              <option value="" data-i18n="residenceChoose" disabled selected>Selecione uma opção</option>
+              <option value="Brazil" data-i18n="residenceBrazil">No Brasil</option>
+              <option value="Canada" data-i18n="residenceCanada">No Canadá</option>
+              <option value="Another country" data-i18n="residenceOther">Em outro país</option>
+            </select>
           </div>
           <div class="field">
-            <label for="af-reason" data-i18n="fieldReason">Por que o Canadá? Você vem para visitar, para morar ou para estudar em uma universidade?</label>
-            <textarea id="af-reason" name="Why Canada? Visiting, moving, or attending university?" rows="3" required></textarea>
+            <label for="af-arrival" data-i18n="fieldArrival">Se ainda não mora no Canadá, quando planeja vir?</label>
+            <input type="text" id="af-arrival" name="When are you planning to come to Canada?" placeholder="ex.: janeiro de 2027" data-i18n-placeholder="fieldArrivalPh" />
+          </div>
+          <div class="field">
+            <label for="af-goal" data-i18n="fieldGoal">Qual é o seu principal objetivo no Canadá?</label>
+            <select id="af-goal" name="Main goal in Canada" required>
+              <option value="" data-i18n="goalChoose" disabled selected>Selecione uma opção</option>
+              <option value="Explore the country before deciding" data-i18n="goalExplore">Conhecer o país antes de decidir</option>
+              <option value="Move and settle in" data-i18n="goalMove">Me mudar e me estabelecer</option>
+              <option value="Study at a college or university" data-i18n="goalStudy">Estudar em um college ou universidade</option>
+              <option value="Get a job in my field" data-i18n="goalJob">Conseguir um emprego na minha área</option>
+              <option value="Grow my career" data-i18n="goalCareer">Crescer na minha carreira</option>
+            </select>
           </div>
           <div class="field">
             <label for="af-background" data-i18n="fieldBackground">Qual é a sua formação ou área profissional?</label>
@@ -718,9 +734,20 @@
         applyIntro3: "Você sai com um plano de ação personalizado e a recomendação do curso ideal para você.",
         fieldName: "Nome completo",
         fieldEmail: "E-mail",
-        fieldArrival: "Quando você planeja vir para o Canadá?",
-        fieldArrivalPh: "ex.: já estou aqui / janeiro de 2027",
-        fieldReason: "Por que o Canadá? Você vem para visitar, para morar ou para estudar em uma universidade?",
+        fieldResidence: "Onde você mora hoje?",
+        residenceChoose: "Selecione uma opção",
+        residenceBrazil: "No Brasil",
+        residenceCanada: "No Canadá",
+        residenceOther: "Em outro país",
+        fieldArrival: "Se ainda não mora no Canadá, quando planeja vir?",
+        fieldArrivalPh: "ex.: janeiro de 2027",
+        fieldGoal: "Qual é o seu principal objetivo no Canadá?",
+        goalChoose: "Selecione uma opção",
+        goalExplore: "Conhecer o país antes de decidir",
+        goalMove: "Me mudar e me estabelecer",
+        goalStudy: "Estudar em um college ou universidade",
+        goalJob: "Conseguir um emprego na minha área",
+        goalCareer: "Crescer na minha carreira",
         fieldBackground: "Qual é a sua formação ou área profissional?",
         fieldCourse: "Qual curso combina mais com você?",
         courseChoose: "Selecione uma opção",
@@ -823,9 +850,20 @@
         applyIntro3: "You’ll leave with a personalised action plan and a recommendation for the right course for you.",
         fieldName: "Full name",
         fieldEmail: "Email",
-        fieldArrival: "When are you planning to come to Canada?",
-        fieldArrivalPh: "e.g. already here / January 2027",
-        fieldReason: "Why Canada? Are you visiting, moving, or attending university?",
+        fieldResidence: "Where do you live now?",
+        residenceChoose: "Select an option",
+        residenceBrazil: "In Brazil",
+        residenceCanada: "In Canada",
+        residenceOther: "In another country",
+        fieldArrival: "If you don’t live in Canada yet, when are you planning to come?",
+        fieldArrivalPh: "e.g. January 2027",
+        fieldGoal: "What’s your main goal in Canada?",
+        goalChoose: "Select an option",
+        goalExplore: "Explore the country before deciding",
+        goalMove: "Move and settle in",
+        goalStudy: "Study at a college or university",
+        goalJob: "Get a job in my field",
+        goalCareer: "Grow my career",
         fieldBackground: "What's your professional background?",
         fieldCourse: "Which course suits you best?",
         courseChoose: "Select an option",
