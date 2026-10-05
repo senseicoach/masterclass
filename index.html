@@ -309,6 +309,15 @@
       .bio-grid { grid-template-columns: minmax(0, 1fr); }
       .bio-photo { width: 150px; }
     }
+    /* Align the bio story, the voice line and the intro on the same centre line as the Beethoven quote */
+    :root { --bio-axis: calc((200px + clamp(28px, 5vw, 64px)) / 2); }
+    .bio-text > p[data-i18n^="bioP"] { margin-left: auto; margin-right: auto; }
+    .intro-grid, .intro-grid p { text-align: center; }
+    .intro-grid p { margin-left: auto; margin-right: auto; }
+    @media (min-width: 861px) {
+      .voice-inner { max-width: 656px; position: relative; left: var(--bio-axis); }
+      .intro-grid { max-width: 540px; position: relative; left: var(--bio-axis); }
+    }
     .lab {
       background:
         radial-gradient(ellipse at 85% 0%, rgba(169,176,184,.10), rgba(0,0,0,0) 55%),
