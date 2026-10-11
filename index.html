@@ -356,17 +356,8 @@
     .foot-seal img{width:84px;height:84px;opacity:.85}
       .courses-cta{display:flex;justify-content:center;margin:36px 0 8px}
   
-    .hero-kicker { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-size: clamp(20px, 2.4vw, 28px); color: var(--gold-soft); letter-spacing: .04em; margin-bottom: 22px; }
-    .hero h1 { font-size: clamp(38px, 6vw, 76px); line-height: 1.04; letter-spacing: .005em; max-width: 18ch; margin: 0 auto; text-wrap: balance; }
-    .hero-sub { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-size: clamp(22px, 2.6vw, 30px); font-weight: 400; }
-    .hero-cred { display: inline-flex; align-items: center; gap: 14px; margin-top: 40px; color: rgba(244,239,227,.86); text-decoration: none; font-size: 14px; letter-spacing: .02em; text-align: left; max-width: 560px; }
-    .hero-cred:hover span { text-decoration: underline; text-underline-offset: 3px; }
-    .hero-photo { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; object-position: center 20%; flex: none; border: 1px solid rgba(244,239,227,.35); background: var(--navy); }
-    .hero-kicker, .hero h1, .hero-sub { text-shadow: 0 2px 20px rgba(0,0,0,.35); }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 36px; }
-    .hero-actions .btn.ghost { color: #f7f1e4; border-color: rgba(244,239,227,.45); }
     .intro { padding-top: 96px; }
-    @media (min-width: 861px) { .intro-grid { left: 0 !important; margin-left: auto; margin-right: auto; } }
+    @media (min-width: 861px) { .voice-inner { left: 0 !important; } .intro-grid { left: 0 !important; margin-left: auto; margin-right: auto; } }
     .intro-grid { margin-left: auto; margin-right: auto; }
   </style>
 </head>
@@ -391,17 +382,14 @@
     <section class="hero">
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="hero-inner">
-        <p class="hero-kicker" data-i18n="h1">The Canadian Dream</p>
-        <h1 data-i18n="voiceTitle">No Brasil, quando você falava, as pessoas escutavam.</h1>
-        <p class="hero-sub" data-i18n="voiceSub">Encontre essa voz no Canadá.</p>
-        <a class="hero-cred" href="#bio">
-          <img class="hero-photo" alt="Ron Taylor" width="56" height="56" />
-          <span data-i18n="heroCred">Ron Taylor · consultor de comunicação canadense · três décadas de aulas individuais</span>
-        </a>
-        <div class="hero-actions">
-          <a class="btn" href="#cursos" data-i18n="heroBtnCourses">Ver cursos</a>
-          <a class="btn ghost" href="#aplicar" data-i18n="heroBtnApply">Inscreva-se</a>
-        </div>
+        <h1 data-i18n="h1">The Canadian Dream</h1>
+        <p class="hero-sub" data-i18n="heroSub">Onde as montanhas e o oceano recebem você de braços abertos.</p>
+      </div>
+    </section>
+    <section class="section voice">
+      <div class="voice-inner">
+        <h2 data-i18n="voiceTitle">No Brasil, quando você falava, as pessoas escutavam.</h2>
+        <p class="voice-sub" data-i18n="voiceSub">Encontre essa voz no Canadá.</p>
       </div>
     </section>
 
@@ -725,9 +713,6 @@
         voiceTitle: "No Brasil, quando você falava, as pessoas escutavam.",
         voiceSub: "Encontre essa voz no Canadá.",
         heroSub: "Onde as montanhas e o oceano recebem você de braços abertos.",
-        heroCred: "Ron Taylor · consultor de comunicação canadense · três décadas de aulas individuais",
-        heroBtnCourses: "Ver cursos",
-        heroBtnApply: "Inscreva-se",
         introTitle: "Cinco cursos.",
         introTitle2: "Escolha a sua pista de decolagem.",
         introP1: "Você está prestes a embarcar numa jornada que vai testar a sua garra, fazer você duvidar de si mesmo e, no fim, revelar o melhor de você.",
@@ -847,9 +832,6 @@
         h1: "The Canadian Dream",
         voiceTitle: "In Brazil, when you spoke, people listened.",
         voiceSub: "Find that voice in Canada.",
-        heroCred: "Ron Taylor · Canadian communication consultant · three decades of one-to-one lessons",
-        heroBtnCourses: "See courses",
-        heroBtnApply: "Apply",
         heroSub: "Where mountains and oceans welcome you with open arms.",
         introTitle: "Five courses.",
         introTitle2: "Choose your runway.",
@@ -1017,9 +999,6 @@
     const setNav = () => navBar.classList.toggle("scrolled", window.scrollY > 40);
     window.addEventListener("scroll", setNav, { passive: true });
     setNav();
-  </script>
-  <script>
-    (function () { var a = document.querySelector(".hero-photo"), b = document.querySelector(".bio-photo"); if (a && b) a.src = b.src; })();
   </script>
 </body>
 </html>
