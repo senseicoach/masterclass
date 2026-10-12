@@ -114,7 +114,7 @@
     }
     .hero-sub {
       max-width: 640px; margin: 28px auto 0;
-      font-size: 17px; color: rgba(244,239,227,.82); font-weight: 300;
+      font-size: 19px; color: rgba(244,239,227,.92); font-weight: 300;
     }
     .section { padding: 88px 24px; }
     .wrap { width: min(1120px, 100%); margin: 0 auto; }
@@ -365,6 +365,9 @@
     @media (max-width: 860px) { .bio-label { position: static; text-align: center; margin: 0 0 12px; } }
   
     .new-badge { display: inline-block; vertical-align: middle; margin-left: 10px; padding: 3px 9px; font-family: Inter, system-ui, sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ink); background: var(--gold); border-radius: 2px; position: relative; top: -2px; }
+  
+    .testimonial.clamped p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 7; overflow: hidden; }
+    .testimonial .read-more { display: inline-block; margin-top: 8px; padding: 0; background: none; border: 0; cursor: pointer; font: 600 12px/1.4 Inter, system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--navy); border-bottom: 1px solid currentColor; }
   </style>
 </head>
 <body>
@@ -669,6 +672,7 @@
               <option value="Move and settle in" data-i18n="goalMove">Me mudar e me estabelecer</option>
               <option value="Study at a college or university" data-i18n="goalStudy">Estudar em um college ou universidade</option>
               <option value="Get a job in my field" data-i18n="goalJob">Conseguir um emprego na minha área</option>
+              <option value="Pass my probation" data-i18n="goalProbation">Passar no período de experiência</option>
               <option value="Grow my career" data-i18n="goalCareer">Crescer na minha carreira</option>
             </select>
           </div>
@@ -822,6 +826,9 @@
         goalMove: "Me mudar e me estabelecer",
         goalStudy: "Estudar em um college ou universidade",
         goalJob: "Conseguir um emprego na minha área",
+        goalProbation: "Passar no período de experiência",
+        readMore: "Ler mais",
+        readLess: "Ler menos",
         goalCareer: "Crescer na minha carreira",
         fieldBackground: "Qual é a sua formação ou área profissional?",
         fieldCourse: "Qual curso combina mais com você?",
@@ -949,6 +956,9 @@
         goalMove: "Move and settle in",
         goalStudy: "Study at a college or university",
         goalJob: "Get a job in my field",
+        goalProbation: "Pass my probation",
+        readMore: "Read more",
+        readLess: "Read less",
         goalCareer: "Grow my career",
         fieldBackground: "What's your professional background?",
         fieldCourse: "Which course suits you best?",
@@ -1034,6 +1044,29 @@
     const setNav = () => navBar.classList.toggle("scrolled", window.scrollY > 40);
     window.addEventListener("scroll", setNav, { passive: true });
     setNav();
+  </script>
+  <script>
+    (function () {
+      document.querySelectorAll(".testimonial").forEach(function (t) {
+        var p = t.querySelector("p"); if (!p) return;
+        t.classList.add("clamped");
+        if (p.scrollHeight <= p.clientHeight + 2) { t.classList.remove("clamped"); return; }
+        var lang = document.documentElement.lang === "en" ? "en" : "pt";
+        var labels = { pt: ["Ler mais", "Ler menos"], en: ["Read more", "Read less"] };
+        var b = document.createElement("button");
+        b.type = "button"; b.className = "read-more";
+        b.setAttribute("data-i18n", "readMore"); b.setAttribute("aria-expanded", "false");
+        b.textContent = labels[lang][0];
+        b.addEventListener("click", function () {
+          var open = t.classList.toggle("clamped") === false;
+          b.setAttribute("aria-expanded", open ? "true" : "false");
+          b.setAttribute("data-i18n", open ? "readLess" : "readMore");
+          var l = document.documentElement.lang === "en" ? "en" : "pt";
+          b.textContent = labels[l][open ? 1 : 0];
+        });
+        p.insertAdjacentElement("afterend", b);
+      });
+    })();
   </script>
 </body>
 </html>
