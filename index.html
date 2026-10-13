@@ -729,7 +729,7 @@
         <p class="spots" data-i18n="applySpots">Para preservar a qualidade da minha metodologia individual, só posso aceitar 12 novos alunos em 2027.</p>
         <p class="kicker" data-i18n="applyKicker">Inscreva-se</p>
         <p ><span class="line" data-i18n="applyIntro">Preencha os campos abaixo e vamos marcar o seu Preboarding Assessment:</span><span class="line" data-i18n="applyIntro2">Duas horas, online, $100 CAD (não reembolsável), creditados integralmente no curso que você escolher.</span><span class="line" data-i18n="applyIntro3">Você sai com um plano de ação personalizado e a recomendação do curso ideal para você.</span></p>
-        <p><span data-i18n="applyWa">Prefere conversar antes?</span> <a class="wa-link" href="https://wa.me/818039114334" target="_blank" rel="noopener" data-i18n="applyWaLink">Fale comigo no WhatsApp</a></p>
+        <p><span data-i18n="applyWa">Prefere conversar antes?</span> <a class="wa-link" href="https://wa.me/818039114334?text=Ol%C3%A1%20Ron%2C%20vi%20o%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos." target="_blank" rel="noopener" data-i18n="applyWaLink">Fale comigo no WhatsApp</a></p>
         <form class="apply-form" id="applyForm" name="preboarding" method="POST" action="https://api.web3forms.com/submit">
           <input type="hidden" name="access_key" value="f884dfc0-ddb7-4480-92a3-ca6892d53866" />
           <input type="hidden" name="subject" id="af-subject" value="Preboarding Assessment" />
@@ -811,7 +811,7 @@
   <footer class="wrap">
     <div>© 2026 Ron Taylor · Executive Class</div>
     <div class="footer-cities" data-i18n="footerCity">Vancouver · Tóquio · São Paulo</div>
-    <div class="footer-contact"><a href="mailto:executiveclass.ca@gmail.com">executiveclass.ca@gmail.com</a> · <a href="https://wa.me/818039114334" target="_blank" rel="noopener">WhatsApp</a></div>
+    <div class="footer-contact"><a href="mailto:executiveclass.ca@gmail.com">executiveclass.ca@gmail.com</a> · <a href="https://wa.me/818039114334?text=Ol%C3%A1%20Ron%2C%20vi%20o%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos." target="_blank" rel="noopener">WhatsApp</a></div>
   </footer>
 
   <script>
@@ -938,6 +938,7 @@
         levelAdv: "Avançado — estou refinando a fluência para a carreira",
         applySubmit: "Enviar inscrição",
         testiKicker: "Depoimentos",
+        waText: "Olá Ron, vi o seu site e gostaria de saber mais sobre os cursos.",
         testiTitle: "Depoimentos de pessoas como você!",
         ctaTitle: "Vamos começar a todo vapor?",
         bioRole: "Consultor de comunicação canadense",
@@ -1068,6 +1069,7 @@
         levelAdv: "Advanced — refining fluency for my career",
         applySubmit: "Send application",
         testiKicker: "Testimonials",
+        waText: "Hi Ron, I saw your website and would like to know more about your courses.",
         testiTitle: "Testimonials by people like you!",
         ctaTitle: "Are you ready to hit the ground running?",
         bioRole: "Canadian Communication Consultant",
@@ -1090,6 +1092,9 @@
         if (copy[lang][key]) el.placeholder = copy[lang][key];
       });
       buttons.forEach((b) => b.classList.toggle("active", b.dataset.lang === lang));
+      document.querySelectorAll('a[href^="https://wa.me/"]').forEach((a) => {
+        a.href = "https://wa.me/818039114334?text=" + encodeURIComponent(copy[lang].waText);
+      });
     }
     let currentLang = "pt";
     buttons.forEach((b) => b.addEventListener("click", () => { currentLang = b.dataset.lang; applyLang(currentLang); }));
