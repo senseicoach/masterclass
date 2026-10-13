@@ -24,6 +24,89 @@
   <link rel="manifest" href="site.webmanifest" />
   <meta name="apple-mobile-web-app-title" content="Executive Class" />
   <meta name="application-name" content="Executive Class" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Executive Class",
+  "alternateName": "Executive Class · Ron Taylor",
+  "url": "https://executiveclass.ca/",
+  "logo": "https://executiveclass.ca/icon-512.png",
+  "image": "https://executiveclass.ca/og-image-2.jpg",
+  "description": "Aulas individuais de inglês para profissionais brasileiros: entrevistas, trabalho e vida no Canadá.",
+  "email": "executiveclass.ca@gmail.com",
+  "inLanguage": [
+    "pt-BR",
+    "en"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Vancouver",
+    "addressRegion": "BC",
+    "addressCountry": "CA"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Canada"
+    },
+    {
+      "@type": "Country",
+      "name": "Brazil"
+    }
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Ron Taylor",
+    "jobTitle": "Canadian Communication Consultant"
+  },
+  "sameAs": [
+    "https://senseicoach.github.io/ebooks/"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Cursos",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Preboarding Assessment",
+        "price": "100",
+        "priceCurrency": "CAD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Testando as Águas",
+        "price": "425",
+        "priceCurrency": "CAD"
+      },
+      {
+        "@type": "Offer",
+        "name": "The Onboarding Sprint",
+        "price": "1475",
+        "priceCurrency": "CAD"
+      },
+      {
+        "@type": "Offer",
+        "name": "The University & College Prep Sprint",
+        "price": "1475",
+        "priceCurrency": "CAD"
+      },
+      {
+        "@type": "Offer",
+        "name": "The Interview Sprint",
+        "price": "120",
+        "priceCurrency": "CAD"
+      },
+      {
+        "@type": "Offer",
+        "name": "The First 90 Days",
+        "price": "520",
+        "priceCurrency": "CAD"
+      }
+    ]
+  }
+}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -372,6 +455,11 @@
   
     .testimonial.clamped p { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 7; overflow: hidden; }
     .testimonial .read-more { display: inline-block; margin-top: 8px; padding: 0; background: none; border: 0; cursor: pointer; font: 600 12px/1.4 Inter, system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--navy); border-bottom: 1px solid currentColor; }
+    /* Larger tap areas for small text links (invisible, no layout change) */
+    .testimonial .read-more, footer a, .wa-link, .brand { position: relative; }
+    .testimonial .read-more::before, footer a::before, .wa-link::before, .brand::before {
+      content: ""; position: absolute; left: -10px; right: -10px; top: 50%; height: 44px; transform: translateY(-50%);
+    }
   </style>
 </head>
 <body>
@@ -505,6 +593,7 @@
     <section class="section testimonials">
       <div class="wrap">
         <p class="kicker" data-i18n="testiKicker">Depoimentos</p>
+        <h2 data-i18n="testiTitle">Depoimentos de pessoas como você!</h2>
         <div class="testimonial-columns">
           <div class="testimonial"><p>Ter o Ron como meu professor de inglês foi fundamental para o meu sucesso no “Plano Canadá”. Graças à sua dedicação em me ensinar, consegui em menos de um ano morando no Canadá o emprego que eu queria, na minha área de formação e atuação no Brasil. Meu inglês era básico-intermediário e foi o Ron que me preparou para as entrevistas. Desde então, o Ron me auxiliou em todas as etapas da minha trajetória até me tornar cidadã canadense. Consegui duas promoções na minha área de trabalho e, quando casei, Ron também me ajudou a escrever meus votos de casamento. Tenho muita sorte em tê-lo na minha vida, um professor maravilhoso que tenho muito orgulho de chamar de amigo.</p><span>Nathalia, Risk, Audit &amp; Compliance Analyst</span></div>
           <div class="testimonial"><p>Quando iniciei o meu mestrado no Canadá em 2017, tive a grata felicidade de ser apresentado ao Ron. Durante os dois anos de curso, Ron me ajudou não somente com as revisões de trabalhos acadêmicos e o uso da língua inglesa, como também me preparou para entrevistas e para ingressar no mercado de trabalho. Por exemplo, quando eu estava me preparando para uma entrevista de emprego, ele focava as aulas nesse objetivo e, inclusive, pesquisava sobre a empresa para ser mais eficaz na minha preparação. A adaptabilidade às minhas necessidades é a grande vantagem que encontrei nas aulas do Ron.</p><span>Flávio, Entrepreneur</span></div>
@@ -849,6 +938,7 @@
         levelAdv: "Avançado — estou refinando a fluência para a carreira",
         applySubmit: "Enviar inscrição",
         testiKicker: "Depoimentos",
+        testiTitle: "Depoimentos de pessoas como você!",
         ctaTitle: "Vamos começar a todo vapor?",
         bioRole: "Consultor de comunicação canadense",
         bioCities: "Vancouver – Tóquio – São Paulo",
@@ -978,6 +1068,7 @@
         levelAdv: "Advanced — refining fluency for my career",
         applySubmit: "Send application",
         testiKicker: "Testimonials",
+        testiTitle: "Testimonials by people like you!",
         ctaTitle: "Are you ready to hit the ground running?",
         bioRole: "Canadian Communication Consultant",
         bioCities: "Vancouver – Tokyo – São Paulo",
