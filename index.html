@@ -387,6 +387,8 @@
     .bio-role span { white-space: nowrap; }
     .bio-role .bio-cities { margin-left: auto; }
     @media (max-width: 520px) { .bio-role span { white-space: normal; } .bio-role .bio-cities { margin-left: 0; } }
+    /* Phone: stack the role and cities, centred on the same line as the Beethoven quote */
+    @media (max-width: 860px) { .bio-text .bio-role { flex-direction: column; align-items: center; justify-content: center; text-align: center; } .bio-role .bio-cities { margin-left: 0; } }
     .nav-link { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-soft); }
     .nav-link:hover { color: #fff; }
 
