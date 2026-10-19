@@ -325,6 +325,8 @@
 
     .wa-link { color: inherit; border-bottom: 1px solid currentColor; text-decoration: none; }
     .wa-link:hover { opacity: .8; }
+    .form-en-note { font-weight: 600; margin: 0 0 18px; }
+    .apply-form label .pt-hint { display: block; font-size: .85em; opacity: .6; text-transform: none; letter-spacing: 0; font-weight: 400; margin-top: 3px; }
     .wa-note { font-size: .9em; opacity: .75; margin-top: 4px; }
     .testimonials { background: var(--paper); color: var(--ink); }
     .testimonial-columns { column-count: 3; column-gap: 24px; margin-top: 40px; }
@@ -531,7 +533,7 @@
             <div>
               <h3 data-i18n="c1title">Testando as Águas</h3>
               <p class="who" data-i18n="c1who">Para quem está pensando em morar no Canadá e quer conhecer o país por algumas semanas ou um mês.</p>
-              <p data-i18n="c1body">Curso intensivo de 5 dias, individual, para todos os níveis a partir do básico. Duas horas de aula por dia. Você vive o inglês e o cotidiano canadense antes de dar o grande passo.</p>
+              <p data-i18n="c1body">Curso intensivo de 5 dias, individual, para quem já consegue manter uma conversa simples em inglês (não é para iniciantes). Duas horas de aula por dia. Você vive o inglês e o cotidiano canadense antes de dar o grande passo.</p>
             </div>
           </article>
           <article class="course">
@@ -755,8 +757,9 @@
         <p class="kicker" data-i18n="applyKicker">Inscreva-se</p>
         <p ><span class="line" data-i18n="applyIntro">Preencha os campos abaixo e vamos marcar o seu Preboarding Assessment:</span><span class="line" data-i18n="applyIntro2">Duas horas, online, $100 CAD (não reembolsável), creditados integralmente no curso que você escolher.</span><span class="line" data-i18n="applyIntro3">Você sai com um plano de ação personalizado e a recomendação do curso ideal para você.</span></p>
         <p><span data-i18n="applyWa">Prefere conversar antes?</span> <a class="wa-link" href="https://wa.me/818039114334?text=Hi%20Ron%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20courses." target="_blank" rel="noopener" data-i18n="applyWaLink">Fale comigo no WhatsApp</a></p>
-        <p class="wa-note" data-i18n="applyWaNote">Por favor, escreva para mim em inglês, pois eu não falo português.</p>
+        <p class="wa-note" data-i18n="applyWaNote">Please correspond in English, as I do not speak Portuguese.</p>
         <form class="apply-form" id="applyForm" name="preboarding" method="POST" action="https://api.web3forms.com/submit">
+          <p class="form-en-note">Please answer in English.</p>
           <input type="hidden" name="access_key" value="f884dfc0-ddb7-4480-92a3-ca6892d53866" />
           <input type="hidden" name="subject" id="af-subject" value="Preboarding Assessment" />
           <input type="hidden" name="from_name" value="Executive Class website" />
@@ -888,7 +891,7 @@
         courseKicker: "Os cursos",
         c1title: "Testando as Águas",
         c1who: "Para quem está pensando em morar no Canadá e quer conhecer o país por algumas semanas ou um mês.",
-        c1body: "Curso intensivo de 5 dias, individual, para todos os níveis a partir do básico. Duas horas de aula por dia. Você vive o inglês e o cotidiano canadense antes de dar o grande passo.",
+        c1body: "Curso intensivo de 5 dias, individual, para quem já consegue manter uma conversa simples em inglês (não é para iniciantes). Duas horas de aula por dia. Você vive o inglês e o cotidiano canadense antes de dar o grande passo.",
         c2who: "Para quem vai morar no Canadá — ou acabou de chegar.",
         c2body: "Quatro semanas, com cinco aulas individuais de 2 horas por semana. Dia a dia, trabalho, entrevistas e a confiança para prosperar no seu novo lar.",
         c3who: "Para quem está se preparando para entrevistas de emprego.",
@@ -914,7 +917,7 @@
         payInfoTitle: "Informações importantes",
         applyWa: "Prefere conversar antes?",
         applyWaLink: "Fale comigo no WhatsApp",
-        applyWaNote: "Por favor, escreva para mim em inglês, pois eu não falo português.",
+        applyWaNote: "Please correspond in English, as I do not speak Portuguese.",
         pricesKicker: "Investimento",
         pbLead: "O Preboarding Assessment estabelece a base.",
         pbP1: "Durante a nossa avaliação de duas horas, preciso entender como você chegou até aqui — os desafios que enfrentou, as conquistas que alcançou e a experiência e o conhecimento que construiu ao longo da sua carreira.",
@@ -1031,7 +1034,7 @@
         courseKicker: "The Courses",
         c1title: "Testing the Waters",
         c1who: "For Brazilians considering Canada and visiting for a few weeks or a month.",
-        c1body: "A 5-day one-on-one intensive for all levels from elementary up. Two hours of lessons a day. Live in English and experience everyday Canadian life before you commit to the bigger move.",
+        c1body: "A 5-day one-on-one intensive for anyone who can already hold a simple conversation in English (not for complete beginners). Two hours of lessons a day. Live in English and experience everyday Canadian life before you commit to the bigger move.",
         c2who: "For Brazilians planning to move — or who have just arrived.",
         c2body: "Four weeks of five one-on-one 2-hour lessons a week. Everyday life, work, interviews, and the confidence to thrive in your new home.",
         c3who: "For Brazilians preparing for job interviews.",
@@ -1161,6 +1164,21 @@
       document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
         const key = el.getAttribute("data-i18n-placeholder");
         if (copy[lang][key]) el.placeholder = copy[lang][key];
+      });
+      const af = document.getElementById("applyForm");
+      af.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (copy.en[key]) el.textContent = copy.en[key];
+        if (lang === "pt" && el.tagName === "LABEL" && copy.pt[key] && copy.pt[key] !== copy.en[key]) {
+          const h = document.createElement("small");
+          h.className = "pt-hint";
+          h.textContent = copy.pt[key];
+          el.appendChild(h);
+        }
+      });
+      af.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-placeholder");
+        if (copy.en[key]) el.placeholder = copy.en[key];
       });
       buttons.forEach((b) => b.classList.toggle("active", b.dataset.lang === lang));
       document.querySelectorAll('a[href^="https://wa.me/"]').forEach((a) => {
