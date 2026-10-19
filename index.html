@@ -248,6 +248,8 @@
     .courses-more p { color: rgba(244,239,227,.85); font-size: 16px; max-width: 70ch; margin: 0; }
     .prices { background: var(--navy); border-top: 1px solid rgba(201,162,39,.22); }
     .prices h2 { color: var(--cream); margin-bottom: 28px; }
+    .pb-note { max-width: 900px; margin: 0 0 28px; padding: 14px 18px; border-left: 3px solid var(--gold); background: rgba(244,239,227,.05); color: rgba(244,239,227,.85); font-size: 15px; line-height: 1.55; }
+    .pb-note strong { color: #fff; font-weight: 600; }
     .price-list { border-top: 1px solid rgba(201,162,39,.45); max-width: 900px; }
     .price-row { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid rgba(201,162,39,.22); }
     .price-row h3 { font-family: "Cormorant Garamond", Georgia, serif; font-size: 26px; font-weight: 500; color: #fff; margin: 0 0 4px; }
@@ -676,6 +678,7 @@
     <section class="section prices" id="precos">
       <div class="wrap">
         <h2 class="serif" data-i18n="pricesTitle">Cursos e Investimento</h2>
+        <p class="pb-note" data-i18n-html="priceNote">Todos os cursos começam com o <strong>Preboarding Assessment</strong>: 2 horas, $100 CAD, creditados integralmente no valor do curso. Por exemplo, The Interview Sprint custa $240 no total: $100 no Preboarding Assessment e $140 ao iniciar o curso.</p>
         <div class="price-list">
           <div class="price-row">
             <div>
@@ -923,6 +926,7 @@
         guarTitle: "Minha garantia",
         guarBody: "Se você precisar parar a qualquer momento durante o seu curso, todas as aulas restantes são reembolsadas integralmente. Sem questionamentos.",
         pricesTitle: "Cursos e Investimento",
+        priceNote: "Todos os cursos começam com o <strong>Preboarding Assessment</strong>: 2 horas, $100 CAD, creditados integralmente no valor do curso. Por exemplo, The Interview Sprint custa $240 no total: $100 no Preboarding Assessment e $140 ao iniciar o curso.",
         pricesNote: "Todos os valores estão em dólares canadenses (CAD), e todas as aulas são realizadas online, em formato individual e personalizado. Observe que a taxa do Preboarding Assessment não é reembolsável; no entanto, o valor integral será creditado em qualquer curso em que você se matricular.",
         pr0n: "Preboarding Assessment",
         pr0f: "2 horas · individual · online · pré-requisito para todos os cursos · não reembolsável · creditado integralmente no valor do seu curso",
@@ -1063,6 +1067,7 @@
         guarTitle: "My guarantee",
         guarBody: "If you need to stop at any point during your course, all remaining lessons are refunded in full. No questions asked.",
         pricesTitle: "Courses and Fees",
+        priceNote: "Every course begins with the <strong>Preboarding Assessment</strong>: 2 hours, $100 CAD, fully credited toward your course. For example, The Interview Sprint costs $240 in total: $100 for the Preboarding Assessment and $140 when the course begins.",
         pricesNote: "All fees are listed in Canadian Dollars (CAD), and all lessons are conducted online in a personalized, one-on-one format. Please note that the Preboarding Assessment fee is non-refundable; however, the full amount will be credited toward any course you enroll in.",
         pr0n: "Preboarding Assessment",
         pr0f: "2 hours · one-on-one · online · prerequisite for all courses · non-refundable · fully credited toward your course",
@@ -1141,6 +1146,10 @@
       document.querySelectorAll("[data-i18n]").forEach((el) => {
         const key = el.getAttribute("data-i18n");
         if (copy[lang][key]) el.textContent = copy[lang][key];
+      });
+      document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-html");
+        if (copy[lang][key]) el.innerHTML = copy[lang][key];
       });
       document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
         const key = el.getAttribute("data-i18n-placeholder");
