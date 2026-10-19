@@ -325,6 +325,7 @@
 
     .wa-link { color: inherit; border-bottom: 1px solid currentColor; text-decoration: none; }
     .wa-link:hover { opacity: .8; }
+    .wa-note { font-size: .9em; opacity: .75; margin-top: 4px; }
     .testimonials { background: var(--paper); color: var(--ink); }
     .testimonial-columns { column-count: 3; column-gap: 24px; margin-top: 40px; }
     .testimonial {
@@ -753,7 +754,8 @@
         <p class="spots" data-i18n="applySpots">Para preservar a qualidade da minha metodologia, só posso aceitar 12 novos alunos em 2027.</p>
         <p class="kicker" data-i18n="applyKicker">Inscreva-se</p>
         <p ><span class="line" data-i18n="applyIntro">Preencha os campos abaixo e vamos marcar o seu Preboarding Assessment:</span><span class="line" data-i18n="applyIntro2">Duas horas, online, $100 CAD (não reembolsável), creditados integralmente no curso que você escolher.</span><span class="line" data-i18n="applyIntro3">Você sai com um plano de ação personalizado e a recomendação do curso ideal para você.</span></p>
-        <p><span data-i18n="applyWa">Prefere conversar antes?</span> <a class="wa-link" href="https://wa.me/818039114334?text=Ol%C3%A1%20Ron%2C%20vi%20o%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos." target="_blank" rel="noopener" data-i18n="applyWaLink">Fale comigo no WhatsApp</a></p>
+        <p><span data-i18n="applyWa">Prefere conversar antes?</span> <a class="wa-link" href="https://wa.me/818039114334?text=Hi%20Ron%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20courses." target="_blank" rel="noopener" data-i18n="applyWaLink">Fale comigo no WhatsApp</a></p>
+        <p class="wa-note" data-i18n="applyWaNote">Pode me escrever em inglês, mesmo que seja simples: eu não falo português.</p>
         <form class="apply-form" id="applyForm" name="preboarding" method="POST" action="https://api.web3forms.com/submit">
           <input type="hidden" name="access_key" value="f884dfc0-ddb7-4480-92a3-ca6892d53866" />
           <input type="hidden" name="subject" id="af-subject" value="Preboarding Assessment" />
@@ -852,7 +854,7 @@
   <footer class="wrap">
     <div>© 2026 Ron Taylor · Executive Class</div>
     <div class="footer-cities" data-i18n="footerCity">Canadá</div>
-    <div class="footer-contact"><a href="mailto:executiveclass.ca@gmail.com">executiveclass.ca@gmail.com</a> · <a href="https://wa.me/818039114334?text=Ol%C3%A1%20Ron%2C%20vi%20o%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos." target="_blank" rel="noopener">WhatsApp</a></div>
+    <div class="footer-contact"><a href="mailto:executiveclass.ca@gmail.com">executiveclass.ca@gmail.com</a> · <a href="https://wa.me/818039114334?text=Hi%20Ron%2C%20I%20saw%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20courses." target="_blank" rel="noopener">WhatsApp</a></div>
   </footer>
 
   <script>
@@ -912,6 +914,7 @@
         payInfoTitle: "Informações importantes",
         applyWa: "Prefere conversar antes?",
         applyWaLink: "Fale comigo no WhatsApp",
+        applyWaNote: "Pode me escrever em inglês, mesmo que seja simples: eu não falo português.",
         pricesKicker: "Investimento",
         pbLead: "O Preboarding Assessment estabelece a base.",
         pbP1: "Durante a nossa avaliação de duas horas, preciso entender como você chegou até aqui — os desafios que enfrentou, as conquistas que alcançou e a experiência e o conhecimento que construiu ao longo da sua carreira.",
@@ -991,7 +994,7 @@
         levelAdv: "Avançado — estou aprimorando a fluência para o trabalho",
         applySubmit: "Enviar inscrição",
         testiKicker: "Depoimentos",
-        waText: "Olá Ron, vi o seu site e gostaria de saber mais sobre os cursos.",
+        waText: "Hi Ron, I saw your website and would like to know more about your courses.",
         testiTitle: "Depoimentos de pessoas como você!",
         ctaTitle: "Vamos começar a todo vapor?",
         bioRole: "Consultor de comunicação canadense",
@@ -1054,6 +1057,7 @@
         payInfoTitle: "Important Information",
         applyWa: "Prefer to talk first?",
         applyWaLink: "Message me on WhatsApp",
+        applyWaNote: "Please write to me in English, even if it’s simple: I don’t speak Portuguese.",
         pricesKicker: "Fees",
         pbLead: "The Preboarding Assessment establishes the foundation.",
         pbP1: "During our two-hour assessment, I need to understand how you arrived at this point — the challenges you’ve faced, the successes you’ve achieved, and the experience and knowledge you’ve built throughout your career.",
