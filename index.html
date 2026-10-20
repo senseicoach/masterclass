@@ -420,8 +420,10 @@
       .vancouver .wrap { margin-left: 24px; }
       .bio-grid { grid-template-columns: minmax(0, 1fr); }
       .bio-photo { width: 150px; }
-      .bio-figure { width: 150px; }
+      .bio-figure { width: 150px; margin-left: auto; margin-right: auto; text-align: center; }
     }
+    .testi-cta { display: flex; justify-content: center; margin: 40px 0 0; }
+    .testi-cta .btn { text-align: center; }
     /* Align the bio story, the voice line and the intro on the same centre line as the Beethoven quote */
     :root { --bio-axis: calc((200px + clamp(28px, 5vw, 64px)) / 2); }
     .bio-text > p[data-i18n^="bioP"] { margin-left: auto; margin-right: auto; text-align: center; }
@@ -625,6 +627,7 @@
           <div class="testimonial"><p>Desembarquei em Vancouver em julho de 2019 com inglês nível intermediário e meu marido, com o básico do básico. Eu precisava melhorar vocabulário, aprimorar o ouvido e aprender o inglês do dia a dia. Precisava me comunicar! Meu marido, estudando no college, corria atrás de referências de um professor de inglês que pudesse ajudá-lo a se comunicar melhor. Foi quando uma amiga indicou o Ron. Sempre tive resistência a ter aula online, até perceber que o inglês e a confiança do meu marido melhoravam significativamente. Decidi então me inscrever nas aulas. Foi a melhor coisa que fiz na vida. As aulas eram personalizadas, repassávamos vocabulário, aprendi palavras que nunca pensei em usar. Do conhecimento vieram a confiança e a vontade de nos comunicar ainda mais. E assim, fomos desbloqueando algumas inseguranças, quebrando barreiras. Nós nos permitimos errar, mas nunca insistir no erro. Ainda estamos em evolução, com a diferença de que agora estamos mais preparados e com o suporte de um teacher e amigo que levaremos para o resto de nossas vidas. Como ele diz, conhecimento é investimento. Invista em você!</p><span>Jennifer, International Procurement Analyst</span></div>
           <div class="testimonial"><p>Recomendo as aulas do Ron para qualquer pessoa que esteja em busca de aprimorar a pronúncia em inglês, praticar conversação ou simplesmente ter uma boa conversa sobre temas variados com um falante nativo. Ron é uma das pessoas mais amigáveis e simpáticas que eu já conheci, e as aulas são sempre muito leves, trazendo reflexões não só sobre o idioma, mas também sobre a vida. Ele me acompanhou em diferentes fases da minha trajetória, sempre muito interessado e demonstrando verdadeiro cuidado comigo, mesmo fora das aulas. Por fim, mas não menos importante, Ron é um ótimo conselheiro e encorajador. Ele sempre fez questão de exaltar minhas conquistas e me encorajar a dar o próximo passo, mesmo quando nem eu acreditava que seria possível.</p><span>Taynah, Sales Operations Specialist</span></div>
         </div>
+        <div class="testi-cta"><a class="btn" href="#aplicar" data-i18n="testiCta">Agende o seu Preboarding Assessment</a></div>
       </div>
     </section>
 
@@ -916,6 +919,7 @@
         navApply: "Inscreva-se",
         navCourses: "Investimento",
         viewPrices: "Ver cursos e valores",
+        testiCta: "Agende o seu Preboarding Assessment",
         navCourseList: "Cursos",
         footerCity: "Canadá",
         payCaLabel: "Residentes no Canadá:",
@@ -1065,6 +1069,7 @@
         navApply: "Apply",
         navCourses: "Fees",
         viewPrices: "View courses & fees",
+        testiCta: "Book your Preboarding Assessment",
         navCourseList: "Courses",
         footerCity: "Canada",
         payCaLabel: "Canadian Residents:",
