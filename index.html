@@ -390,6 +390,9 @@
       display: block; margin-top: 12px; font-family: Inter, system-ui, sans-serif; font-style: normal;
       font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); text-align: center;
     }
+    .bio-more-btn { display: block; margin: 36px auto 0; background: none; border: 1px solid rgba(244,239,227,.35); color: var(--cream); padding: 12px 26px; font: 600 12px/1.4 Inter, system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; transition: border-color .2s, background .2s; }
+    .bio-more-btn:hover { border-color: var(--cream); background: rgba(244,239,227,.06); }
+    .bio-more p { margin-left: auto; margin-right: auto; text-align: center; }
     .bio-text p { margin-top: 18px; color: rgba(244,239,227,.8); font-size: 16.5px; max-width: 60ch; }
     .bio-text blockquote + p { margin-top: 64px; }
     .bio-text .kicker { margin-top: 0; font-size: 11px; color: var(--gold); }
@@ -641,6 +644,12 @@
           <p data-i18n="bioP1">Ao compartilhar a jornada dos meus alunos, vivi a alquimia que nasce quando um ser humano estende a mão a outro, e aprendi lições que só três décadas de experiência podem ensinar.</p>
           <p data-i18n="bioP2">Não alcancei o divino, mas vivo uma vida cheia de sentido graças a pessoas como você — pessoas que investem no próprio sucesso e que se levantam quando tropeçam.</p>
           <p data-i18n="bioP3">Quero guiar você enquanto se firma no Canadá.</p>
+          <div class="bio-more" id="bioMore" hidden>
+            <p data-i18n="bioM1">Nasci e cresci em Vancouver. Antes de o ensino se tornar o trabalho da minha vida, trabalhei para o Governo Federal do Canadá, no Immigration and Refugee Board, e estudei radiodifusão e redação publicitária, uma formação que ainda molda a forma como escuto e como ajudo as pessoas a encontrar as palavras certas.</p>
+            <p data-i18n="bioM2">Ensino inglês há trinta anos. Ao longo desse caminho, desenvolvi uma metodologia criada para ajudar imigrantes a realizar o seu sonho canadense: não apenas falar inglês, mas ser ouvido em inglês.</p>
+            <p data-i18n="bioM3">Hoje moro em Tóquio, onde estou terminando quatro livros.</p>
+          </div>
+          <button type="button" class="bio-more-btn" data-i18n="bioMore" aria-expanded="false" aria-controls="bioMore">Saiba mais sobre mim</button>
         </div>
       </div>
     </section>
@@ -999,6 +1008,10 @@
         testiTitle: "Depoimentos de pessoas como você!",
         ctaTitle: "Vamos começar a todo vapor?",
         bioRole: "Consultor de comunicação canadense",
+        bioM1: "Nasci e cresci em Vancouver. Antes de o ensino se tornar o trabalho da minha vida, trabalhei para o Governo Federal do Canadá, no Immigration and Refugee Board, e estudei radiodifusão e redação publicitária, uma formação que ainda molda a forma como escuto e como ajudo as pessoas a encontrar as palavras certas.",
+        bioM2: "Ensino inglês há trinta anos. Ao longo desse caminho, desenvolvi uma metodologia criada para ajudar imigrantes a realizar o seu sonho canadense: não apenas falar inglês, mas ser ouvido em inglês.",
+        bioM3: "Hoje moro em Tóquio, onde estou terminando quatro livros.",
+        bioMore: "Saiba mais sobre mim", bioLess: "Mostrar menos",
         formSending: "Enviando…",
         formThanks: "Obrigado! Recebi a sua inscrição e vou responder por e-mail em breve.",
         formError: "Não foi possível enviar agora. Tente de novo em alguns minutos ou fale comigo pelo WhatsApp.",
@@ -1142,6 +1155,10 @@
         testiTitle: "Testimonials by people like you!",
         ctaTitle: "Are you ready to hit the ground running?",
         bioRole: "Canadian Communication Consultant",
+        bioM1: "I was born and raised in Vancouver. Before teaching became my life’s work, I worked for the Federal Government of Canada at the Immigration and Refugee Board, and I studied broadcasting and copywriting, training that still shapes how I listen and how I help people find the right words.",
+        bioM2: "I have taught English for thirty years. Along the way, I developed a methodology designed to help immigrants achieve their Canadian Dream: not just to speak English, but to be heard in it.",
+        bioM3: "Today I am based in Tokyo, where I am finishing four books.",
+        bioMore: "More about me", bioLess: "Show less",
         formSending: "Sending…",
         formThanks: "Thank you! I’ve received your application and will reply by email soon.",
         formError: "The form couldn’t be sent right now. Please try again in a few minutes, or message me on WhatsApp.",
@@ -1250,6 +1267,21 @@
           b.textContent = labels[l][open ? 1 : 0];
         });
         p.insertAdjacentElement("afterend", b);
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      var btn = document.querySelector(".bio-more-btn"), box = document.getElementById("bioMore");
+      if (!btn || !box) return;
+      btn.addEventListener("click", function () {
+        var open = box.hidden;
+        box.hidden = !open;
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        var key = open ? "bioLess" : "bioMore";
+        btn.setAttribute("data-i18n", key);
+        var l = document.documentElement.lang === "en" ? "en" : "pt";
+        btn.textContent = copy[l][key];
       });
     })();
   </script>
