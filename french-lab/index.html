@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>French Listening Lab | Executive Class</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎧</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#23272c; --navy-2:#2e333a; --navy-3:#3c424a; --chalk:#e8eaec; --dim:#a3aab2;
+  --paper:#f5f5f3; --white:#fff; --ink:#1e2226; --muted:#5b6168; --rule:#dcdfe2;
+  --gold:#4e9c93; --gold-soft:#e2f1ef;
+  --missed:#f7dca4; --missed-ink:#6a4300; --extra:#b3261e;
+  --p1:#2f6f69; --p2:#7a3b2e; --p3:#2f4f86; --p4:#3d6b3a; --p5:#9a5a12; --p6:#8a3b5a; --p7:#5f5a1c;
+  --p8:#4b3f8f; --p9:#1f5e7a; --p10:#6b2d5c; --p11:#384a62; --p12:#8a4b12; --p13:#2d6a4f;
+  --part:var(--p1);
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:"Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+[data-part="1"]{--part:var(--p1)} [data-part="2"]{--part:var(--p2)} [data-part="3"]{--part:var(--p3)}
+[data-part="4"]{--part:var(--p4)} [data-part="5"]{--part:var(--p5)} [data-part="6"]{--part:var(--p6)}
+[data-part="7"]{--part:var(--p7)} [data-part="8"]{--part:var(--p8)} [data-part="9"]{--part:var(--p9)}
+[data-part="10"]{--part:var(--p10)} [data-part="11"]{--part:var(--p11)} [data-part="12"]{--part:var(--p12)} [data-part="13"]{--part:var(--p13)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.55;font-size:16px}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+a{color:var(--part)}
+
+.shell{display:grid;grid-template-columns:330px 1fr;min-height:100vh}
+aside{background:var(--navy);color:var(--chalk);position:sticky;top:0;height:100vh;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px)}
+.brand{padding:26px 24px 20px;border-bottom:1px solid var(--navy-3);display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center}
+.crest{width:46px;height:46px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-weight:700;color:var(--gold);font-size:17px;letter-spacing:.02em}
+.brand h1{font-family:var(--serif);font-weight:600;font-size:23px;line-height:1.1;color:var(--white)}
+.brand p{font-size:13px;color:var(--dim);margin-top:3px}
+.search{padding:14px 24px;border-bottom:1px solid var(--navy-3)}
+.search input{width:100%;background:var(--navy-2);border:1px solid var(--navy-3);border-radius:8px;padding:9px 12px;color:var(--white)}
+.search input::placeholder{color:#8794ad}
+.progress-mini{padding:12px 24px;border-bottom:1px solid var(--navy-3);font-size:13px;color:var(--dim)}
+.progress-mini .bar{height:5px;background:var(--navy-3);border-radius:3px;margin-top:6px;overflow:hidden}
+.progress-mini .bar i{display:block;height:100%;background:var(--gold);border-radius:3px}
+nav{overflow-y:auto;flex:1;padding:6px 0 24px}
+.home-link{display:block;width:100%;text-align:left;background:none;border:0;color:var(--chalk);padding:12px 24px 8px;cursor:pointer;font-size:14.5px;font-weight:600}
+.home-link:hover{color:var(--gold)}
+details.part{margin-top:2px}
+details.part summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:28px 1fr auto;align-items:baseline;gap:8px;padding:9px 24px;font-family:var(--serif);font-size:16.5px;font-weight:600;color:var(--white)}
+details.part summary::-webkit-details-marker{display:none}
+details.part summary b{font-family:var(--sans);font-size:12px;font-weight:700;color:var(--navy);background:var(--dim);border-radius:4px;text-align:center;padding:1px 0}
+details.part[open] summary b{background:var(--gold)}
+details.part summary small{font-family:var(--sans);font-size:12px;font-weight:400;color:var(--dim)}
+details.part summary:hover{background:var(--navy-2)}
+nav ol{list-style:none;padding:2px 0 8px}
+nav li button{display:grid;grid-template-columns:30px 1fr 16px;gap:6px;width:100%;text-align:left;background:none;border:0;color:#c9d1df;padding:6px 20px 6px 40px;cursor:pointer;font-size:14px;line-height:1.35}
+nav li button span:first-child{color:var(--dim);font-variant-numeric:tabular-nums}
+nav li button:hover{background:var(--navy-2);color:var(--white)}
+nav li button[aria-current="true"]{background:var(--navy-3);color:var(--white);box-shadow:inset 3px 0 0 var(--gold)}
+nav li button .ck{color:var(--gold);font-size:12px}
+.empty{padding:16px 24px;color:var(--dim);font-size:14px}
+
+.scrim{display:none}
+main{min-width:0;grid-column:2}
+.topbar{display:none}
+.wrap{max-width:800px;margin:0 auto;padding:48px 32px 90px}
+
+/* home */
+.hero{border-bottom:1px solid var(--rule);padding-bottom:30px;margin-bottom:10px}
+.hero h2{font-family:var(--serif);font-size:48px;font-weight:600;line-height:1.05;letter-spacing:-.01em;color:var(--navy);margin-bottom:18px;max-width:17ch}
+.hero p{font-size:17.5px;max-width:62ch;margin-bottom:12px;color:#2b3446}
+.hero .exchange{margin:26px 0 6px;max-width:560px}
+.sec{font-family:var(--serif);font-size:30px;font-weight:600;margin:40px 0 6px;color:var(--navy)}
+.sub{color:var(--muted);max-width:62ch;margin-bottom:14px}
+.steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:18px 0 8px;border:1px solid var(--rule);border-radius:10px;background:var(--white);overflow:hidden}
+.steps li{padding:16px 18px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.steps li:nth-child(3n){border-right:0}
+.steps li:nth-last-child(-n+3){border-bottom:0}
+.steps b{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:19px;font-weight:600;color:var(--navy)}
+.steps b i{font-style:normal;font-family:var(--sans);font-size:13px;width:24px;height:24px;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center}
+.steps span{display:block;font-size:14px;color:var(--muted);margin-top:4px;line-height:1.4}
+.parts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:16px}
+.parts-grid button{display:flex;flex-direction:column;gap:6px;text-align:left;background:var(--white);border:1px solid var(--rule);border-radius:10px;padding:16px 16px 14px;cursor:pointer;position:relative;overflow:hidden}
+.parts-grid button::before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:var(--part)}
+.parts-grid button:hover{border-color:var(--part)}
+.parts-grid .pn{font-size:13px;font-weight:700;color:var(--part)}
+.parts-grid strong{font-family:var(--serif);font-size:20px;line-height:1.15;color:var(--ink)}
+.parts-grid .pd{font-size:14px;color:var(--muted);line-height:1.4}
+.parts-grid .pc{font-size:13px;color:var(--part);font-weight:600;margin-top:auto;padding-top:6px}
+.toc{columns:2 300px;column-gap:30px;margin:14px 0 30px}
+.toc section{break-inside:avoid;margin-bottom:22px}
+.toc h4{font-family:var(--serif);font-size:19px;font-weight:600;margin-bottom:4px;color:var(--part);padding-bottom:5px;border-bottom:2px solid var(--part)}
+.toc ol{list-style:none}
+.toc button{display:grid;grid-template-columns:32px 1fr auto;width:100%;text-align:left;background:none;border:0;padding:4px 0;cursor:pointer;font-size:15px;color:var(--ink);gap:4px}
+.toc button span:first-child{color:var(--part);font-variant-numeric:tabular-nums;font-weight:600}
+.toc button:hover{color:var(--part)}
+.toc .ck{color:var(--gold);font-size:13px}
+.notice{background:var(--white);border:1px solid var(--rule);border-left:4px solid var(--gold);padding:18px 20px;margin:22px 0;border-radius:0 8px 8px 0}
+.notice h3{font-size:16px;margin-bottom:6px}
+.notice p{font-size:15px;color:var(--muted)}
+.resetrow{font-size:14px;color:var(--muted);margin-top:8px}
+.linkbtn{background:none;border:0;color:var(--part);text-decoration:underline;cursor:pointer;padding:0}
+
+/* script page */
+.plate{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;margin-bottom:24px}
+.num{width:92px;height:92px;border-radius:12px;background:var(--part);color:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:inset 0 -6px 0 rgba(0,0,0,.18)}
+.num small{font-size:11.5px;font-weight:600;opacity:.8}
+.num b{font-family:var(--serif);font-size:40px;line-height:1;font-weight:600}
+.partname{font-size:14px;font-weight:600;color:var(--part)}
+.script h2{font-family:var(--serif);font-size:38px;font-weight:600;line-height:1.1;margin:4px 0 10px;color:var(--ink)}
+.facts{display:flex;flex-wrap:wrap;gap:8px}
+.facts span{font-size:13px;border:1px solid var(--rule);background:var(--white);border-radius:999px;padding:3px 10px;color:var(--muted)}
+.facts span.kind{border-color:color-mix(in srgb,var(--part) 35%,#fff);color:var(--part);background:color-mix(in srgb,var(--part) 7%,#fff);font-weight:600}
+
+.rounds{display:grid;grid-template-columns:repeat(6,1fr);list-style:none;margin:0 0 -1px;position:relative;z-index:1}
+.rounds button{width:100%;background:transparent;border:1px solid transparent;border-bottom:0;border-radius:10px 10px 0 0;padding:10px 6px 11px;cursor:pointer;font-size:13px;line-height:1.25;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:4px}
+.rounds button i{font-style:normal;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--rule);display:grid;place-items:center;font-weight:700;font-size:13px;background:var(--white)}
+.rounds button:hover{color:var(--part)}
+.rounds button.done i{background:var(--part);border-color:var(--part);color:var(--white)}
+.rounds button[aria-current="step"]{background:var(--white);border-color:var(--rule);color:var(--ink);font-weight:600}
+.rounds button[aria-current="step"] i{border-color:var(--part);color:var(--part);background:var(--white);box-shadow:0 0 0 3px color-mix(in srgb,var(--part) 18%,#fff)}
+.panel{background:var(--white);border:1px solid var(--rule);border-radius:0 0 12px 12px;padding:24px 26px 22px}
+.panel h3{font-family:var(--serif);font-size:27px;font-weight:600;line-height:1.1;margin-bottom:6px;color:var(--part)}
+.panel .hint{font-size:15.5px;color:var(--muted);margin-bottom:16px;max-width:64ch}
+
+/* player */
+.deck{border:1px solid var(--rule);border-radius:10px;background:#f8f9fb;padding:14px 16px;margin-bottom:14px}
+.deck-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.deck-row+.deck-row{margin-top:10px;padding-top:10px;border-top:1px solid var(--rule)}
+.btn{background:var(--part);color:var(--white);border:0;border-radius:8px;padding:10px 16px;cursor:pointer;font-weight:600;font-size:15px}
+.btn:hover{filter:brightness(.9)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.secondary{background:var(--white);color:var(--part);border:1px solid var(--rule)}
+.btn.secondary:hover{border-color:var(--part);background:color-mix(in srgb,var(--part) 6%,#fff)}
+.btn.big{padding:11px 20px;min-width:128px}
+.btn.gold{background:var(--navy);color:var(--gold)}
+.deck label{font-size:14px;color:var(--muted);display:flex;gap:6px;align-items:center}
+.deck select{border:1px solid var(--rule);border-radius:6px;padding:6px 8px;background:var(--white);max-width:210px;font-size:14px}
+.deck .sp{margin-left:auto}
+.nowline{font-size:14px;color:var(--muted);flex:1;min-width:180px}
+.nowline b{color:var(--ink)}
+.track{height:6px;background:var(--rule);border-radius:3px;overflow:hidden;margin-top:10px}
+.track i{display:block;height:100%;width:0;background:var(--part);transition:width .2s}
+.voice-note{font-size:13px;color:var(--muted);margin:2px 0 16px}
+.recording audio{width:100%;margin-bottom:6px}
+.check{display:flex;gap:8px;align-items:center;font-size:14px;color:var(--ink);cursor:pointer}
+.check input{accent-color:var(--part);width:17px;height:17px}
+
+/* transcript as a dialogue script */
+.dlg{margin-top:6px;border-top:1px solid var(--rule)}
+.turn{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid #eceef2}
+.who{font-size:13px;font-weight:700;padding-top:4px}
+.turn.P .who{color:var(--part)}
+.turn.S .who{color:#4d5a70}
+.turn.S .say{background:#f3f5f8;border-radius:10px;padding:8px 12px;margin-left:-12px}
+.say{font-family:var(--serif);font-size:18.5px;line-height:1.7}
+.seg{border-radius:4px;transition:background .15s;cursor:pointer}
+.seg:hover{background:color-mix(in srgb,var(--part) 8%,transparent)}
+.seg.on{background:var(--gold-soft);box-shadow:0 0 0 2px var(--gold-soft)}
+.masked{border:1px dashed #b9c1ce;border-radius:10px;padding:22px 24px;color:var(--muted);font-size:15px;background:#fafbfc}
+.masked .turns{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.masked .turns span{font-size:12.5px;font-weight:700;border-radius:4px;padding:3px 8px;background:var(--white);border:1px solid var(--rule)}
+.masked .turns span.P{color:var(--part)}
+.masked .turns span.on{background:var(--gold-soft);border-color:var(--gold)}
+
+.field{margin-top:14px}
+.field label{display:block;font-size:14px;font-weight:600;margin-bottom:6px;color:var(--ink)}
+.field input{width:100%;max-width:360px;border:1px solid var(--rule);border-radius:8px;padding:9px 12px;background:var(--white)}
+textarea{width:100%;min-height:210px;border:1px solid var(--rule);border-radius:10px;padding:14px 16px;background:var(--white);font-size:17px;line-height:1.6;resize:vertical}
+textarea.short{min-height:100px}
+textarea:focus,.field input:focus{border-color:var(--part);outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--part) 15%,#fff)}
+.prompts{list-style:none;margin:6px 0 4px;display:grid;gap:6px}
+.prompts li{font-size:15px;padding-left:18px;position:relative}
+.prompts li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.nextrow{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:22px;padding-top:18px;border-top:1px solid var(--rule)}
+
+.result{margin-top:22px;border:1px solid var(--rule);border-radius:10px;padding:20px 22px;background:#fbfbfc}
+.score{font-family:var(--serif);font-size:40px;font-weight:600;line-height:1;color:var(--part)}
+.score small{font-family:var(--sans);font-size:15px;font-weight:400;color:var(--muted);margin-left:8px}
+.legend{font-size:14px;color:var(--muted);margin:12px 0}
+.legend mark,.legend del{padding:0 4px}
+.diff{font-size:17px;line-height:1.9;font-family:var(--serif)}
+mark{background:var(--missed);color:var(--missed-ink);border-radius:3px;padding:0 2px}
+mark.small{outline:2px solid #c98a1a;outline-offset:-1px}
+del{color:var(--extra);text-decoration:line-through}
+.smalls{margin-top:14px;font-size:15px}
+.rest{color:#9aa1a8}
+.sendbox{margin-top:18px;padding-top:16px;border-top:1px solid var(--rule)}
+.sendbox p{font-size:14px;color:var(--muted);margin-top:8px}
+.status{font-size:14px;color:var(--part);margin-top:8px;min-height:1.2em}
+.done-banner{margin-top:16px;display:flex;gap:12px;align-items:center;background:var(--gold-soft);border:1px solid #e8d49f;border-radius:10px;padding:12px 16px;font-size:15px}
+
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:40px;padding-top:22px;border-top:1px solid var(--rule)}
+.pager button{background:none;border:0;cursor:pointer;text-align:left;max-width:48%;padding:4px 0}
+.pager button:last-child{text-align:right;margin-left:auto}
+.pager small{display:block;font-size:13px;color:var(--muted)}
+.pager span{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--ink)}
+.pager button:hover span{color:var(--part)}
+
+@media (max-width:900px){
+  .shell{grid-template-columns:1fr}
+  main{grid-column:1}
+  aside{position:fixed;inset:0 auto 0 0;width:min(340px,88vw);z-index:30;transform:translateX(-100%);transition:transform .2s ease}
+  aside.open{transform:none}
+  .scrim{position:fixed;inset:0;background:rgba(10,18,32,.45);z-index:20;display:none}
+  .scrim.open{display:block}
+  .topbar{display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:10;background:var(--navy);color:var(--white);padding:10px 16px;padding-top:calc(10px + env(safe-area-inset-top,0px))}
+  .topbar button{background:var(--navy-3);color:var(--white);border:0;border-radius:6px;padding:8px 12px;cursor:pointer}
+  .topbar strong{font-family:var(--serif);font-size:19px;font-weight:600}
+  .wrap{padding:26px 16px 70px}
+  .hero h2{font-size:36px}
+  .script h2{font-size:29px}
+  .plate{grid-template-columns:1fr;gap:12px}
+  .num{width:70px;height:70px}.num b{font-size:30px}
+  .rounds{grid-template-columns:repeat(3,1fr);gap:4px;margin-bottom:8px}
+  .rounds button{border:1px solid var(--rule);border-radius:8px;background:var(--white)}
+  .panel{border-radius:12px;padding:18px 16px}
+  .steps{grid-template-columns:1fr}
+  .steps li{border-right:0!important;border-bottom:1px solid var(--rule)!important}
+  .steps li:last-child{border-bottom:0!important}
+  .turn{grid-template-columns:1fr;gap:2px}
+  .turn.S .say{margin-left:0}
+  .say{font-size:17.5px}
+  .deck .sp{margin-left:0}
+}
+@media (prefers-reduced-motion: reduce){aside,.track i,.seg{transition:none}}
+@media print{
+  aside,.topbar,.deck,.voice-note,.rounds,.pager,.nextrow,.actions,textarea,.field{display:none!important}
+  .shell{display:block}.panel{border:0;padding:0}
+}
+
+.setting{font-size:15px;color:var(--muted);margin:-4px 0 10px}
+.setting b{color:var(--ink);font-weight:600}
+.star{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--rule);border-radius:10px;background:var(--white);overflow:hidden;margin:16px 0 10px}
+.star li{padding:16px 16px 14px;border-right:1px solid var(--rule)}
+.star li:last-child{border-right:0}
+.star b{display:block;font-family:var(--serif);font-size:30px;line-height:1;color:var(--gold)}
+.star strong{display:block;font-family:var(--serif);font-size:19px;color:var(--navy);margin-top:6px}
+.star em{display:block;font-style:normal;font-size:12.5px;font-weight:700;color:var(--muted);margin-top:2px}
+.star span{display:block;font-size:14px;color:var(--muted);margin-top:6px;line-height:1.4}
+.star li.act{background:var(--gold-soft)}
+.pitfalls{list-style:none;display:grid;gap:10px;margin:14px 0 6px}
+.pitfalls li{background:var(--white);border:1px solid var(--rule);border-radius:10px;padding:12px 16px;font-size:15px}
+.pitfalls li b{color:var(--navy)}
+.formula{counter-reset:f;list-style:none;display:grid;gap:10px;margin:14px 0}
+.formula li{counter-increment:f;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;font-size:15.5px}
+.formula li::before{content:counter(f);width:30px;height:30px;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-weight:700;font-size:14px}
+.coach{margin-top:18px;background:var(--gold-soft);border:1px solid #edcfb2;border-radius:10px;padding:16px 18px}
+.coach h4{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--navy);margin-bottom:4px}
+.coach p{font-size:15.5px;color:#3a3a33}
+.mine{margin-top:22px;padding-top:18px;border-top:1px solid var(--rule)}
+.mine h4{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--part);margin-bottom:4px}
+@media (max-width:900px){.star{grid-template-columns:1fr 1fr}.star li:nth-child(2){border-right:0}.star li:nth-child(-n+2){border-bottom:1px solid var(--rule)}}
+.scene{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--muted);margin:-2px 0 10px;max-width:62ch}
+.listenfor{margin-top:18px;background:var(--gold-soft);border:1px solid #bfe0dc;border-radius:10px;padding:16px 18px}
+.listenfor h4{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--navy);margin-bottom:4px}
+.listenfor p{font-size:15.5px;color:#2d3a38}
+.listenfor p+p{margin-top:6px}
+.respond{margin-top:22px}
+.respond h4{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--navy);margin-bottom:4px}
+.rsp{border:1px solid var(--rule);border-radius:10px;padding:14px 16px;margin-top:12px;background:var(--white)}
+.rsit{font-size:14.5px;color:#55615f}
+.rq{font-size:17px;margin:6px 0 10px}
+.rsp .field{margin-bottom:10px}
+.model{margin-top:10px;background:var(--gold-soft);border-radius:8px;padding:10px 12px;font-size:16px}
+.model span{display:block;font-size:13.5px;color:#55615f;margin-top:4px}
+.startlist{list-style:none;display:grid;gap:8px;margin:14px 0 8px}
+.startlist button{display:grid;grid-template-columns:40px 1fr auto;gap:12px;align-items:center;width:100%;text-align:left;background:var(--white);border:1px solid var(--rule);border-radius:10px;padding:12px 16px;cursor:pointer;font:inherit;color:var(--ink)}
+.startlist button:hover{border-color:var(--gold)}
+.startlist .n{width:32px;height:32px;border-radius:8px;background:var(--gold);color:#fff;display:grid;place-items:center;font-weight:700;font-variant-numeric:lining-nums}
+.startlist b{display:block;font-family:var(--serif);font-size:18px}
+.startlist small{color:var(--muted);font-size:13.5px}
+.startlist .lv{font-size:12.5px;font-weight:700;color:var(--gold);text-align:right}
+.startlist .ck{color:var(--gold);font-weight:700}
+.cats{margin-top:20px;padding-top:14px;border-top:1px solid rgba(127,127,127,.35)}.cats h4{margin:0 0 6px;font-size:17px}.cats ol{margin:8px 0 0;padding-left:26px}.cats li{margin:4px 0;line-height:1.5}
+#yourturn{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:60;background:#F2C14E;color:#2a2100;padding:12px 22px 14px;border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,.28);font-size:18px;min-width:min(320px,90vw);text-align:center}#yourturn .yt-bar{display:block;height:5px;background:rgba(0,0,0,.15);border-radius:3px;margin-top:9px;overflow:hidden}#yourturn .yt-bar i{display:block;height:100%;width:100%;background:#2a2100;animation:ytshrink linear forwards}@keyframes ytshrink{from{width:100%}to{width:0}}.rp-note{font-weight:400;opacity:.75}
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside id="sidebar" aria-label="Scripts">
+    <div class="brand">
+      <div class="crest" aria-hidden="true">FL</div>
+      <div><h1>French Listening Lab</h1><p>Executive Class</p></div>
+    </div>
+    <div class="search">
+      <label for="q" style="position:absolute;left:-9999px">Search stories</label>
+      <input id="q" type="search" placeholder="Search stories and topics">
+    </div>
+    <div class="progress-mini" id="progMini"></div>
+    <nav id="nav"></nav>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+  <main>
+    <div class="topbar"><button id="menuBtn" aria-controls="sidebar" aria-expanded="false">Stories</button><strong>French Listening Lab</strong></div>
+    <div class="wrap" id="view"></div>
+  </main>
+</div>
+<script>
+const BOOK = [{"part": 1, "title": "Foundations", "desc": "NCLC 1–3 (A1–A2). Short, slow conversations for Lucas's first weeks in Montréal.", "scripts": [{"num": 1, "title": "Bonjour, je m'appelle Lucas", "lines": [["P", "Bonjour !", "Martin"], ["S", "Bonjour. Je m'appelle Lucas. Je suis votre nouveau voisin.", "Lucas"], ["P", "Ah, enchanté, Lucas ! Moi, c'est Martin. J'habite ici, au 4B.", "Martin"], ["S", "Enchanté, Martin. Moi, j'habite au 4A, en face.", "Lucas"], ["P", "Bienvenue dans l'immeuble ! Tu viens d'où ?", "Martin"], ["S", "Je viens du Brésil. Je suis de Belo Horizonte.", "Lucas"], ["P", "Le Brésil ! Super. Moi, je viens de la ville de Québec. Et tu peux me tutoyer, hein. Ici, entre voisins, on se tutoie.", "Martin"], ["S", "D'accord ! Tu travailles à Montréal ?", "Lucas"], ["P", "Oui, je suis professeur dans une école secondaire. Et toi ?", "Martin"], ["S", "Moi, je suis développeur informatique. Je commence mon nouveau travail lundi.", "Lucas"], ["P", "Bonne chance ! Tu restes longtemps dans l'immeuble ?", "Martin"], ["S", "Quelques mois. Je cherche un appartement pour le premier juillet.", "Lucas"], ["P", "Bonne idée. Si tu as besoin de quelque chose, je suis là.", "Martin"], ["S", "Merci beaucoup, Martin. Bonne soirée !", "Lucas"], ["P", "Bonne soirée, Lucas !", "Martin"]], "words": 129, "kind": "story", "scene": "Hello, my name is Lucas. Lucas meets Martin, his neighbour in the furnished apartment where he is staying.", "F": "Greetings, être, names and countries", "V": "enchanté (pleased to meet you); un voisin (a neighbour); l'immeuble (the building); en face (across the hall, opposite); tutoyer (to say tu instead of vous); quelques mois (a few months)", "t": [[1.99, 4.44], [5.09, 7.27], [7.49, 10.06], [10.27, 13.44], [14.09, 17.74], [17.95, 21.12], [21.34, 25.56], [26.21, 29.3], [29.52, 34.06], [34.7, 37.87], [38.09, 40.32], [40.97, 43.87], [44.09, 47.33], [47.98, 50.5], [50.71, 53.11], [53.33, 57.96], [58.18, 61.94], [62.16, 66.96], [67.61, 69.77], [69.98, 72.84], [73.49, 79.13], [79.34, 81.26], [81.91, 86.02], [86.23, 90.05], [90.7, 93.34], [93.55, 96.94], [97.58, 99.72], [99.94, 104.11], [104.76, 107.18], [107.4, 112.82], [113.47, 116.83], [117.05, 119.52], [120.17, 123.55]], "R": []}, {"num": 2, "title": "À l'aéroport", "lines": [["P", "Bonjour, madame. Excusez-moi, je cherche les taxis.", "Lucas"], ["S", "Bonjour ! Les taxis sont dehors, à droite de la sortie.", "L'agente"], ["P", "Merci. Est-ce qu'il y a aussi un autobus pour le centre-ville ?", "Lucas"], ["S", "Oui, l'autobus 747. Il va au centre-ville. Il passe souvent, le jour et la nuit.", "L'agente"], ["P", "Où est l'arrêt ?", "Lucas"], ["S", "L'arrêt est juste devant la sortie, à gauche.", "L'agente"], ["P", "Et où est-ce que j'achète un billet ?", "Lucas"], ["S", "Il y a des machines ici, au niveau des arrivées.", "L'agente"], ["P", "Parfait. Et où sont les toilettes, s'il vous plaît ?", "Lucas"], ["S", "Là-bas, à côté du café.", "L'agente"], ["P", "Une dernière question. Il fait froid dehors ?", "Lucas"], ["S", "Oui ! Il fait moins deux aujourd'hui, et il va neiger ce soir. Mettez votre manteau !", "L'agente"], ["P", "Merci, madame. Bonne journée !", "Lucas"], ["S", "Bonne journée, et bienvenue à Montréal !", "L'agente"]], "words": 117, "kind": "story", "scene": "At the airport. Lucas has just landed at Montréal-Trudeau and asks at the information desk.", "F": "Simple questions, places in the airport, the weather", "V": "dehors (outside); la sortie (the exit); l'arrêt (the (bus) stop); un billet (a ticket); les arrivées (arrivals); moins deux (minus two (degrees)); il va neiger (it's going to snow)", "t": [[1.99, 5.04], [5.26, 9.26], [9.91, 12.14], [12.36, 16.97], [17.62, 19.68], [19.9, 24.48], [25.13, 29.57], [29.78, 32.69], [32.9, 37.01], [37.66, 39.86], [40.51, 45.22], [45.86, 49.13], [49.78, 54.5], [55.15, 57.07], [57.29, 61.13], [61.78, 65.42], [66.07, 68.81], [69.02, 71.71], [72.36, 74.23], [74.45, 79.49], [79.7, 82.56], [83.21, 86.18], [86.4, 88.7], [89.35, 93.67]], "R": []}, {"num": 3, "title": "Le taxi", "lines": [["P", "Bonsoir ! Vous allez où ?", "Le chauffeur"], ["S", "Bonsoir. Je vais au 3450, rue Saint-Urbain, s'il vous plaît.", "Lucas"], ["P", "Le 3450, Saint-Urbain. C'est sur le Plateau. Pas de problème.", "Le chauffeur"], ["S", "C'est loin d'ici ?", "Lucas"], ["P", "Non, pas trop. Quinze minutes, avec la circulation.", "Le chauffeur"], ["S", "Est-ce que je peux payer par carte ?", "Lucas"], ["P", "Oui, bien sûr. Par carte ou en argent comptant. Vous êtes ici en vacances ?", "Le chauffeur"], ["S", "Non, je commence un nouveau travail. Je suis brésilien.", "Lucas"], ["P", "Le Brésil ! Bienvenue ! Bon, nous sommes sur Saint-Urbain. C'est à gauche ou à droite ?", "Le chauffeur"], ["S", "À droite. C'est la maison avec la porte bleue.", "Lucas"], ["P", "Celle-ci ?", "Le chauffeur"], ["S", "Oui, c'est ici. Combien je vous dois ?", "Lucas"], ["P", "Ça fait vingt-deux dollars.", "Le chauffeur"], ["S", "Voici vingt-cinq dollars. Gardez la monnaie.", "Lucas"], ["P", "Merci beaucoup ! Bonne soirée !", "Le chauffeur"]], "words": 110, "kind": "story", "scene": "The taxi. Lucas takes a taxi from downtown to the furnished apartment on the Plateau.", "F": "Addresses, street numbers, à gauche / à droite", "V": "la circulation (traffic); en argent comptant (in cash); à gauche, à droite (left, right); Combien je vous dois ? (How much do I owe you?); Gardez la monnaie. (Keep the change.)", "t": [[1.99, 4.32], [4.54, 6.82], [7.46, 9.77], [9.98, 16.58], [17.23, 21.91], [22.13, 24.77], [24.98, 27.55], [28.2, 30.55], [31.2, 33.79], [34.01, 38.3], [38.95, 42.19], [42.84, 45.79], [46.01, 49.39], [49.61, 52.87], [53.52, 57.58], [57.79, 60.43], [61.08, 63.53], [63.74, 65.9], [66.12, 69.77], [69.98, 73.15], [73.8, 75.82], [76.03, 79.46], [80.11, 82.25], [82.9, 85.78], [85.99, 88.56], [89.21, 92.4], [93.05, 96.26], [96.48, 99.0], [99.65, 102.05], [102.26, 104.66]], "R": []}, {"num": 4, "title": "Au dépanneur", "lines": [["P", "Bonjour !", "Lucas"], ["S", "Bonjour ! Je peux vous aider ?", "Le commis"], ["P", "Oui. Est-ce que vous avez du lait ?", "Lucas"], ["S", "Oui, le lait est dans le frigo, au fond, à gauche.", "Le commis"], ["P", "Merci. Et le pain ?", "Lucas"], ["S", "Le pain est ici, à côté de la caisse.", "Le commis"], ["P", "Je voudrais aussi une carte prépayée pour mon téléphone.", "Lucas"], ["S", "Oui. Vingt-cinq ou cinquante dollars ?", "Le commis"], ["P", "Vingt-cinq, s'il vous plaît. Et deux bouteilles d'eau.", "Lucas"], ["S", "Alors, un litre de lait, un pain, la carte et deux bouteilles d'eau. Ça fait trente-six dollars et cinquante.", "Le commis"], ["P", "Je peux payer par carte ?", "Lucas"], ["S", "Oui, insérez votre carte ici. Voulez-vous un sac ?", "Le commis"], ["P", "Non merci, j'ai mon sac.", "Lucas"], ["S", "Parfait. Merci, bonne journée !", "Le commis"], ["P", "Bonne journée !", "Lucas"]], "words": 102, "kind": "story", "scene": "At the corner store. Lucas buys a few things at the dépanneur near his building.", "F": "Prices, quantities, je voudrais", "V": "un dépanneur (a corner store (Québec)); au fond (at the back); la caisse (the cash register); une carte prépayée (a prepaid card); une bouteille (a bottle); un sac (a bag)", "t": [[1.99, 4.27], [4.92, 7.37], [7.58, 10.06], [10.7, 12.58], [12.79, 15.55], [16.2, 22.27], [22.92, 24.98], [25.2, 27.17], [27.82, 32.66], [33.31, 38.28], [38.93, 40.8], [41.02, 44.62], [45.26, 48.6], [48.82, 51.46], [52.1, 59.4], [59.62, 64.25], [64.9, 67.73], [68.38, 72.77], [72.98, 75.7], [76.34, 79.97], [80.62, 82.63], [82.85, 86.4], [87.05, 89.35]], "R": []}, {"num": 5, "title": "Un café, s'il vous plaît", "lines": [["P", "Bonjour ! Qu'est-ce que je vous sers ?", "La serveuse"], ["S", "Bonjour. Je voudrais un café, s'il vous plaît.", "Lucas"], ["P", "Un café filtre ou un espresso ?", "La serveuse"], ["S", "Un café filtre.", "Lucas"], ["P", "Petit, moyen ou grand ?", "La serveuse"], ["S", "Moyen, s'il vous plaît. Avec du lait, sans sucre.", "Lucas"], ["P", "Parfait. Pour emporter ou pour ici ?", "La serveuse"], ["S", "Pour ici. Et je voudrais aussi un muffin aux bleuets.", "Lucas"], ["P", "Bonne idée, ils sont frais ce matin. Autre chose ?", "La serveuse"], ["S", "Non, c'est tout. C'est combien ?", "Lucas"], ["P", "Ça fait six dollars soixante-quinze.", "La serveuse"], ["S", "Voilà. Est-ce que vous avez le wifi ?", "Lucas"], ["P", "Oui. Le mot de passe est écrit sur le mur, là-bas.", "La serveuse"], ["S", "Merci beaucoup !", "Lucas"], ["P", "Je vous apporte votre café. Bonne journée !", "La serveuse"]], "words": 98, "kind": "story", "scene": "A coffee, please. Lucas orders breakfast at a café on rue Saint-Denis.", "F": "Sizes, ordering politely", "V": "Qu'est-ce que je vous sers ? (What can I get you?); moyen (medium); sans sucre (without sugar); pour emporter (to go); les bleuets (blueberries (Québec)); le mot de passe (the password)", "t": [[1.99, 4.22], [4.44, 7.32], [7.97, 10.15], [10.37, 14.3], [14.95, 18.46], [19.1, 21.72], [22.37, 25.7], [26.35, 29.54], [29.76, 33.17], [33.82, 35.86], [36.07, 39.19], [39.84, 41.95], [42.17, 46.42], [47.06, 50.9], [51.12, 53.47], [54.12, 56.86], [57.07, 59.21], [59.86, 63.5], [64.15, 66.12], [66.34, 69.24], [69.89, 71.78], [72.0, 76.7], [77.35, 79.87], [80.52, 83.86], [84.07, 86.45]], "R": []}, {"num": 6, "title": "Un appel pour l'appartement", "lines": [["P", "Allô ?", "Mme Gagnon"], ["S", "Bonjour, madame. Je m'appelle Lucas. J'appelle au sujet de l'appartement à louer.", "Lucas"], ["P", "Ah oui, le quatre et demi. Bonjour, Lucas.", "Mme Gagnon"], ["S", "Où est l'appartement ?", "Lucas"], ["P", "Il est sur la rue Beaubien, près du métro.", "Mme Gagnon"], ["S", "C'est combien par mois ?", "Lucas"], ["P", "C'est mille cinq cents dollars par mois.", "Mme Gagnon"], ["S", "Est-ce que l'électricité est incluse ?", "Lucas"], ["P", "Non, l'électricité n'est pas incluse. L'eau chaude est incluse.", "Mme Gagnon"], ["S", "Est-ce qu'il y a une laveuse et une sécheuse ?", "Lucas"], ["P", "Oui, il y a une laveuse et une sécheuse dans l'appartement.", "Mme Gagnon"], ["S", "Parfait. Est-ce que je peux visiter l'appartement ?", "Lucas"], ["P", "Oui. Samedi, à dix heures, ça va ?", "Mme Gagnon"], ["S", "Oui, samedi à dix heures, c'est parfait. Merci, madame !", "Lucas"], ["P", "Ça me fait plaisir ! À samedi, Lucas.", "Mme Gagnon"]], "words": 108, "kind": "story", "scene": "A call about the apartment. Lucas sees an \"À louer\" sign and phones the landlord.", "F": "Rent, what's included, booking a visit", "V": "à louer (for rent); un quatre et demi (a two-bedroom apartment (4 ½)); par mois (per month); inclus, incluse (included); une laveuse, une sécheuse (a washer, a dryer); Ça me fait plaisir ! (You're welcome! (Québec))", "t": [[1.99, 3.86], [4.51, 7.56], [7.78, 10.34], [10.56, 14.74], [15.38, 18.82], [19.03, 22.25], [22.9, 25.3], [25.94, 30.24], [30.89, 33.53], [34.18, 37.78], [38.42, 41.93], [42.58, 47.04], [47.26, 50.35], [51.0, 54.94], [55.58, 60.74], [61.39, 63.31], [63.53, 66.86], [67.51, 69.41], [69.62, 73.73], [74.38, 78.98], [79.2, 82.2], [82.85, 85.78], [85.99, 89.16]], "R": []}, {"num": 7, "title": "Ouvrir un compte", "lines": [["P", "Bonjour, monsieur. Comment est-ce que je peux vous aider ?", "La conseillère"], ["S", "Bonjour. Je voudrais ouvrir un compte bancaire.", "Lucas"], ["P", "Bien sûr. Vous avez une pièce d'identité ?", "La conseillère"], ["S", "Oui, voici mon passeport.", "Lucas"], ["P", "Merci. Vous voulez un compte chèques ou un compte d'épargne ?", "La conseillère"], ["S", "Un compte chèques, s'il vous plaît.", "Lucas"], ["P", "Parfait. Pouvez-vous épeler votre nom de famille ?", "La conseillère"], ["S", "Oui. O, L, I, V, E, I, R, A. Oliveira.", "Lucas"], ["P", "Merci. Et votre date de naissance ?", "La conseillère"], ["S", "Le douze mars mille neuf cent quatre-vingt-quatorze.", "Lucas"], ["P", "Très bien. Voici votre carte de débit. Vous allez choisir votre NIP à la machine.", "La conseillère"], ["S", "Merci. Est-ce qu'il y a des frais ?", "Lucas"], ["P", "Pour les nouveaux arrivants, le compte est gratuit pendant un an.", "La conseillère"], ["S", "Super ! Merci beaucoup.", "Lucas"], ["P", "Avec plaisir. Bienvenue chez nous, monsieur Oliveira !", "La conseillère"]], "words": 116, "kind": "story", "scene": "Opening an account. Lucas opens his first Canadian bank account.", "F": "Documents, avoir, spelling a name", "V": "un compte bancaire (a bank account); une pièce d'identité (a piece of ID); un compte chèques (a chequing account); un compte d'épargne (a savings account); épeler (to spell); le NIP (the PIN (Québec)); les frais (fees)", "t": [[1.99, 4.99], [5.21, 8.45], [9.1, 11.28], [11.5, 15.48], [16.13, 18.46], [18.67, 22.2], [22.85, 26.5], [27.14, 29.28], [29.5, 33.7], [34.34, 37.92], [38.57, 40.61], [40.82, 44.59], [45.24, 47.11], [47.33, 53.5], [53.71, 55.92], [56.57, 58.7], [58.92, 62.09], [62.74, 67.3], [67.94, 70.03], [70.25, 73.82], [74.04, 78.43], [79.08, 81.14], [81.36, 83.98], [84.62, 90.05], [90.7, 92.88], [93.1, 95.5], [96.14, 98.88], [99.1, 103.34]], "R": []}, {"num": 8, "title": "Le forfait cellulaire", "lines": [["P", "Bonjour ! Je peux vous aider ?", "Le vendeur"], ["S", "Oui, je voudrais un forfait cellulaire.", "Lucas"], ["P", "Pas de problème. Vous avez déjà un téléphone ?", "Le vendeur"], ["S", "Oui, j'ai mon téléphone du Brésil.", "Lucas"], ["P", "Parfait. Nous avons trois forfaits. Le premier : dix gigas pour trente-cinq dollars par mois. Le deuxième : cinquante gigas pour cinquante dollars. Le troisième : cent gigas pour soixante-cinq dollars.", "Le vendeur"], ["S", "J'appelle souvent ma famille au Brésil. Les appels internationaux sont inclus ?", "Lucas"], ["P", "Pas dans le premier. Dans le deuxième et le troisième, oui.", "Le vendeur"], ["S", "Alors, le deuxième, s'il vous plaît.", "Lucas"], ["P", "Bon choix. Avec un contrat de deux ans ou sans contrat ?", "Le vendeur"], ["S", "Sans contrat.", "Lucas"], ["P", "D'accord. Votre nouveau numéro commence par cinq, un, quatre. Voici votre carte SIM.", "Le vendeur"], ["S", "Merci ! Je peux l'activer aujourd'hui ?", "Lucas"], ["P", "Oui, tout de suite. Ça prend cinq minutes.", "Le vendeur"]], "words": 120, "kind": "story", "scene": "The phone plan. Lucas chooses a phone plan in a store.", "F": "Numbers, prices, comparing", "V": "un forfait (a plan); un cellulaire (a cellphone (Québec)); un giga (a gigabyte); les appels internationaux (international calls); sans contrat (without a contract); tout de suite (right away)", "t": [[1.99, 4.3], [4.51, 7.06], [7.7, 11.86], [12.5, 15.07], [15.29, 18.67], [19.32, 23.28], [23.93, 25.9], [26.11, 29.11], [29.33, 34.8], [35.02, 40.46], [40.68, 46.18], [46.82, 50.81], [51.02, 54.55], [55.2, 57.86], [58.08, 62.11], [62.76, 67.13], [67.78, 69.91], [70.13, 74.42], [75.07, 77.38], [78.02, 80.14], [80.35, 85.9], [86.11, 89.35], [90.0, 92.09], [92.3, 95.38], [96.02, 98.93], [99.14, 102.17]], "R": []}, {"num": 9, "title": "La carte OPUS", "lines": [["P", "Bonjour, monsieur. Je voudrais une carte OPUS.", "Lucas"], ["S", "Bonjour. Vous voulez des passages ou un abonnement mensuel ?", "L'agent"], ["P", "Je prends le métro tous les jours pour aller travailler. Qu'est-ce que vous me conseillez ?", "Lucas"], ["S", "Alors, l'abonnement mensuel. Il est valide du premier au dernier jour du mois.", "L'agent"], ["P", "Il est valide pour l'autobus aussi ?", "Lucas"], ["S", "Oui, pour le métro et l'autobus.", "L'agent"], ["P", "Parfait. Aujourd'hui, je vais à la station Beaubien. C'est quelle ligne ?", "Lucas"], ["S", "C'est la ligne orange. Prenez la direction Côte-Vertu.", "L'agent"], ["P", "Direction Côte-Vertu. C'est combien de stations ?", "Lucas"], ["S", "Cinq stations. Beaubien, c'est après Rosemont.", "L'agent"], ["P", "Et le métro passe souvent ?", "Lucas"], ["S", "Oui, toutes les trois ou quatre minutes à l'heure de pointe.", "L'agent"], ["P", "Merci beaucoup !", "Lucas"], ["S", "Bonne journée !", "L'agent"]], "words": 107, "kind": "story", "scene": "The OPUS card. Lucas gets a transit card at Berri-UQAM station.", "F": "Transit words, lines and stations", "V": "un passage (a single ride); un abonnement mensuel (a monthly pass); conseiller (to recommend); valide (valid); la ligne orange (the orange line); l'heure de pointe (rush hour)", "t": [[1.99, 5.02], [5.23, 8.26], [8.9, 11.38], [11.59, 16.1], [16.75, 21.34], [21.55, 24.43], [25.08, 29.45], [29.66, 34.51], [35.16, 38.66], [39.31, 43.9], [44.54, 46.46], [46.68, 50.83], [51.05, 53.23], [53.88, 57.05], [57.26, 61.25], [61.9, 64.8], [65.02, 67.75], [68.4, 71.16], [71.38, 75.34], [75.98, 78.77], [79.42, 85.7], [86.35, 88.87], [89.52, 91.97]], "R": []}, {"num": 10, "title": "Demander son chemin", "lines": [["P", "Excusez-moi, madame. Je cherche une pharmacie.", "Lucas"], ["S", "Une pharmacie ? Il y en a une sur l'avenue du Mont-Royal.", "La passante"], ["P", "C'est loin ?", "Lucas"], ["S", "Non, c'est à cinq minutes à pied. Allez tout droit sur la rue Saint-Denis.", "La passante"], ["P", "Tout droit sur Saint-Denis.", "Lucas"], ["S", "Oui. Au deuxième feu, tournez à gauche. C'est l'avenue du Mont-Royal.", "La passante"], ["P", "Au deuxième feu, à gauche. D'accord.", "Lucas"], ["S", "Ensuite, continuez deux minutes. La pharmacie est à droite, à côté d'une banque.", "La passante"], ["P", "À droite, à côté d'une banque. Elle est ouverte le dimanche ?", "Lucas"], ["S", "Oui, je pense. Elle ferme à neuf heures le soir.", "La passante"], ["P", "Parfait. Merci beaucoup, madame.", "Lucas"], ["S", "De rien. Bonne journée !", "La passante"]], "words": 96, "kind": "story", "scene": "Asking the way. On the Plateau, Lucas asks a woman where to find a pharmacy.", "F": "Directions: tout droit, tourner, à côté de", "V": "Il y en a une (There is one); à pied (on foot); tout droit (straight ahead); le feu (the traffic light); tourner (to turn); à côté de (next to); ouvert, ouverte (open)", "t": [[1.99, 5.23], [5.45, 8.35], [9.0, 11.45], [11.66, 15.82], [16.46, 18.46], [19.1, 22.99], [23.21, 26.83], [27.48, 30.26], [30.91, 32.81], [33.02, 37.08], [37.3, 40.61], [41.26, 44.76], [44.98, 47.09], [47.74, 51.67], [51.89, 56.64], [57.29, 60.89], [61.1, 64.06], [64.7, 67.61], [67.82, 71.33], [71.98, 73.9], [74.11, 77.45], [78.1, 80.18], [80.4, 82.78]], "R": []}, {"num": 11, "title": "Au marché Jean-Talon", "lines": [["P", "Bonjour ! Regardez nos fraises, elles viennent de l'île d'Orléans !", "Le marchand"], ["S", "Bonjour. Elles sont combien, les fraises ?", "Lucas"], ["P", "Six dollars le casseau.", "Le marchand"], ["S", "Je vais prendre un casseau, s'il vous plaît.", "Lucas"], ["P", "Parfait. Autre chose ?", "Le marchand"], ["S", "Oui, je voudrais un kilo de tomates.", "Lucas"], ["P", "Voilà, un kilo de tomates. Et avec ça ?", "Le marchand"], ["S", "Trois oignons et un concombre.", "Lucas"], ["P", "Très bien. Le maïs est très bon aujourd'hui. Six épis pour cinq dollars.", "Le marchand"], ["S", "Du maïs ! J'adore le maïs. J'en prends six.", "Lucas"], ["P", "Excellent. Alors, les fraises, six dollars ; les tomates, quatre dollars ; les oignons et le concombre, trois dollars ; et le maïs, cinq dollars. Ça fait dix-huit dollars.", "Le marchand"], ["S", "Voici vingt dollars.", "Lucas"], ["P", "Et voici deux dollars. Merci, bonne fin de semaine !", "Le marchand"]], "words": 109, "kind": "story", "scene": "At Jean-Talon Market. On a summer Saturday, Lucas buys fruit and vegetables at the market.", "F": "Food words, kilos, prices", "V": "les fraises (strawberries); un casseau (a small basket (Québec)); Et avec ça ? (Anything else?); un oignon, un concombre (an onion, a cucumber); le maïs, un épi (corn, an ear of corn); J'en prends six. (I'll take six.)", "t": [[1.99, 4.3], [4.51, 9.31], [9.96, 12.14], [12.36, 15.82], [16.46, 19.37], [20.02, 24.12], [24.77, 26.74], [26.95, 29.4], [30.05, 34.03], [34.68, 38.5], [38.71, 41.06], [41.71, 45.36], [46.01, 48.05], [48.26, 51.74], [51.96, 55.54], [56.18, 58.42], [58.63, 61.46], [61.68, 64.27], [64.92, 67.03], [67.25, 79.7], [79.92, 83.04], [83.69, 86.62], [87.26, 90.38], [90.6, 94.27]], "R": []}, {"num": 12, "title": "La carte d'assurance maladie", "lines": [["P", "Bonjour. Vous avez un rendez-vous ?", "L'agente"], ["S", "Oui, à dix heures. Je m'appelle Lucas Oliveira.", "Lucas"], ["P", "Parfait. C'est pour une première carte d'assurance maladie ?", "L'agente"], ["S", "Oui, c'est ça.", "Lucas"], ["P", "Vous avez rempli le formulaire ?", "L'agente"], ["S", "Oui, le voici.", "Lucas"], ["P", "Merci. Votre date de naissance, c'est bien le douze mars mille neuf cent quatre-vingt-quatorze ?", "L'agente"], ["S", "Oui.", "Lucas"], ["P", "Et votre adresse ?", "L'agente"], ["S", "Le 3450, rue Saint-Urbain, appartement 4A, à Montréal.", "Lucas"], ["P", "Et le code postal ?", "L'agente"], ["S", "H, 2, X, 2, N, 7.", "Lucas"], ["P", "Merci. Maintenant, on va prendre votre photo. Regardez la caméra, s'il vous plaît. Ne souriez pas.", "L'agente"], ["S", "D'accord.", "Lucas"], ["P", "C'est fait. Vous allez recevoir votre carte par la poste. Gardez bien cette feuille.", "L'agente"], ["S", "Merci beaucoup, madame.", "Lucas"]], "words": 102, "kind": "story", "scene": "The health card. Lucas registers for his Québec health insurance card at a RAMQ office.", "F": "Dates of birth, addresses, postal codes", "V": "l'assurance maladie (health insurance); un rendez-vous (an appointment); remplir un formulaire (to fill out a form); le code postal (the postal code); sourire (to smile); par la poste (by mail); une feuille (a sheet of paper)", "t": [[1.99, 4.27], [4.49, 7.3], [7.94, 10.97], [11.18, 14.64], [15.29, 17.33], [17.54, 21.94], [22.58, 25.34], [25.99, 29.59], [30.24, 32.98], [33.62, 35.76], [35.98, 42.79], [43.44, 45.31], [45.96, 48.53], [49.18, 57.12], [57.77, 60.55], [61.2, 66.7], [67.34, 69.48], [69.7, 73.87], [74.09, 78.17], [78.38, 80.9], [81.55, 83.66], [84.31, 86.45], [86.66, 91.1], [91.32, 94.42], [95.06, 98.4]], "R": []}, {"num": 13, "title": "À la pharmacie", "lines": [["P", "Bonjour, je peux vous aider ?", "Le pharmacien"], ["S", "Oui. J'ai un rhume. J'ai mal à la gorge et je tousse.", "Lucas"], ["P", "Depuis quand ?", "Le pharmacien"], ["S", "Depuis deux jours.", "Lucas"], ["P", "Vous avez de la fièvre ?", "Le pharmacien"], ["S", "Non, je ne pense pas.", "Lucas"], ["P", "D'accord. Je vous conseille ce sirop pour la toux. Suivez les instructions sur la boîte. Et pour la gorge, prenez ces pastilles.", "Le pharmacien"], ["S", "Merci. Est-ce que je peux aller travailler ?", "Lucas"], ["P", "Oui, mais reposez-vous et buvez beaucoup d'eau. Si vous avez de la fièvre, appelez le 811.", "Le pharmacien"], ["S", "Le 811 ?", "Lucas"], ["P", "Oui, c'est Info-Santé. Une infirmière répond vingt-quatre heures sur vingt-quatre.", "Le pharmacien"], ["S", "Merci beaucoup. Ça fait combien ?", "Lucas"], ["P", "Dix-huit dollars. Bon rétablissement !", "Le pharmacien"]], "words": 98, "kind": "story", "scene": "At the pharmacy. Lucas has a cold and asks the pharmacist for advice.", "F": "Body and simple symptoms, depuis", "V": "un rhume (a cold); avoir mal à la gorge (to have a sore throat); tousser, la toux (to cough, a cough); la fièvre (a fever); des pastilles (lozenges); se reposer (to rest); Bon rétablissement ! (Get well soon!)", "t": [[1.99, 5.59], [6.24, 8.11], [8.33, 10.75], [10.97, 14.69], [15.34, 17.52], [18.17, 20.69], [21.34, 24.19], [24.84, 27.94], [28.58, 30.94], [31.15, 35.26], [35.47, 39.72], [39.94, 44.74], [45.38, 47.45], [47.66, 50.74], [51.38, 56.54], [56.76, 62.71], [63.36, 65.93], [66.58, 70.1], [70.32, 75.72], [76.37, 78.77], [78.98, 81.19], [81.84, 84.94], [85.15, 88.03]], "R": []}, {"num": 14, "title": "Ma famille", "lines": [["P", "C'est qui, sur la photo ?", "Martin"], ["S", "C'est ma famille, au Brésil. Ici, c'est ma mère, et là, c'est mon père.", "Lucas"], ["P", "Ils ont l'air gentils. Tu as des frères et sœurs ?", "Martin"], ["S", "Oui, j'ai une sœur et un frère. Ma sœur s'appelle Beatriz. Elle a trente ans. Elle est médecin.", "Lucas"], ["P", "Et ton frère ?", "Martin"], ["S", "Mon frère s'appelle Pedro. Il a vingt-cinq ans. Il est étudiant à l'université.", "Lucas"], ["P", "Et le chien ?", "Martin"], ["S", "C'est notre chien, Bolacha. Il a dix ans.", "Lucas"], ["P", "Bolacha ? Ça veut dire quoi ?", "Martin"], ["S", "Ça veut dire « biscuit » en portugais.", "Lucas"], ["P", "C'est mignon ! Moi, j'ai une fille. Elle s'appelle Léa et elle a huit ans.", "Martin"], ["S", "Tu parles à tes parents souvent ?", "Lucas"], ["P", "Oui, ils habitent à Québec. Je leur rends visite une fois par mois. Et toi ?", "Martin"], ["S", "Moi, j'appelle mes parents tous les dimanches.", "Lucas"]], "words": 127, "kind": "story", "scene": "My family. Lucas shows Martin photos of his family in Brazil.", "F": "Possessives, family words, ages", "V": "ma mère, mon père (my mother, my father); avoir l'air (to look, to seem); des frères et sœurs (brothers and sisters); Elle a trente ans. (She is thirty.); Ça veut dire quoi ? (What does it mean?); mignon (cute); rendre visite à (to visit (someone))", "t": [[1.99, 5.16], [5.81, 9.31], [9.53, 14.66], [15.31, 18.29], [18.5, 21.62], [22.27, 26.21], [26.42, 29.62], [29.83, 32.18], [32.4, 34.75], [35.4, 37.85], [38.5, 41.69], [41.9, 44.59], [44.81, 48.36], [49.01, 51.07], [51.72, 55.18], [55.39, 57.77], [58.42, 60.5], [60.72, 63.34], [63.98, 68.35], [69.0, 71.38], [71.59, 75.02], [75.24, 79.68], [80.33, 83.33], [83.98, 88.13], [88.34, 92.38], [92.59, 94.51], [95.16, 99.65]], "R": []}, {"num": 15, "title": "Il fait froid !", "lines": [["P", "Salut, Lucas ! Regarde dehors, il neige !", "Martin"], ["S", "Oui ! C'est la première fois que je vois la neige !", "Lucas"], ["P", "Vraiment ? C'est beau, hein ?", "Martin"], ["S", "C'est magnifique. Mais il fait froid ! Il fait combien aujourd'hui ?", "Lucas"], ["P", "Il fait moins cinq. Mais avec le vent, on dirait moins douze.", "Martin"], ["S", "Moins douze ! Au Brésil, il fait trente degrés en ce moment.", "Lucas"], ["P", "Ici, en janvier, il fait souvent moins vingt.", "Martin"], ["S", "Moins vingt ? Qu'est-ce que je dois porter ?", "Lucas"], ["P", "Un bon manteau, une tuque, des gants, un foulard et des bottes d'hiver.", "Martin"], ["S", "Je n'ai pas de bottes d'hiver.", "Lucas"], ["P", "Il faut acheter des bottes. Avec des souliers, tu vas glisser sur la glace.", "Martin"], ["S", "D'accord. Je vais magasiner samedi.", "Lucas"], ["P", "Bonne idée. Et n'oublie pas : en hiver, on s'habille en couches.", "Martin"]], "words": 117, "kind": "story", "scene": "It's cold!. The first snow falls, and Martin explains how to dress for winter.", "F": "Weather, temperatures, winter clothes", "V": "il neige, la neige (it's snowing, snow); on dirait (it feels like); porter (to wear); une tuque (a winter hat (Québec)); un foulard (a scarf); des souliers (shoes (Québec)); glisser (to slip); magasiner (to go shopping (Québec)); en couches (in layers)", "t": [[1.99, 4.99], [5.21, 9.24], [9.89, 11.76], [11.98, 15.67], [16.32, 18.31], [18.53, 21.05], [21.7, 24.07], [24.29, 26.83], [27.05, 30.05], [30.7, 33.65], [33.86, 38.64], [39.29, 41.59], [41.81, 46.46], [47.11, 52.49], [53.14, 55.1], [55.32, 58.08], [58.73, 66.67], [67.32, 70.49], [71.14, 74.54], [74.76, 79.99], [80.64, 82.75], [82.97, 86.11], [86.76, 89.18], [89.4, 95.09]], "R": []}]}];
+const PILOT = [{"num": 1, "level": "Tier 1: First conversations"}, {"num": 2, "level": "Tier 1: First conversations"}, {"num": 3, "level": "Tier 1: First conversations"}, {"num": 4, "level": "Tier 1: First conversations"}, {"num": 5, "level": "Tier 1: First conversations"}, {"num": 6, "level": "Tier 1: First conversations"}, {"num": 7, "level": "Tier 1: First conversations"}, {"num": 8, "level": "Tier 1: First conversations"}, {"num": 9, "level": "Tier 1: First conversations"}, {"num": 10, "level": "Tier 1: First conversations"}];
+const PART_DESC = {"1": "NCLC 1–3 (A1–A2). Short, slow conversations for Lucas's first weeks in Montréal."};
+const TEACHER_EMAIL = "executiveclass.ca@gmail.com";
+/* ===== RECORDINGS ===========================================================
+   MP3 files live in the "audio" folder beside this page, named by script
+   number: audio/Story-001.mp3 ... audio/Story-100.mp3. Each script in BOOK has
+   "t": the start and end time of every sentence, so students can replay one
+   sentence at a time and follow the highlighted text in sync.
+   If a recording is missing, the lab falls back to the device's voices.      */
+const AUDIO_BASE = "https://executiveclass.ca/french-lab/audio/";
+const AUDIO_EXT = ".mp3";
+/* =========================================================================== */
+
+const SMALL = new Set("le la les l' un une des du de d' \u00e0 au aux en y ne pas n' plus que qu' qui je j' tu il elle on nous vous ils elles me m' te t' se s' lui leur est c'est sont ai as a avons avez ont suis es sommes \u00eates \u00e9t\u00e9 \u00e9tait et ou mais pour par avec sans dans sur sous chez ce c' \u00e7a cette ces cet mon ma mes ton ta tes son sa ses notre nos votre vos leurs y'a si oui non".split(" "));
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const WHO = { P: "Voice 1", S: "Voice 2" };
+const ALL = [];
+BOOK.forEach(p => p.scripts.forEach(s => { s.part = p.part; s.partTitle = p.title; ALL.push(s); }));
+const byNum = n => ALL.find(s => s.num === n);
+const minutes = w => { const m = w / 140; return m < 1.25 ? "about 1 minute" : `about ${Math.round(m * 2) / 2} minutes`.replace(".5", "½"); };
+const fullText = s => s.lines.map(l => l[1]).join(" ");
+function sentencesOf(text) { return text.replace(/\s+/g, " ").replace(/\b(Mrs|Mr|Dr)\. /g, "$1§ ").match(/[^.!?]+[.!?]+["”’')]*(\s|$)|[^.!?]+$/g)?.map(x => x.trim().replace(/§/g, ".")).filter(Boolean) || [text]; }
+function segsOf(s) { const out = []; s.lines.forEach((l, ti) => sentencesOf(l[1]).forEach(t => out.push({ sp: l[0], t, turn: ti, name: l[2] }))); return out; }
+
+/* local progress (this browser only) */
+const store = {
+  get(k, d) { try { const v = localStorage.getItem("ll2:" + k); return v === null ? d : JSON.parse(v); } catch { return d; } },
+  set(k, v) { try { localStorage.setItem("ll2:" + k, JSON.stringify(v)); } catch {} }
+};
+let DONE = new Set(store.get("done", []));
+const markDone = n => { DONE.add(n); store.set("done", [...DONE]); renderProgress(); };
+
+/* recordings */
+const audioUrl = n => `${AUDIO_BASE}French-${String(n).padStart(3, "0")}${AUDIO_EXT}`;
+const audioCache = {};
+function checkAudio(n) {
+  if (n in audioCache) return Promise.resolve(audioCache[n]);
+  return new Promise(res => {
+    const a = new Audio(), done = ok => { audioCache[n] = ok; res(ok); };
+    a.addEventListener("loadedmetadata", () => done(true), { once: true });
+    a.addEventListener("error", () => done(false), { once: true });
+    a.preload = "metadata"; a.src = audioUrl(n);
+    setTimeout(() => { if (!(n in audioCache)) done(false); }, 4000);
+  });
+}
+
+/* ---------- navigation ---------- */
+function renderProgress() {
+  const n = DONE.size, pct = Math.round(n / ALL.length * 100);
+  $("#progMini").innerHTML = `${n} of ${ALL.length} stories completed<div class="bar"><i style="width:${pct}%"></i></div>`;
+}
+function renderNav(filter = "") {
+  const f = filter.trim().toLowerCase();
+  const cur = location.hash.startsWith("#script-") ? +location.hash.slice(8) : null;
+  const curPart = cur ? (byNum(cur) || {}).part : null;
+  let html = `<button class="home-link" data-home>About these stories</button>`, any = false;
+  BOOK.forEach(p => {
+    const items = p.scripts.filter(s => !f || (s.title + " " + p.title + " " + fullText(s)).toLowerCase().includes(f));
+    if (!items.length) return; any = true;
+    const open = f || p.part === curPart || (!cur && p.part === 1);
+    html += `<details class="part" ${open ? "open" : ""}><summary><b>${p.part}</b><span>${esc(p.title)}</span><small>${items.length}</small></summary><ol>` +
+      items.map(s => `<li><button data-script="${s.num}" ${s.num === cur ? 'aria-current="true"' : ''}><span>${s.num}</span><span>${esc(s.title)}</span><span class="ck">${DONE.has(s.num) ? "✓" : ""}</span></button></li>`).join("") + `</ol></details>`;
+  });
+  if (!any) html += `<p class="empty">No stories match “${esc(filter)}”. Try one word, like “bank” or “school”.</p>`;
+  $("#nav").innerHTML = html;
+  const c = $('nav [aria-current="true"]'); if (c && !f) c.scrollIntoView({ block: "nearest" });
+}
+
+const ROUNDS = [
+  ["Listen", "Hear the whole conversation once and follow the story."],
+  ["Transcribe", "Write what you hear, one sentence at a time."],
+  ["Listen again", "Play it from the start and fix your transcription."],
+  ["Compare", "Check your words against the text and see what you missed."],
+  ["Shadow", "Read along with the recording, then say it with the speakers."],
+  ["Retell", "Take one person's part, retell the story, then respond in your own words."]
+];
+
+function renderHome() {
+  stopAll();
+  delete document.body.dataset.part;
+  $("#view").innerHTML = `<section>
+    <div class="hero">
+      <h2>Québécois French, one conversation at a time</h2>
+      <p>These conversations follow Lucas and Camila, two Brazilians building a new life in Montréal: the apartment, the bank, the métro, work, school and the first winter. They are recorded with Québécois voices, a different one for each person.</p>
+      <p>The lab goes from first words to the NCLC 7 listening level in three tiers. It is extra listening practice for learners who are studying French with a teacher. New conversations are added as they are ready; there are ${ALL.length} so far, and 100 in all.</p>
+      <div class="exchange dlg" data-part="1">
+        <div class="turn P"><div class="who">Martin</div><div class="say">Bienvenue dans l'immeuble ! Tu viens d'où ?</div></div>
+        <div class="turn S"><div class="who">Lucas</div><div class="say">Je viens du Brésil. Je suis de Belo Horizonte.</div></div>
+      </div>
+    </div>
+    <h3 class="sec">Six rounds for every story</h3>
+    <p class="sub">Do them in order. Most people need 20 to 30 minutes per conversation.</p>
+    <ol class="steps">${ROUNDS.map((r, k) => `<li><b><i>${k + 1}</i>${esc(r[0])}</b><span>${esc(r[1])}</span></li>`).join("")}</ol>
+    <h3 class="sec">Start here</h3>
+    <p class="sub">Everyone begins with these 10 conversations, in order. Then continue through Tier 1.</p>
+    <ol class="startlist">${PILOT.map((p, k) => { const s = ALL.find(x => x.num === p.num); return `<li><button data-script="${s.num}"><span class="n">${k + 1}</span><span><b>${esc(s.title)}</b><small>${esc(s.F)}</small></span><span class="lv">${k === 0 || PILOT[k - 1].level !== p.level ? esc(p.level) : ""}${DONE.has(s.num) ? ' <span class="ck">✓</span>' : ""}</span></button></li>`; }).join("")}</ol>
+    <h3 class="sec">The library: all ${ALL.length} stories</h3>
+    <p class="sub">Work through the tiers in order. Each tier matches a stage of your French course.</p>
+    <div class="parts-grid">${BOOK.map(p => { const d = p.scripts.filter(s => DONE.has(s.num)).length; return `<button data-part="${p.part}" data-script="${p.scripts.find(s => !DONE.has(s.num))?.num || p.scripts[0].num}"><span class="pn">Tier ${p.part}</span><strong>${esc(p.title)}</strong><span class="pd">${esc(PART_DESC[p.part] || "")}</span><span class="pc">${p.scripts.length} stories${d ? `, ${d} done` : ""}</span></button>`; }).join("")}</div>
+    <div class="toc">${BOOK.map(p => `<section data-part="${p.part}"><h4>Tier ${p.part}: ${esc(p.title)}</h4><ol>${p.scripts.map(s => `<li><button data-script="${s.num}"><span>${s.num}</span><span>${esc(s.title)}</span><span class="ck">${DONE.has(s.num) ? "✓" : ""}</span></button></li>`).join("")}</ol></section>`).join("")}</div>
+    <div class="notice">
+      <h3>The people are fictional</h3>
+      <p>The people, companies, and events in these stories are invented for listening practice. Places in Montréal are real.</p>
+    </div>
+    <p class="resetrow">Your progress is saved in this browser only. <button class="linkbtn" id="reset">Clear my progress</button></p>
+  </section>`;
+  $("#reset").onclick = () => { if (confirm("Clear the check marks for all stories in this browser?")) { DONE = new Set(); store.set("done", []); renderProgress(); renderHome(); renderNav($("#q").value); } };
+  window.scrollTo(0, 0);
+}
+
+/* ---------- script page ---------- */
+let ST = null;
+const PREF = Object.assign({ rate: "0.9", pv: "", sv: "", arate: "1", gap: "1.4" }, store.get("pref", {}));
+const savePref = () => store.set("pref", PREF);
+
+function renderScript(n) {
+  stopAll();
+  const i = ALL.findIndex(s => s.num === n);
+  if (i < 0) return renderHome();
+  const s = ALL[i];
+  if (!ST || ST.num !== n) ST = { num: n, round: 0, gist: "", answer: "", name: store.get("name", ""), seg: 0, segs: segsOf(s), result: null, done: new Set(), hasAudio: false, roleplay: false, reveal: false };
+  document.body.dataset.part = s.part;
+  const prev = ALL[i - 1], next = ALL[i + 1];
+  const turns = s.lines.length;
+  $("#view").innerHTML = `<article class="script" data-part="${s.part}">
+    <div class="plate">
+      <div class="num" aria-hidden="true"><small>Story</small><b>${s.num}</b></div>
+      <div>
+        <p class="partname">Tier ${s.part}: ${esc(s.partTitle)}</p>
+        <h2>${esc(s.title)}</h2>
+        <p class="scene">${esc(s.scene)}</p>
+        <div class="facts"><span class="kind">Conversation</span><span>${s.words} words</span><span>${minutes(s.t && s.t.length ? s.t[s.t.length - 1][1] / 60 * 140 : s.words)}</span>${DONE.has(s.num) ? `<span>✓ Completed</span>` : ""}</div>
+      </div>
+    </div>
+    <ol class="rounds" aria-label="Rounds">${ROUNDS.map((r, k) => `<li><button data-round="${k}" ${k === ST.round ? 'aria-current="step"' : ''} class="${ST.done.has(k) ? 'done' : ''}"><i>${ST.done.has(k) && k !== ST.round ? "✓" : k + 1}</i>${r[0]}</button></li>`).join("")}</ol>
+    <div class="panel" id="panel"></div>
+    <div class="pager">
+      ${prev ? `<button data-script="${prev.num}"><small>Previous</small><span>${prev.num}. ${esc(prev.title)}</span></button>` : "<span></span>"}
+      ${next ? `<button data-script="${next.num}"><small>Next</small><span>${next.num}. ${esc(next.title)}</span></button>` : ""}
+    </div>
+  </article>`;
+  document.querySelectorAll("[data-round]").forEach(b => b.onclick = () => goRound(+b.dataset.round));
+  renderPanel(s);
+  checkAudio(s.num).then(ok => { if (ok && !ST.hasAudio && ST.num === s.num) { ST.hasAudio = true; renderPanel(s); } });
+}
+function goRound(k) { saveFields(); stopAll(); ST.done.add(ST.round); ST.round = k; renderScript(ST.num); const r = document.querySelector(".rounds"); window.scrollTo({ top: r.getBoundingClientRect().top + scrollY - 70 }); }
+function saveFields() { const g = $("#gist"), a = $("#answer"), nm = $("#sname"); if (g) ST.gist = g.value; if (a) ST.answer = a.value; if (nm) { ST.name = nm.value; store.set("name", nm.value); } }
+
+function dialogueHTML(s, showText) {
+  let k = 0;
+  if (!showText) return `<div class="masked">The text is hidden in this round so you listen, not read.
+      <div class="turns">${s.lines.map((l, ti) => `<span class="${l[0]}" data-turn="${ti}">${esc(l[2])}</span>`).join("")}</div></div>`;
+  return `<div class="dlg">${s.lines.map((l, ti) => `<div class="turn ${l[0]}"><div class="who">${esc(l[2])}</div><div class="say">${sentencesOf(l[1]).map(t => `<span class="seg" data-seg="${k++}">${esc(t)}</span>`).join(" ")}</div></div>`).join("")}</div>`;
+}
+
+function playerHTML(opts) {
+  const { lines = false, echo = false } = opts || {};
+  const S = ALL.find(x => x.num === ST.num), dlg = true, rec = ST.hasAudio;
+  return `<div class="deck">
+      <div class="deck-row">
+        <button class="btn big" id="play">Play</button>
+        <button class="btn secondary" id="stop">Stop</button>
+        <span class="nowline" id="nowline" aria-live="polite">Ready. ${ST.segs.length} sentences.</span>
+      </div>
+      ${lines ? `<div class="deck-row"><button class="btn secondary" id="sprev">Previous sentence</button><button class="btn" id="splay"></button><button class="btn secondary" id="snext">Next sentence</button></div>` : ""}
+      ${echo ? `<div class="deck-row"><label>Pause after each sentence <select id="gap"><option value="1">Short</option><option value="1.4">Medium</option><option value="2">Long</option></select></label>${dlg ? `<label class="check"><input type="checkbox" id="roleplay" ${ST.roleplay ? "checked" : ""}> I'll say ${esc(roleName())}'s lines <span class="rp-note">(that voice goes quiet and you speak)</span></label>` : ""}</div>` : ""}
+      <div class="deck-row">
+        ${rec ? `<button class="btn secondary" id="back10">Back 10 seconds</button><span class="nowline">Recorded voices, a different one for each person.</span>` : `<label>Voice 1 <select id="pv"></select></label><label>Voice 2 <select id="sv"></select></label>`}
+        <label class="sp">Speed <select id="${rec ? "arate" : "rate"}">${rec ? `<option value="0.75">Slow</option><option value="0.9">A little slow</option><option value="1">Natural</option>` : `<option value="0.65">Very slow</option><option value="0.8">Slow</option><option value="0.9">A little slow</option><option value="1">Natural</option>`}</select></label>
+      </div>
+      <div class="track"><i id="trk"></i></div>
+    </div>
+    ${rec ? "" : `<p class="voice-note">The recording didn't load, so these are your device's voices. Voices marked ★ sound the most natural.</p>`}`;
+}
+
+/* ---------- speech engine ---------- */
+let voices = [], RUN = 0;
+/* Voice quality: Safari and macOS list many novelty and old robotic voices
+   (Fred, Albert, Zarvox, Eddy, Grandpa...). Hide them, and rank the natural
+   "Premium" / "Enhanced" voices first. */
+const NOVELTY = /\b(albert|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|jester|organ|pipe organ|superstar|trinoids|whisper|wobble|zarvox|fred|junior|ralph|kathy|princess|eddy|flo|grandma|grandpa|reed|rocko|sandy|shelley|agnes|bruce|vicki|victoria)\b/i;
+const FEMALE = /female|samantha|ava|zoe|allison|susan|nicky|karen|moira|tessa|serena|kate|stephanie|fiona|catherine|martha|aria|jenny|zira|libby|sonia|natasha|clara|emma|michelle|joanna|kendra|salli|hazel|ruth|isla|evie|google us english|google uk english female/i;
+const MALE = /\bmale\b|alex|aaron|evan|nathan|tom|daniel|oliver|arthur|lee|gordon|rishi|guy|christopher|eric|andrew|brian|roger|ryan|liam|william|david|mark|matthew|james|thomas|noah|jamie/i;
+const GOOD = /samantha|alex|ava|zoe|allison|susan|evan|nathan|tom|daniel|karen|moira|tessa|serena|kate|oliver|arthur|jenny|aria|guy|libby|sonia|ryan|clara|liam|natural|neural|google/i;
+const gender = v => FEMALE.test(v.name) && !/\bmale\b/i.test(v.name) ? "F" : MALE.test(v.name) ? "M" : "?";
+function quality(v) {
+  const n = v.name;
+  return (/premium/i.test(n) ? 60 : 0) + (/enhanced/i.test(n) ? 45 : 0) + (/natural|neural|online/i.test(n) ? 40 : 0) +
+    (GOOD.test(n) ? 20 : 0) + ({ "fr-CA": 6, "fr-FR": 3 }[v.lang] || 1) + (v.default ? 2 : 0);
+}
+const label = v => v.name.replace(/^Microsoft |^Google /, "").replace(/ Online \(Natural\)/, " (natural)") + " · " + v.lang.slice(3) + (quality(v) >= 45 ? "  ★" : "");
+function loadVoices() {
+  if (!("speechSynthesis" in window)) return [];
+  const all = speechSynthesis.getVoices().filter(v => v.lang && v.lang.toLowerCase().startsWith("fr"));
+  voices = all.filter(v => !NOVELTY.test(v.name));
+  if (!voices.length) voices = all;
+  voices.sort((a, b) => quality(b) - quality(a) || a.name.localeCompare(b.name));
+  return voices;
+}
+function defaultVoices() {
+  if (!voices.length) return ["", ""];
+  const p = PREF.pv && voices.find(v => v.name === PREF.pv) || voices[0];
+  const best = voices[0] && quality(voices[0]);
+  // second voice: best voice that isn't the first one's; prefer the other gender if it's nearly as good
+  const others = voices.filter(v => v !== p);
+  const opp = others.find(v => gender(v) !== "?" && gender(v) !== gender(p) && quality(v) >= quality(others[0] || p) - 25);
+  const s = PREF.sv && voices.find(v => v.name === PREF.sv) || opp || others[0] || p;
+  return [p.name, s.name];
+}
+function fillVoices() {
+  loadVoices();
+  const [dp, ds] = defaultVoices();
+  [["#pv", dp], ["#sv", ds]].forEach(([id, def]) => {
+    const sel = $(id); if (!sel) return;
+    if (!("speechSynthesis" in window) || !voices.length) { sel.innerHTML = `<option value="">Default</option>`; if (!("speechSynthesis" in window)) { sel.disabled = true; $("#play") && ($("#play").disabled = true); $("#nowline") && ($("#nowline").textContent = "This browser can't read text aloud. Try Chrome, Edge, or Safari."); } return; }
+    sel.innerHTML = voices.map(v => `<option value="${esc(v.name)}">${esc(label(v))}</option>`).join("");
+    sel.value = def;
+  });
+}
+if ("speechSynthesis" in window) speechSynthesis.onvoiceschanged = () => { if ($("#pv")) fillVoices(); };
+function utter(text, sp) {
+  return new Promise(res => {
+    const u = new SpeechSynthesisUtterance(text);
+    const name = sp === "S" ? ($("#sv") ? $("#sv").value : PREF.sv) : ($("#pv") ? $("#pv").value : PREF.pv);
+    const v = voices.find(x => x.name === name);
+    if (v) { u.voice = v; u.lang = v.lang; } else u.lang = "fr-CA";
+    const same = sp === "S" && $("#sv") && $("#pv") && $("#sv").value === $("#pv").value;
+    u.pitch = same ? 1.25 : 1;
+    u.rate = +PREF.rate;
+    let fin = false; const end = () => { if (!fin) { fin = true; res(); } };
+    u.onend = end; u.onerror = end;
+    speechSynthesis.speak(u);
+  });
+}
+const wait = ms => new Promise(r => setTimeout(r, ms));
+const roleName = () => { const s = ALL.find(x => x.num === ST.num); return ((s && s.lines.find(l => l[0] === "S")) || [])[2] || ""; };
+let REC = null;
+function playSeg(k, flow) {
+  const T = ALL.find(x => x.num === ST.num).t, a = REC; if (!a || !T) return Promise.resolve();
+  const end = flow && k + 1 < T.length ? T[k + 1][0] : T[k][1] + 0.05, id = RUN;
+  a.playbackRate = +PREF.arate;
+  const from = flow && k === 0 ? 0 : T[k][0];
+  if (a.paused || Math.abs(a.currentTime - from) > 0.4) a.currentTime = from;
+  return new Promise(res => {
+    const tick = () => { if (id !== RUN || a.ended) { res(); return; } if (a.currentTime >= end) { if (!flow) a.pause(); res(); return; } requestAnimationFrame(tick); };
+    a.play().then(() => requestAnimationFrame(tick)).catch(() => res());
+  });
+}
+function highlight(k) {
+  document.querySelectorAll(".seg.on").forEach(e => e.classList.remove("on"));
+  document.querySelectorAll(".masked .turns span.on").forEach(e => e.classList.remove("on"));
+  if (k < 0) return;
+  const e = document.querySelector(`.seg[data-seg="${k}"]`);
+  if (e) { e.classList.add("on"); const r = e.getBoundingClientRect(); if (r.top < 90 || r.bottom > innerHeight - 40) e.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); }
+  const t = document.querySelector(`.masked .turns span[data-turn="${ST.segs[k].turn}"]`); if (t) t.classList.add("on");
+}
+function status(k, extra) {
+  const g = ST.segs[k], nl = $("#nowline"), trk = $("#trk");
+  if (nl && g) nl.innerHTML = `<b>${esc(g.name)}</b> · sentence ${k + 1} of ${ST.segs.length}${extra ? ` · ${extra}` : ""}`;
+  if (trk) trk.style.width = `${((k + 1) / ST.segs.length) * 100}%`;
+}
+function showTurn(ms) {
+  let el = document.getElementById("yourturn");
+  if (!ms) { if (el) el.remove(); return; }
+  if (!el) { el = document.createElement("div"); el.id = "yourturn"; el.setAttribute("role", "status"); document.body.appendChild(el); }
+  el.innerHTML = '<strong>Your turn:</strong> say this line now<span class="yt-bar"><i></i></span>';
+  el.querySelector("i").style.animationDuration = ms + "ms";
+}
+async function playFrom(start, { echo = false, only = false } = {}) {
+  if (!ST.hasAudio && !("speechSynthesis" in window)) return;
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  if (REC && ST.hasAudio) REC.pause();
+  const id = ++RUN; setPlaying(true);
+  for (let k = start; k < ST.segs.length; k++) {
+    if (id !== RUN) return;
+    const g = ST.segs[k]; ST.seg = k; highlight(k); status(k); updSeg();
+    const mine = echo && ST.roleplay && g.name === roleName();
+    const T = ST.hasAudio && ALL.find(x => x.num === ST.num).t, flow = ST.hasAudio && !echo && !only;
+    if (mine) { status(k, "your line, say it now"); const ms = T ? (T[k][1] - T[k][0]) * 1000 / +PREF.arate + 1200 : g.t.split(" ").length * 470 / +PREF.rate + 900; showTurn(ms); await wait(ms); showTurn(0); }
+    else if (ST.hasAudio) await playSeg(k, flow);
+    else await utter(g.t, g.sp);
+    if (id !== RUN) return;
+    if (echo && !mine) { status(k, "your turn, repeat it"); await wait(T ? (T[k][1] - T[k][0]) * 1000 * +PREF.gap / +PREF.arate + 700 : g.t.split(" ").length * 380 * +PREF.gap / +PREF.rate + 700); }
+    else if (!ST.hasAudio && k + 1 < ST.segs.length && ST.segs[k + 1].turn !== g.turn) await wait(260);
+    if (only) break;
+  }
+  if (id === RUN) { setPlaying(false); highlight(-1); const nl = $("#nowline"); if (nl) nl.textContent = only ? `Sentence ${ST.seg + 1} of ${ST.segs.length}. Play it again or go to the next one.` : "Finished. Press Play to hear it again."; }
+}
+function setPlaying(on) { const p = $("#play"); if (p) p.textContent = on ? "Playing…" : "Play"; }
+function stopAll() { showTurn(0);
+  RUN++;
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  if (REC) REC.pause();
+  setPlaying(false); highlight(-1);
+}
+function updSeg() { const b = $("#splay"); if (b) b.textContent = `Play sentence ${ST.seg + 1} of ${ST.segs.length}`; }
+
+function wirePlayer(s, opts = {}) {
+  if (ST.hasAudio) {
+    if (!REC || REC.dataset.n != ST.num) { REC = new Audio(audioUrl(ST.num)); REC.preload = "auto"; REC.dataset.n = ST.num; }
+    $("#arate").value = ["0.75", "0.9", "1"].includes(PREF.arate) ? PREF.arate : "1";
+    $("#arate").onchange = e => { PREF.arate = e.target.value; savePref(); REC.playbackRate = +e.target.value; };
+    $("#back10").onclick = () => { const T = ALL.find(x => x.num === ST.num).t; const at = Math.max(0, (REC.currentTime || 0) - 10); let k = 0; T.forEach((g, i) => { if (g[0] <= at) k = i; }); ST.seg = k; playFrom(k); };
+  } else {
+  fillVoices();
+  $("#rate").value = PREF.rate;
+  $("#rate").onchange = e => { PREF.rate = e.target.value; savePref(); };
+  $("#pv").onchange = e => { PREF.pv = e.target.value; savePref(); };
+  if ($("#sv")) $("#sv").onchange = e => { PREF.sv = e.target.value; savePref(); };
+  }
+  if ($("#gap")) { $("#gap").value = PREF.gap; $("#gap").onchange = e => { PREF.gap = e.target.value; savePref(); }; }
+  if ($("#roleplay")) $("#roleplay").onchange = e => ST.roleplay = e.target.checked;
+  $("#play").onclick = () => playFrom(opts.resume && ST.seg < ST.segs.length - 1 ? ST.seg : 0, { echo: !!opts.echo });
+  $("#stop").onclick = stopAll;
+  if ($("#splay")) {
+    updSeg();
+    $("#splay").onclick = () => playFrom(ST.seg, { only: true });
+    $("#sprev").onclick = () => { ST.seg = Math.max(0, ST.seg - 1); playFrom(ST.seg, { only: true }); };
+    $("#snext").onclick = () => { ST.seg = Math.min(ST.segs.length - 1, ST.seg + 1); playFrom(ST.seg, { only: true }); };
+  }
+  document.querySelectorAll(".seg").forEach(e => e.onclick = () => playFrom(+e.dataset.seg, { only: !!opts.tapOne, echo: !!opts.echo }));
+}
+
+function nextRow(k) {
+  return `<div class="nextrow">${k > 0 ? `<button class="btn secondary" data-go="${k - 1}">Back to round ${k}</button>` : "<span></span>"}${k < 5 ? `<button class="btn" data-go="${k + 1}">Go to round ${k + 2}: ${ROUNDS[k + 1][0].toLowerCase()}</button>` : `<button class="btn gold" id="finish">${DONE.has(ST.num) ? "Completed ✓" : "Mark this story as completed"}</button>`}</div>`;
+}
+
+function renderPanel(s) {
+  const k = ST.round, P = $("#panel"), dlg = true;
+  const answerBox = `<div class="field"><label for="answer">Your transcription</label><textarea id="answer" placeholder="Write exactly what you hear. You don't need to write the speakers' names.">${esc(ST.answer)}</textarea></div>`;
+  const gistQs = ["Who is talking, and where are they?", "What is the problem, the news, or the question?", "How does the conversation end?"];
+  if (k === 0) P.innerHTML = `<h3>Round 1: Listen for the main idea</h3>
+    <p class="hint">Listen to the whole exchange once. Don't write while you listen. When it finishes, answer these questions in your own words.</p>
+    ${playerHTML()}${dialogueHTML(s, false)}
+    <ul class="prompts" style="margin-top:18px">${gistQs.map(q => `<li>${q}</li>`).join("")}</ul>
+    <div class="field"><label for="gist">Your answers</label><textarea id="gist" class="short">${esc(ST.gist)}</textarea></div>${nextRow(k)}`;
+  if (k === 1) P.innerHTML = `<h3>Round 2: Transcribe</h3>
+    <p class="hint">Play one sentence at a time and write exactly what you hear. Replay a sentence as many times as you need. If you can't hear a word, leave a space and keep going.</p>
+    ${playerHTML({ lines: true })}${dialogueHTML(s, false)}${answerBox}${nextRow(k)}`;
+  if (k === 2) P.innerHTML = `<h3>Round 3: Listen again and fix</h3>
+    <p class="hint">Play the whole story from the beginning and follow your transcription. Fix anything you're unsure about. Listen closely for the small words: <i>a, the, to, of, it's, don't, that</i>.</p>
+    ${playerHTML()}${answerBox}${nextRow(k)}`;
+  if (k === 3) P.innerHTML = `<h3>Round 4: Compare</h3>
+    <p class="hint">Check your transcription against the text. Look at the words you missed. Were they small words? Words linked together? New words you didn't know?</p>
+    ${answerBox}<div class="actions"><button class="btn gold" id="check">Check my transcription</button></div><div id="result"></div><div class="cats"><h4>Why did you miss it?</h4><p class="hint">For each word or phrase you missed, decide which kind of mistake it was. Over time, this shows you what to practise.</p><ol type="A"><li><b>New vocabulary:</b> you didn't know the word.</li><li><b>Known word, not recognized:</b> you know it when you read it, but you didn't hear it.</li><li><b>Connected speech:</b> words were linked or shortened, like “wanna” or “gotta.”</li><li><b>Small words:</b> you missed little words like “a,” “the,” “to” or “of.”</li><li><b>Meaning:</b> you heard every word, but misunderstood what the person meant.</li></ol></div>${nextRow(k)}`;
+  if (k === 4) P.innerHTML = `<h3>Round 5: Shadow</h3>
+    <p class="hint">Now the text is visible. Follow the highlight while the voices speak, and tap any sentence to hear it from there. Then play it again and speak along with the voices, at the same time, copying their rhythm and the small words.</p>
+    ${playerHTML({ resume: false })}${dialogueHTML(s, true)}
+    <div class="listenfor"><h4>Listen for</h4><p>${esc(s.F)}</p>${s.V ? `<p><b>Words and phrases:</b> ${esc(s.V)}</p>` : ""}</div>${nextRow(k)}`;
+  if (k === 5) P.innerHTML = `<h3>Round 6: Retell and Respond</h3>
+    <p class="hint">First, echo: after each sentence there's a pause, so say it out loud. Then tick the box and take ${esc(roleName())}'s part: that voice goes quiet and you say the lines yourself. Finally, close the text and tell the story in your own words, as if you were telling a friend. Last, answer two short situations in your own words.</p>
+    ${playerHTML({ echo: true })}${dialogueHTML(s, true)}
+    <div class="mine"><h4>Tell it in your own words</h4>
+      <ul class="prompts"><li>Who is in the story, and where are they?</li><li>What happens first, next, and at the end?</li><li>Use at least three of the words from “Listen for.”</li><li>Say it out loud in one or two minutes, without looking at the text.</li></ul>
+      <div class="field"><label for="mineTxt">My notes (saved in this browser)</label><textarea id="mineTxt" class="short">${esc(store.get("mine:" + s.num, ""))}</textarea></div>
+    </div><div class="respond"><h4>Respond</h4><p class="hint">Now it's your turn. Read the situation, say your answer out loud, and write it if you like. Then compare it with the model answer.</p>
+      ${(s.R || []).map((r, i) => `<div class="rsp"><p class="rsit">${esc(r[0])}</p><p class="rq"><b>${esc(r[1])}:</b> “${esc(r[2])}”</p><div class="field"><label for="rsp${i}">Your answer (saved in this browser)</label><textarea id="rsp${i}" class="short" data-rsp="${i}">${esc(store.get(`rsp:${s.num}:${i}`, ""))}</textarea></div><button class="btn secondary" data-model="${i}">Show a model answer</button><p class="model" id="model${i}" hidden><b>Model answer:</b> ${esc(r[3])}<span>Your answer doesn't have to match. Any natural, polite reply that fits the situation is good.</span></p></div>`).join("")}
+    </div>${nextRow(k)}`;
+  if ($("#mineTxt")) $("#mineTxt").oninput = e => store.set("mine:" + s.num, e.target.value);
+  P.querySelectorAll("[data-rsp]").forEach(t => t.oninput = e => store.set(`rsp:${ST.num}:${t.dataset.rsp}`, e.target.value));
+  P.querySelectorAll("[data-model]").forEach(b => b.onclick = () => { const m = $("#model" + b.dataset.model); m.hidden = !m.hidden; b.textContent = m.hidden ? "Show a model answer" : "Hide the model answer"; });
+  if (k !== 3) wirePlayer(s, { echo: k === 5, tapOne: k === 5 });
+  P.querySelectorAll("[data-go]").forEach(b => b.onclick = () => goRound(+b.dataset.go));
+  if ($("#finish")) $("#finish").onclick = () => { ST.done.add(5); markDone(ST.num); renderScript(ST.num); renderNav($("#q").value); };
+  if (k === 3) { $("#check").onclick = () => { saveFields(); check(s); }; if (ST.result) showResult(s); }
+}
+
+/* ---------- transcription check ---------- */
+const norm = w => w.toLowerCase().replace(/[’‘]/g, "'").replace(/[^a-z0-9'àâäéèêëîïôöùûüÿçœæãõáíóú½%]/g, "").replace(/^'+|'+$/g, "");
+function tokens(t) { return t.replace(/[“”]/g, '"').replace(/—|–/g, " ").split(/\s+/).filter(Boolean).map(w => ({ raw: w, n: norm(w) })).filter(x => x.n); }
+function check(s) {
+  const FULL = tokens(fullText(s)), B = tokens(ST.answer);
+  if (!B.length) { $("#result").innerHTML = `<div class="result"><p>Your transcription is empty. Go back to round 2, write what you hear, and then check it here.</p></div>`; return; }
+  const reach = Math.min(FULL.length, Math.round(B.length * 1.6) + 15);
+  const A = FULL.slice(0, reach), tail = FULL.slice(reach), n = A.length, m = B.length;
+  const L = Array.from({ length: n + 1 }, () => new Uint16Array(m + 1));
+  for (let i = n - 1; i >= 0; i--) for (let j = m - 1; j >= 0; j--) L[i][j] = A[i].n === B[j].n ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
+  const ops = []; let i = 0, j = 0;
+  while (i < n || j < m) {
+    if (i < n && j < m && A[i].n === B[j].n) { ops.push(["same", i]); i++; j++; }
+    else if (j < m && (i >= n || L[i][j + 1] >= L[i + 1][j])) { ops.push(["extra", j]); j++; }
+    else { ops.push(["miss", i]); i++; }
+  }
+  const hits = ops.filter(o => o[0] === "same").map(o => o[1]);
+  while (hits.length > 1 && hits[hits.length - 1] - hits[hits.length - 2] > 8) hits.pop();
+  const lastA = hits.length ? hits[hits.length - 1] : -1;
+  if (lastA < 0) { ST.result = { empty: true }; showResult(s); return; }
+  let out = [], matched = 0, graded = 0, small = new Map(), other = [], extra = [], rest = [];
+  ops.forEach(([kd, x]) => {
+    if (kd === "same" && x <= lastA) { out.push(esc(A[x].raw)); matched++; graded++; }
+    else if (kd === "same") rest.push(esc(A[x].raw));
+    else if (kd === "extra") { if (!rest.length) { out.push(`<del>${esc(B[x].raw)}</del>`); extra.push(B[x].n); } }
+    else if (x > lastA) rest.push(esc(A[x].raw));
+    else { graded++; const w = A[x].n, sm = SMALL.has(w); if (sm) small.set(w, (small.get(w) || 0) + 1); else other.push(w); out.push(`<mark class="${sm ? "small" : ""}">${esc(A[x].raw)}</mark>`); }
+  });
+  tail.forEach(w => rest.push(esc(w.raw)));
+  ST.result = { out, rest, matched, graded, small: [...small].sort((a, b) => b[1] - a[1]), other, extra };
+  ST.done.add(3); showResult(s);
+}
+function showResult(s) {
+  const R = ST.result, box = $("#result"); if (!box) return;
+  if (R.empty) { box.innerHTML = `<div class="result"><p>None of your words matched the text yet. Listen again from the beginning and try the first few sentences.</p></div>`; return; }
+  const pct = Math.floor(R.matched / R.graded * 100), partial = R.rest.length > 0;
+  const smallList = R.small.map(([w, c]) => c > 1 ? `${esc(w)} (${c})` : esc(w)).join(", ");
+  const acad = [...new Set(R.other.filter(w => w.length > 7))].slice(0, 20);
+  box.innerHTML = `<div class="result">
+    <p class="score">${pct}%<small>${R.matched} of ${R.graded} words correct${partial ? ", checked up to where you stopped" : ""}</small></p>
+    <p class="legend"><mark>missed</mark> <mark class="small">missed small word</mark> <del>extra or misspelled</del>${partial ? ` <span class="rest">not transcribed yet</span>` : ""}</p>
+    <div class="diff">${R.out.join(" ")}${partial ? ` <span class="rest">${R.rest.join(" ")}</span>` : ""}</div>
+    ${smallList ? `<p class="smalls"><b>Small words you missed:</b> ${smallList}</p>` : `<p class="smalls">You didn't miss any small words. Well done.</p>`}
+    ${acad.length ? `<p class="smalls"><b>Longer words to review:</b> ${acad.map(esc).join(", ")}</p>` : ""}
+    <div class="sendbox">
+      <div class="field"><label for="sname">Your name</label><input id="sname" value="${esc(ST.name || "")}" autocomplete="name"></div>
+      <div class="actions"><button class="btn" id="copy">Copy my results</button></div>
+      <p>Copy your results and send them to your French teacher.</p>
+      <p class="status" id="status" role="status"></p>
+    </div></div>`;
+  $("#sname").oninput = e => { ST.name = e.target.value; store.set("name", ST.name); };
+  $("#copy").onclick = async () => {
+    const t = resultText(s);
+    try { await navigator.clipboard.writeText(t); } catch { const ta = document.createElement("textarea"); ta.value = t; document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove(); }
+    $("#status").textContent = "Copied. Paste it into a message to your teacher.";
+  };
+}
+function resultText(s) {
+  const R = ST.result, pct = Math.floor(R.matched / R.graded * 100);
+  const cap = (a, k) => a.length > k ? a.slice(0, k).join(", ") + ` (and ${a.length - k} more)` : a.join(", ") || "none";
+  const lines = ["Listening Lab results", `Name: ${ST.name || "(not given)"}`, `Story: ${s.num}. ${s.title} (Tier ${s.part}: ${s.partTitle})`,
+    `Score: ${pct}% (${R.matched} of ${R.graded} words${R.rest.length ? ", checked up to where I stopped" : ""})`, "",
+    `Small words I missed: ${cap(R.small.map(([w, c]) => c > 1 ? `${w} (${c})` : w), 30)}`,
+    `Other words I missed: ${cap(R.other, 40)}`, `Extra or misspelled words I wrote: ${cap(R.extra, 30)}`];
+  if (ST.gist) lines.push("", `My answers after the first listen: ${ST.gist.slice(0, 500)}`);
+  return lines.join("\n");
+}
+
+/* ---------- routing ---------- */
+function route() {
+  const h = location.hash;
+  if (h.startsWith("#script-")) renderScript(+h.slice(8)); else renderHome();
+  renderNav($("#q").value); closeMenu();
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-script],[data-home]"); if (!b) return;
+  location.hash = b.hasAttribute("data-home") ? "#home" : "#script-" + b.dataset.script;
+});
+$("#q").addEventListener("input", e => renderNav(e.target.value));
+function closeMenu() { $("#sidebar").classList.remove("open"); $("#scrim").classList.remove("open"); $("#menuBtn").setAttribute("aria-expanded", "false"); }
+$("#menuBtn").onclick = () => { $("#sidebar").classList.add("open"); $("#scrim").classList.add("open"); $("#menuBtn").setAttribute("aria-expanded", "true"); };
+$("#scrim").onclick = closeMenu;
+document.addEventListener("keydown", e => { if (e.key === "Escape") { closeMenu(); stopAll(); } });
+window.addEventListener("hashchange", route);
+window.addEventListener("beforeunload", () => { if ("speechSynthesis" in window) speechSynthesis.cancel(); });
+renderProgress();
+route();
+</script>
+</body>
+</html>
