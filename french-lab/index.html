@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="description" content="Free Québécois French listening practice: 100 recorded conversations set in Montréal, from first words to NCLC 7, with transcription and sentence replay.">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>French Listening Lab | Executive Class</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎧</text></svg>">
@@ -286,8 +287,8 @@ del{color:var(--extra);text-decoration:line-through}
       <div><h1>French Listening Lab</h1><p>Executive Class</p></div>
     </div>
     <div class="search">
-      <label for="q" style="position:absolute;left:-9999px">Search stories</label>
-      <input id="q" type="search" placeholder="Search stories and topics">
+      <label for="q" style="position:absolute;left:-9999px">Search conversations</label>
+      <input id="q" type="search" placeholder="Search conversations and topics">
     </div>
     <div class="progress-mini" id="progMini"></div>
     <nav id="nav"></nav>
@@ -350,13 +351,13 @@ function checkAudio(n) {
 /* ---------- navigation ---------- */
 function renderProgress() {
   const n = DONE.size, pct = Math.round(n / ALL.length * 100);
-  $("#progMini").innerHTML = `${n} of ${ALL.length} stories completed<div class="bar"><i style="width:${pct}%"></i></div>`;
+  $("#progMini").innerHTML = `${n} of ${ALL.length} conversations completed<div class="bar"><i style="width:${pct}%"></i></div>`;
 }
 function renderNav(filter = "") {
   const f = filter.trim().toLowerCase();
   const cur = location.hash.startsWith("#script-") ? +location.hash.slice(8) : null;
   const curPart = cur ? (byNum(cur) || {}).part : null;
-  let html = `<button class="home-link" data-home>About these stories</button>`, any = false;
+  let html = `<button class="home-link" data-home>About this lab</button>`, any = false;
   BOOK.forEach(p => {
     const items = p.scripts.filter(s => !f || (s.title + " " + p.title + " " + fullText(s)).toLowerCase().includes(f));
     if (!items.length) return; any = true;
@@ -364,18 +365,18 @@ function renderNav(filter = "") {
     html += `<details class="part" ${open ? "open" : ""}><summary><b>${p.part}</b><span>${esc(p.title)}</span><small>${items.length}</small></summary><ol>` +
       items.map(s => `<li><button data-script="${s.num}" ${s.num === cur ? 'aria-current="true"' : ''}><span>${s.num}</span><span>${esc(s.title)}</span><span class="ck">${DONE.has(s.num) ? "✓" : ""}</span></button></li>`).join("") + `</ol></details>`;
   });
-  if (!any) html += `<p class="empty">No stories match “${esc(filter)}”. Try one word, like “bank” or “school”.</p>`;
+  if (!any) html += `<p class="empty">No conversations match “${esc(filter)}”. Try one word, like “bank” or “school”.</p>`;
   $("#nav").innerHTML = html;
   const c = $('nav [aria-current="true"]'); if (c && !f) c.scrollIntoView({ block: "nearest" });
 }
 
 const ROUNDS = [
-  ["Listen", "Hear the whole conversation once and follow the story."],
+  ["Listen", "Hear the whole conversation once and follow what happens."],
   ["Transcribe", "Write what you hear, one sentence at a time."],
   ["Listen again", "Play it from the start and fix your transcription."],
   ["Compare", "Check your words against the text and see what you missed."],
   ["Shadow", "Read along with the recording, then say it with the speakers."],
-  ["Retell", "Take one person's part, retell the story, then respond in your own words."]
+  ["Retell", "Take one person's part, retell the conversation, then respond in your own words."]
 ];
 
 function renderHome() {
@@ -391,23 +392,23 @@ function renderHome() {
         <div class="turn S"><div class="who">Lucas</div><div class="say">Je viens du Brésil. Je suis de Belo Horizonte.</div></div>
       </div>
     </div>
-    <h3 class="sec">Six rounds for every story</h3>
+    <h3 class="sec">Six rounds for every conversation</h3>
     <p class="sub">Do them in order. Most people need 20 to 30 minutes per conversation.</p>
     <ol class="steps">${ROUNDS.map((r, k) => `<li><b><i>${k + 1}</i>${esc(r[0])}</b><span>${esc(r[1])}</span></li>`).join("")}</ol>
     <h3 class="sec">Start here</h3>
     <p class="sub">Everyone begins with these 10 conversations, in order. Then continue through Tier 1.</p>
     <ol class="startlist">${PILOT.map((p, k) => { const s = ALL.find(x => x.num === p.num); return `<li><button data-script="${s.num}"><span class="n">${k + 1}</span><span><b>${esc(s.title)}</b><small>${esc(s.F)}</small></span><span class="lv">${k === 0 || PILOT[k - 1].level !== p.level ? esc(p.level) : ""}${DONE.has(s.num) ? ' <span class="ck">✓</span>' : ""}</span></button></li>`; }).join("")}</ol>
-    <h3 class="sec">The library: all ${ALL.length} stories</h3>
+    <h3 class="sec">The library: all ${ALL.length} conversations</h3>
     <p class="sub">Work through the tiers in order. Each tier matches a stage of your French course.</p>
-    <div class="parts-grid">${BOOK.map(p => { const d = p.scripts.filter(s => DONE.has(s.num)).length; return `<button data-part="${p.part}" data-script="${p.scripts.find(s => !DONE.has(s.num))?.num || p.scripts[0].num}"><span class="pn">Tier ${p.part}</span><strong>${esc(p.title)}</strong><span class="pd">${esc(PART_DESC[p.part] || "")}</span><span class="pc">${p.scripts.length} stories${d ? `, ${d} done` : ""}</span></button>`; }).join("")}</div>
+    <div class="parts-grid">${BOOK.map(p => { const d = p.scripts.filter(s => DONE.has(s.num)).length; return `<button data-part="${p.part}" data-script="${p.scripts.find(s => !DONE.has(s.num))?.num || p.scripts[0].num}"><span class="pn">Tier ${p.part}</span><strong>${esc(p.title)}</strong><span class="pd">${esc(PART_DESC[p.part] || "")}</span><span class="pc">${p.scripts.length} conversations${d ? `, ${d} done` : ""}</span></button>`; }).join("")}</div>
     <div class="toc">${BOOK.map(p => `<section data-part="${p.part}"><h4>Tier ${p.part}: ${esc(p.title)}</h4><ol>${p.scripts.map(s => `<li><button data-script="${s.num}"><span>${s.num}</span><span>${esc(s.title)}</span><span class="ck">${DONE.has(s.num) ? "✓" : ""}</span></button></li>`).join("")}</ol></section>`).join("")}</div>
     <div class="notice">
       <h3>The people are fictional</h3>
-      <p>The people, companies, and events in these stories are invented for listening practice. Places in Montréal are real.</p>
+      <p>The people, companies, and events in these conversations are invented for listening practice. Places in Montréal are real.</p>
     </div>
     <p class="resetrow">Your progress is saved in this browser only. <button class="linkbtn" id="reset">Clear my progress</button></p>
   </section>`;
-  $("#reset").onclick = () => { if (confirm("Clear the check marks for all stories in this browser?")) { DONE = new Set(); store.set("done", []); renderProgress(); renderHome(); renderNav($("#q").value); } };
+  $("#reset").onclick = () => { if (confirm("Clear the check marks for all conversations in this browser?")) { DONE = new Set(); store.set("done", []); renderProgress(); renderHome(); renderNav($("#q").value); } };
   window.scrollTo(0, 0);
 }
 
@@ -427,7 +428,7 @@ function renderScript(n) {
   const turns = s.lines.length;
   $("#view").innerHTML = `<article class="script" data-part="${s.part}">
     <div class="plate">
-      <div class="num" aria-hidden="true"><small>Story</small><b>${s.num}</b></div>
+      <div class="num" aria-hidden="true"><small>No.</small><b>${s.num}</b></div>
       <div>
         <p class="partname">Tier ${s.part}: ${esc(s.partTitle)}</p>
         <h2>${esc(s.title)}</h2>
@@ -625,7 +626,7 @@ function wirePlayer(s, opts = {}) {
 }
 
 function nextRow(k) {
-  return `<div class="nextrow">${k > 0 ? `<button class="btn secondary" data-go="${k - 1}">Back to round ${k}</button>` : "<span></span>"}${k < 5 ? `<button class="btn" data-go="${k + 1}">Go to round ${k + 2}: ${ROUNDS[k + 1][0].toLowerCase()}</button>` : `<button class="btn gold" id="finish">${DONE.has(ST.num) ? "Completed ✓" : "Mark this story as completed"}</button>`}</div>`;
+  return `<div class="nextrow">${k > 0 ? `<button class="btn secondary" data-go="${k - 1}">Back to round ${k}</button>` : "<span></span>"}${k < 5 ? `<button class="btn" data-go="${k + 1}">Go to round ${k + 2}: ${ROUNDS[k + 1][0].toLowerCase()}</button>` : `<button class="btn gold" id="finish">${DONE.has(ST.num) ? "Completed ✓" : "Mark this conversation as completed"}</button>`}</div>`;
 }
 
 function renderPanel(s) {
@@ -641,22 +642,22 @@ function renderPanel(s) {
     <p class="hint">Play one sentence at a time and write exactly what you hear. Replay a sentence as many times as you need. If you can't hear a word, leave a space and keep going.</p>
     ${playerHTML({ lines: true })}${dialogueHTML(s, false)}${answerBox}${nextRow(k)}`;
   if (k === 2) P.innerHTML = `<h3>Round 3: Listen again and fix</h3>
-    <p class="hint">Play the whole story from the beginning and follow your transcription. Fix anything you're unsure about. Listen closely for the small words: <i>a, the, to, of, it's, don't, that</i>.</p>
+    <p class="hint">Play the whole conversation from the beginning and follow your transcription. Fix anything you're unsure about. Listen closely for the small words: <i>le, la, l', de, du, des, à, au, en, y</i>, and the <i>ne</i> in <i>ne… pas</i>.</p>
     ${playerHTML()}${answerBox}${nextRow(k)}`;
   if (k === 3) P.innerHTML = `<h3>Round 4: Compare</h3>
     <p class="hint">Check your transcription against the text. Look at the words you missed. Were they small words? Words linked together? New words you didn't know?</p>
-    ${answerBox}<div class="actions"><button class="btn gold" id="check">Check my transcription</button></div><div id="result"></div><div class="cats"><h4>Why did you miss it?</h4><p class="hint">For each word or phrase you missed, decide which kind of mistake it was. Over time, this shows you what to practise.</p><ol type="A"><li><b>New vocabulary:</b> you didn't know the word.</li><li><b>Known word, not recognized:</b> you know it when you read it, but you didn't hear it.</li><li><b>Connected speech:</b> words were linked or shortened, like “wanna” or “gotta.”</li><li><b>Small words:</b> you missed little words like “a,” “the,” “to” or “of.”</li><li><b>Meaning:</b> you heard every word, but misunderstood what the person meant.</li></ol></div>${nextRow(k)}`;
+    ${answerBox}<div class="actions"><button class="btn gold" id="check">Check my transcription</button></div><div id="result"></div><div class="cats"><h4>Why did you miss it?</h4><p class="hint">For each word or phrase you missed, decide which kind of mistake it was. Over time, this shows you what to practise.</p><ol type="A"><li><b>New vocabulary:</b> you didn't know the word.</li><li><b>Known word, not recognized:</b> you know it when you read it, but you didn't hear it.</li><li><b>Connected speech:</b> words were linked or shortened, like <i>t'as</i> for <i>tu as</i>, <i>y'a</i> for <i>il y a</i>, or a liaison like <i>les‿amis</i>.</li><li><b>Small words:</b> you missed little words like <i>le</i>, <i>de</i>, <i>l'</i>, <i>en</i> or <i>y</i>.</li><li><b>Meaning:</b> you heard every word, but misunderstood what the person meant.</li></ol></div>${nextRow(k)}`;
   if (k === 4) P.innerHTML = `<h3>Round 5: Shadow</h3>
     <p class="hint">Now the text is visible. Follow the highlight while the voices speak, and tap any sentence to hear it from there. Then play it again and speak along with the voices, at the same time, copying their rhythm and the small words.</p>
     ${playerHTML({ resume: false })}${dialogueHTML(s, true)}
     <div class="listenfor"><h4>Listen for</h4><p>${esc(s.F)}</p>${s.V ? `<p><b>Words and phrases:</b> ${esc(s.V)}</p>` : ""}</div>${nextRow(k)}`;
   if (k === 5) P.innerHTML = `<h3>Round 6: Retell and Respond</h3>
-    <p class="hint">First, echo: after each sentence there's a pause, so say it out loud. Then tick the box and take ${esc(roleName())}'s part: that voice goes quiet and you say the lines yourself. Finally, close the text and tell the story in your own words, as if you were telling a friend. Last, answer two short situations in your own words.</p>
+    <p class="hint">First, echo: after each sentence there's a pause, so say it out loud. Then tick the box and take ${esc(roleName())}'s part: that voice goes quiet and you say the lines yourself. Finally, close the text and tell what happened in your own words, as if you were telling a friend.${(s.R || []).length ? " Last, answer two short situations in your own words." : ""}</p>
     ${playerHTML({ echo: true })}${dialogueHTML(s, true)}
     <div class="mine"><h4>Tell it in your own words</h4>
-      <ul class="prompts"><li>Who is in the story, and where are they?</li><li>What happens first, next, and at the end?</li><li>Use at least three of the words from “Listen for.”</li><li>Say it out loud in one or two minutes, without looking at the text.</li></ul>
+      <ul class="prompts"><li>Who is in the conversation, and where are they?</li><li>What happens first, next, and at the end?</li><li>Use at least three of the words from “Listen for.”</li><li>Say it out loud in one or two minutes, without looking at the text.</li></ul>
       <div class="field"><label for="mineTxt">My notes (saved in this browser)</label><textarea id="mineTxt" class="short">${esc(store.get("mine:" + s.num, ""))}</textarea></div>
-    </div><div class="respond"><h4>Respond</h4><p class="hint">Now it's your turn. Read the situation, say your answer out loud, and write it if you like. Then compare it with the model answer.</p>
+    </div><div class="respond" ${(s.R || []).length ? "" : "hidden"}><h4>Respond</h4><p class="hint">Now it's your turn. Read the situation, say your answer out loud, and write it if you like. Then compare it with the model answer.</p>
       ${(s.R || []).map((r, i) => `<div class="rsp"><p class="rsit">${esc(r[0])}</p><p class="rq"><b>${esc(r[1])}:</b> “${esc(r[2])}”</p><div class="field"><label for="rsp${i}">Your answer (saved in this browser)</label><textarea id="rsp${i}" class="short" data-rsp="${i}">${esc(store.get(`rsp:${s.num}:${i}`, ""))}</textarea></div><button class="btn secondary" data-model="${i}">Show a model answer</button><p class="model" id="model${i}" hidden><b>Model answer:</b> ${esc(r[3])}<span>Your answer doesn't have to match. Any natural, polite reply that fits the situation is good.</span></p></div>`).join("")}
     </div>${nextRow(k)}`;
   if ($("#mineTxt")) $("#mineTxt").oninput = e => store.set("mine:" + s.num, e.target.value);
@@ -670,7 +671,7 @@ function renderPanel(s) {
 
 /* ---------- transcription check ---------- */
 const norm = w => w.toLowerCase().replace(/[’‘]/g, "'").replace(/[^a-z0-9'àâäéèêëîïôöùûüÿçœæãõáíóú½%]/g, "").replace(/^'+|'+$/g, "");
-function tokens(t) { return t.replace(/[“”]/g, '"').replace(/—|–/g, " ").split(/\s+/).filter(Boolean).map(w => ({ raw: w, n: norm(w) })).filter(x => x.n); }
+function tokens(t) { return t.replace(/\b(qu|[cdjlmnst])['’](?=[A-Za-zÀ-ÿ])/gi, "$1' ").replace(/[“”]/g, '"').replace(/—|–/g, " ").split(/\s+/).filter(Boolean).map(w => ({ raw: w, n: norm(w) })).filter(x => x.n); }
 function check(s) {
   const FULL = tokens(fullText(s)), B = tokens(ST.answer);
   if (!B.length) { $("#result").innerHTML = `<div class="result"><p>Your transcription is empty. Go back to round 2, write what you hear, and then check it here.</p></div>`; return; }
